@@ -11304,3 +11304,28 @@ shopify-payment-terms {
     margin-top: 65px;
   }
 }
+
+
+/* F37 Bergman Fonts Start */
+
+@font-face {
+  font-family: F37Bergman-Bold;
+  src: url("fonts/F37Bergman-Bold.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: F37Bergman-Regular;
+  src: url("fonts/F37Bergman-Regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: F37Bergman-Light;
+  src: url("fonts/F37Bergman-Light.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: F37Bergman-Thin;
+  src: url("fonts/F37Bergman-Thin.woff2") format("woff2");
+}
+
+/* F37 Bergman Fonts End */
