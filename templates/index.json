@@ -32,6 +32,16 @@
         "button_background": "#ffffff"
       }
     },
+    "16471976955fcdcd91": {
+      "type": "custom-html",
+      "settings": {
+        "subheading": "",
+        "title": "",
+        "html": "<div style=\"height:50px; background-color: #FAEBDA\"><\/div>",
+        "background_color": "#faebda",
+        "padding": false
+      }
+    },
     "1647186122d1f822ff": {
       "type": "background-video",
       "settings": {
@@ -195,6 +205,7 @@
   },
   "order": [
     "slideshow",
+    "16471976955fcdcd91",
     "1647186122d1f822ff",
     "16471861270237f67f",
     "featured-collections",
