@@ -39,7 +39,7 @@
         "title": "",
         "html": "<div style=\"height:50px; background-color: #FAEBDA\"><\/div>",
         "background_color": "#faebda",
-        "padding": false
+        "padding": true
       }
     },
     "1647186122d1f822ff": {
