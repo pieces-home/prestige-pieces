@@ -2335,13 +2335,16 @@
         this._updateInventory(newVariant, previousVariant); // 3rd: update SKU
 
 
-        this._updateSku(newVariant, previousVariant); // 4th: update the price measurement
+        this._updateSku(newVariant, previousVariant); // 4th: update the metafield
 
 
-        this._updateUnitPrice(newVariant, previousVariant); // 5th: the add to cart button
+        this._updateMetafield(newVariant, previousVariant); // 5th: update the price measurement
 
 
-        this._updateAddToCartButton(newVariant, previousVariant); // 6th: store availability
+        this._updateUnitPrice(newVariant, previousVariant); // 6th: the add to cart button
+
+
+        this._updateAddToCartButton(newVariant, previousVariant); // 7th: store availability
 
 
         this.storeAvailability.updateWithVariant(newVariant); // Finally, we send an event so that other system could hook and do their own logic
@@ -2423,6 +2426,26 @@
 
         if (productSkuNumber && newVariant['sku']) {
           productSkuNumber.innerText = newVariant['sku'];
+        }
+      }
+      /**
+       * Update the Metafield
+       */
+
+    }, {
+      key: "_updateMetafield",
+      value: function _updateMetafield(newVariant) {
+        if (!newVariant) {
+          return;
+        }
+
+        var productMetaField = this.element.querySelector('.ProductMeta__Metafield');
+
+        if (productMetaField && newVariant) {
+          metafields.forEach(function (metafield) {
+            if (metafield.variant_id == newVariant.id)
+            productMetaField.value = metafield.metafield_value;
+          })
         }
       }
       /**
