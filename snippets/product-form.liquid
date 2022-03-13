@@ -230,6 +230,12 @@ for size, we use it to display a size chart (if applicable)
   {%- else -%}
     <input type="hidden" name="id" data-sku="{{ selected_variant.sku }}" value="{{ selected_variant.id }}">
   {%- endunless -%}
+  {%- comment -%} The below is a hidden input for variant design files {%- endcomment -%}
+  {%- for variant in product.variants -%}
+  {%- if product.selected_or_first_available_variant.metafields.design_files.spec_sheet and product.selected_or_first_available_variant.id == variant.id -%}
+    <input name="properties[_design_file]" id="spec_sheet" type="hidden" class="ProductMeta__Metafield" value="{{product.selected_or_first_available_variant.metafields.design_files.spec_sheet}}" />
+    {%- endif -%}    
+  {%- endfor -%}
 </div>
 
 {%- comment -%} The below creates an object of all available variant metafields {%- endcomment -%}
