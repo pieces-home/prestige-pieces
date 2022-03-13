@@ -49,27 +49,39 @@
       "sidebar-menu": {
         "type": "sidebar-menu",
         "settings": {
-          "primary_menu": "main-menu",
+          "primary_menu": "menu",
+          "secondary_menu": "",
           "show_social_media": true
         }
       },
       "announcement": {
         "type": "announcement",
         "settings": {
+          "enable_bar": false,
+          "home_page_only": true,
           "background": "#000000",
           "text_color": "#ffffff",
-          "content": "Announce something here"
+          "content": "Announce something here",
+          "link": ""
         }
       },
       "header": {
         "type": "header",
         "settings": {
           "use_sticky_header": true,
+          "logo": "shopify:\/\/shop_images\/Piecees_V2_Logo_Black.png",
           "logo_max_width": 140,
-          "navigation_menu": "main-menu",
-          "navigation_style": "inline",
+          "mobile_logo_max_width": 100,
+          "show_country_selector": false,
+          "show_locale_selector": true,
+          "navigation_menu": "menu",
+          "navigation_style": "logoLeft",
+          "show_icons": true,
           "enable_transparent_header": true,
-          "transparent_text_color": "#ffffff"
+          "enable_transparent_header_collection": false,
+          "show_transparent_header_border": true,
+          "transparent_text_color": "#ffffff",
+          "transparent_logo": "shopify:\/\/shop_images\/Piecees_V2_Logo_White.png"
         }
       },
       "footer": {
@@ -103,10 +115,28 @@
           "footer-2"
         ],
         "settings": {
-          "show_payment_methods": true
+          "show_payment_methods": true,
+          "show_country_selector": true,
+          "show_locale_selector": true
+        }
+      },
+      "popup": {
+        "type": "popup",
+        "settings": {
+          "show_popup": false,
+          "show_only_on_index": true,
+          "show_only_for_visitors": true,
+          "show_only_once": true,
+          "title": "Popup",
+          "content": "<p>You can use this popup to display some useful information to your customers.<\/p>",
+          "show_newsletter": true,
+          "apparition_delay": 5
         }
       }
-    }
+    },
+    "content_for_index": [
+
+    ]
   },
   "presets": {
     "Allure": {
