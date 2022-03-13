@@ -5552,6 +5552,10 @@ body:not(.features--show-image-zooming) .Image--lazyLoaded.Image--zoomOut {
 }
 
 /* When a spacing is applied to a bordered section, as it is isolated, we use padding, otherwise margin */
+.Section--spacingNone {
+  margin: 0;
+}
+
 .Section--spacingNormal {
   margin: 50px 0;
 }
