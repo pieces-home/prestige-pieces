@@ -6,25 +6,21 @@
         "slide-0": {
           "type": "image",
           "settings": {
-            "apply_overlay": true,
+            "image": "shopify:\/\/shop_images\/00-HP_SLIDER_3_Copy.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/00-HP_SLIDER-MOBILE_Copy_3_17afa5e3-2a7d-48cc-b50b-1fa70d59605d.jpg",
+            "apply_overlay": false,
             "content_position": "bottomLeft",
-            "subheading": "Slide title",
-            "title": "Tell your story"
-          }
-        },
-        "slide-1": {
-          "type": "image",
-          "settings": {
-            "apply_overlay": true,
-            "content_position": "bottomLeft",
-            "subheading": "Slide title",
-            "title": "Tell your story"
+            "subheading": "",
+            "title": "Jewel Tones",
+            "button_1_text": "SHOP NOW",
+            "button_1_link": "shopify:\/\/collections\/jewel-tones",
+            "button_2_text": "",
+            "button_2_link": ""
           }
         }
       },
       "block_order": [
-        "slide-0",
-        "slide-1"
+        "slide-0"
       ],
       "settings": {
         "show_fullscreen": true,
@@ -32,17 +28,60 @@
         "autoplay": true,
         "cycle_speed": 5,
         "text_color": "#ffffff",
-        "button_color": "#363636"
+        "button_color": "#363636",
+        "button_background": "#ffffff"
+      }
+    },
+    "1647186122d1f822ff": {
+      "type": "background-video",
+      "settings": {
+        "section_size": "preserveRatio",
+        "video_url": "https:\/\/vimeo.com\/605093813"
+      }
+    },
+    "16471861270237f67f": {
+      "type": "slideshow",
+      "blocks": {
+        "1647186127411d4fe4-0": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/00-HP_SLIDER_2_Copy_24fbeba5-5e51-40b5-84bf-8cfeb1944a6d.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/00-HP_SLIDER-MOBILE_Copy_3.jpg",
+            "apply_overlay": false,
+            "content_position": "bottomLeft",
+            "subheading": "Plush Seating in New Colors",
+            "title": "Meet Teddy",
+            "button_1_text": "",
+            "button_1_link": "https:\/\/pieceshome.com\/collections\/all",
+            "button_2_text": "",
+            "button_2_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "1647186127411d4fe4-0"
+      ],
+      "settings": {
+        "show_fullscreen": false,
+        "show_arrow": false,
+        "autoplay": true,
+        "cycle_speed": 5,
+        "text_color": "#ffffff",
+        "button_color": "#363636",
+        "button_background": "#ffffff"
       }
     },
     "featured-collections": {
       "type": "featured-collections",
+      "disabled": true,
       "blocks": {
         "featured-collection-0": {
           "type": "collection",
           "settings": {
-            "grid_items_count": 8,
-            "button_text": "View all products"
+            "collection": "home-union-x-pieces",
+            "title": "",
+            "grid_items_count": 4,
+            "button_text": "View all"
           }
         }
       },
@@ -50,9 +89,11 @@
         "featured-collection-0"
       ],
       "settings": {
-        "title": "Featured collection",
+        "title": "",
         "layout_mode": "grid",
         "show_product_info": true,
+        "show_vendor": false,
+        "show_color_swatch": false,
         "grid_mobile_items_per_row": "2",
         "grid_desktop_items_per_row": 4
       }
@@ -63,28 +104,42 @@
         "collection-0": {
           "type": "collection",
           "settings": {
+            "collection": "",
+            "image": "shopify:\/\/shop_images\/collection_block-00.jpg",
             "image_alignment": "center center",
-            "subheading": "Sub-heading",
+            "content_position": "bottomLeft",
+            "subheading": "",
+            "title": "Rugs",
             "button_text": "View products",
-            "apply_overlay": true
+            "button_link": "https:\/\/pieceshome.com\/collections\/all\/rugs",
+            "apply_overlay": false
           }
         },
         "collection-1": {
           "type": "collection",
           "settings": {
+            "collection": "",
+            "image": "shopify:\/\/shop_images\/PIECES_MaineHouse3426-EDIT-Web_Res.jpg",
             "image_alignment": "center center",
-            "subheading": "Sub-heading",
-            "button_text": "View products",
-            "apply_overlay": true
+            "content_position": "bottomLeft",
+            "subheading": "",
+            "title": "Pieces Homes Kennebunk",
+            "button_text": "Book a stay",
+            "button_link": "http:\/\/pieceshomes.com",
+            "apply_overlay": false
           }
         },
         "collection-2": {
           "type": "collection",
           "settings": {
+            "collection": "planters",
             "image_alignment": "center center",
-            "subheading": "Sub-heading",
+            "content_position": "bottomLeft",
+            "subheading": "",
+            "title": "Planters",
             "button_text": "View products",
-            "apply_overlay": true
+            "button_link": "",
+            "apply_overlay": false
           }
         }
       },
@@ -94,153 +149,56 @@
         "collection-2"
       ],
       "settings": {
+        "image_size": "normal",
         "add_spacing": true,
         "expand_collection": false,
+        "stack_on_mobile": true,
         "text_color": "#ffffff",
         "button_color": "#363636"
       }
     },
-    "featured-product": {
-      "type": "featured-product",
+    "16471861569d18b261": {
+      "type": "apps",
       "blocks": {
-        "product-meta": {
-          "type": "product_meta",
+        "d6d1d86c-33ef-4816-8403-ef9872fa28cc": {
+          "type": "shopify:\/\/apps\/section-feed\/blocks\/app-block\/43cd482b-515a-4e82-b170-05d391763cd2",
           "settings": {
-          }
-        },
-        "share-buttons": {
-          "type": "share_buttons",
-          "settings": {
-          }
-        },
-        "variant-selector": {
-          "type": "variant_selector",
-          "settings": {
-          }
-        },
-        "buy-buttons": {
-          "type": "buy_buttons",
-          "settings": {
+            "title": "@pieces_by_an_aesthetic_pursuit",
+            "subheading": "",
+            "button_text": "Follow Us",
+            "button_link": "https:\/\/www.instagram.com\/pieces_by_an_aesthetic_pursuit\/?hl=en",
+            "layout": "grid",
+            "image_size": "large",
+            "add_spacing": true,
+            "rows_count": 2,
+            "show_author": false,
+            "show_caption": true,
+            "show_date": true,
+            "click_action": "open_instagram",
+            "heading_color": "#000000",
+            "subheading_color": "#000000",
+            "button_background": "#6a6a6a",
+            "button_color": "#ffffff",
+            "overlay_color": "#000000",
+            "overlay_text_color": "#ffffff",
+            "overlay_opacity": 28
           }
         }
       },
       "block_order": [
-        "product-meta",
-        "share-buttons",
-        "variant-selector",
-        "buy-buttons"
+        "d6d1d86c-33ef-4816-8403-ef9872fa28cc"
       ],
       "settings": {
-        "title": "Featured product"
-      }
-    },
-    "timeline": {
-      "type": "timeline",
-      "blocks": {
-        "item-0": {
-          "type": "item",
-          "settings": {
-            "apply_overlay": true,
-            "title": "2000",
-            "subheading": "Sub-heading",
-            "heading": "Heading",
-            "content": "<p>Add your own custom content to give more information about your store, availability details...<\/p>"
-          }
-        },
-        "item-1": {
-          "type": "item",
-          "settings": {
-            "apply_overlay": true,
-            "title": "2001",
-            "subheading": "Sub-heading",
-            "heading": "Heading",
-            "content": "<p>Add your own custom content to give more information about your store, availability details...<\/p>"
-          }
-        },
-        "item-2": {
-          "type": "item",
-          "settings": {
-            "apply_overlay": true,
-            "title": "2002",
-            "subheading": "Sub-heading",
-            "heading": "Heading",
-            "content": "<p>Add your own custom content to give more information about your store, availability details...<\/p>"
-          }
-        }
-      },
-      "block_order": [
-        "item-0",
-        "item-1",
-        "item-2"
-      ],
-      "settings": {
-        "text_color": "#ffffff"
-      }
-    },
-    "blog-posts": {
-      "type": "blog-posts",
-      "blocks": {
-        "blog-0": {
-          "type": "blog",
-          "settings": {
-            "blog": "news"
-          }
-        }
-      },
-      "block_order": [
-        "blog-0"
-      ],
-      "settings": {
-        "title": "Featured article",
-        "show_category": false,
-        "button_text": "View all articles"
-      }
-    },
-    "shop-the-look": {
-      "type": "shop-the-look",
-      "blocks": {
-        "look-0": {
-          "type": "look",
-          "settings": {
-            "dot_style": "light",
-            "product_1_horizontal_position": 30,
-            "product_1_vertical_position": 40,
-            "product_2_horizontal_position": 45,
-            "product_2_vertical_position": 65,
-            "product_3_horizontal_position": 70,
-            "product_3_vertical_position": 50
-          }
-        },
-        "look-1": {
-          "type": "look",
-          "settings": {
-            "dot_style": "light",
-            "product_1_horizontal_position": 25,
-            "product_1_vertical_position": 45,
-            "product_2_horizontal_position": 55,
-            "product_2_vertical_position": 30,
-            "product_3_horizontal_position": 65,
-            "product_3_vertical_position": 60
-          }
-        }
-      },
-      "block_order": [
-        "look-0",
-        "look-1"
-      ],
-      "settings": {
-        "subheading": "Shop",
-        "title": "Our looks"
+        "include_margins": true
       }
     }
   },
   "order": [
     "slideshow",
+    "1647186122d1f822ff",
+    "16471861270237f67f",
     "featured-collections",
     "collection-list",
-    "featured-product",
-    "timeline",
-    "blog-posts",
-    "shop-the-look"
+    "16471861569d18b261"
   ]
 }
