@@ -29,7 +29,7 @@
         "cycle_speed": 5,
         "text_color": "#ffffff",
         "button_color": "#363636",
-        "button_background": "#ffffff"
+        "button_background": "#fdfaf3"
       }
     },
     "16471976955fcdcd91": {
@@ -46,7 +46,13 @@
       "type": "background-video",
       "settings": {
         "section_size": "preserveRatio",
-        "video_url": "https:\/\/vimeo.com\/605093813"
+        "video_url": "https:\/\/vimeo.com\/605093813",
+        "collection_url": "",
+        "heading": "Home Union x Pieces",
+        "heading_color": "#ffffff",
+        "button_text": "Shop Now",
+        "button_color": "#363636",
+        "button_background": "#fdfaf3"
       }
     },
     "16471861270237f67f": {
