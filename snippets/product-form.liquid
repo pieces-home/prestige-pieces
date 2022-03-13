@@ -232,6 +232,22 @@ for size, we use it to display a size chart (if applicable)
   {%- endunless -%}
 </div>
 
+{%- comment -%} The below creates an object of all available variant metafields {%- endcomment -%}
+{% assign metafields-data = '[' %}
+{%for variant in product.variants%}
+{% assign metafield-value = variant.metafields.design_files.spec_sheet
+      | replace: '"', "''" %}
+      {% assign metafields-data = metafields-data | append:
+        '{"variant_id":"' | append: variant.id| append: '" ,
+        "metafield_value":"' | append: metafield-value | append: '"},' %}
+        {%endfor%}
+        {% assign metafields-data = metafields-data | append: ']'%}
+        {% assign metafields-data = metafields-data | replace: ",]", "]"%}
+        
+<script>
+  var metafields = {{ metafields-data }}
+</script>
+
 {%- if size_chart_page != empty -%}
   {%- comment -%}If we have a size chart we capture the modal content (it must be displayed outside the form for proper positioning){%- endcomment -%}
 
