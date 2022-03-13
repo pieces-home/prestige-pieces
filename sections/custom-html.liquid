@@ -1,5 +1,5 @@
-<section class="Section Section--spacingNormal" id="section-{{ section.id }}">
-  <div class="Container">
+<section class="Section {%- if section.settings.padding == true -%} Section--spacingNormal {%- else -%} Section--spacingNone {%- endif -%}" id="section-{{ section.id }}">
+  <div class="Container" style="background-color:{{section.settings.background_color}}">
     {%- if section.settings.subheading != blank or section.settings.title != blank -%}
       <header class="SectionHeader SectionHeader--center">
         {%- if section.settings.subheading != blank -%}
@@ -40,6 +40,18 @@
       "id": "html",
       "label": "HTML content",
       "default": "<p>Write your own custom HTML content.</p>"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "checkbox",
+      "id": "padding",
+      "label": "Add padding",
+      "default": false
     }
   ],
   "presets": [

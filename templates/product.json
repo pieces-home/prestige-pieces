@@ -6,6 +6,32 @@
         "product_meta": {
           "type": "product_meta",
           "settings": {
+            "show_vendor": false,
+            "show_sku": false,
+            "show_product_rating": false,
+            "show_taxes_included": false
+          }
+        },
+        "variant_selector": {
+          "type": "variant_selector",
+          "settings": {
+            "selector_mode": "block",
+            "show_color_swatch": false,
+            "show_color_carousel": false,
+            "size_chart": ""
+          }
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "settings": {
+            "show_label": false
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_price_in_button": false,
+            "show_payment_button": true
           }
         },
         "description": {
@@ -15,50 +41,39 @@
         },
         "share_buttons": {
           "type": "share_buttons",
-          "settings": {
-          }
-        },
-        "variant_selector": {
-          "type": "variant_selector",
-          "settings": {
-          }
-        },
-        "quantity_selector": {
-          "type": "quantity_selector",
-          "settings": {
-          }
-        },
-        "buy_buttons": {
-          "type": "buy_buttons",
+          "disabled": true,
           "settings": {
           }
         }
       },
       "block_order": [
         "product_meta",
-        "description",
-        "share_buttons",
         "variant_selector",
         "quantity_selector",
-        "buy_buttons"
+        "buy_buttons",
+        "description",
+        "share_buttons"
       ],
       "settings": {
+        "image_size": "large",
+        "stack_images": true,
+        "show_thumbnails": true,
+        "enable_image_zoom": true,
+        "enable_video_looping": false
       }
     },
     "product-recommendations": {
       "type": "product-recommendations",
       "settings": {
-      }
-    },
-    "recently-viewed-products": {
-      "type": "recently-viewed-products",
-      "settings": {
+        "heading": "Related Products",
+        "show_product_info": true,
+        "show_vendor": false,
+        "show_color_swatch": false
       }
     }
   },
   "order": [
     "main",
-    "product-recommendations",
-    "recently-viewed-products"
+    "product-recommendations"
   ]
 }
