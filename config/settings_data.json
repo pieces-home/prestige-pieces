@@ -22,7 +22,7 @@
     "secondary_elements_background": "#1c1b1b",
     "secondary_elements_text_color": "#ffffff",
     "heading_font": "montserrat_n5",
-    "heading_size": "small",
+    "heading_size": "large",
     "uppercase_heading": true,
     "text_font": "nunito_sans_n4",
     "base_text_font_size": 14,
