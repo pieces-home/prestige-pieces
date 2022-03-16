@@ -6825,7 +6825,7 @@ body:not(.features--show-image-zooming) .Image--lazyLoaded.Image--zoomOut {
   left: 50%;
   width: 100%;
   transform: translate(-50%, -50%);
-  text-align: left;
+  text-align: center;
 }
 
 .CollectionItem__Content--bottomCenter,
@@ -6900,6 +6900,7 @@ body:not(.features--show-image-zooming) .Image--lazyLoaded.Image--zoomOut {
 
   .CollectionItem__Content {
     padding: 0 40px;
+    text-align: left;
   }
 
   .CollectionItem__Content--bottomLeft,
@@ -11310,7 +11311,7 @@ shopify-payment-terms {
 }
 
 
-/* F37 Bergman Fonts Start */
+/* F37 Bergman Fonts */
 
 @font-face {
   font-family: F37Bergman-Bold;
@@ -11332,4 +11333,19 @@ shopify-payment-terms {
   src: url("F37Bergman-Thin.woff2") format("woff2");
 }
 
-/* F37 Bergman Fonts End */
+/* */
+
+/* Font Overide */
+
+body, a.ButtonGroup__Item {
+  font-family: 'Be Vietnam Pro', sans-serif !important;
+  font-weight: 200 !important;
+}
+
+a, .Heading {
+  font-family: 'F37Bergman-Bold', sans-serif !important;
+  /* font-size: .9rem !important; */
+}
+
+/* End Custom Font */
+
