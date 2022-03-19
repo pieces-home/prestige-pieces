@@ -5633,7 +5633,8 @@ body:not(.features--show-image-zooming) .Image--lazyLoaded.Image--zoomOut {
 
 @media screen and (min-width: 641px) {
   .SectionHeader__Heading--emphasize {
-    font-size: calc(var(--base-text-font-size) - (var(--default-text-font-size) - 22px)) !important;
+    /* font-size: calc(var(--base-text-font-size) - (var(--default-text-font-size) - 22px)) !important; */
+    font-size: 3rem !important;
   }
 }
 @media screen and (min-width: 1008px) {
@@ -10795,32 +10796,6 @@ shopify-payment-terms {
   text-align: center;
 }
 
-.Slideshow__Content--middleLeft,
-.Slideshow__Content--bottomLeft {
-  text-align: left;
-}
-.Slideshow__Content--middleLeft .ButtonGroup,
-.Slideshow__Content--bottomLeft .ButtonGroup {
-  justify-content: flex-start;
-}
-
-.Slideshow__Content--middleRight,
-.Slideshow__Content--bottomRight {
-  text-align: right;
-}
-.Slideshow__Content--middleRight .ButtonGroup,
-.Slideshow__Content--bottomRight .ButtonGroup {
-  justify-content: flex-end;
-}
-
-.Slideshow__Content--bottomLeft,
-.Slideshow__Content--bottomCenter,
-.Slideshow__Content--bottomRight {
-  top: auto;
-  bottom: 70px;
-  left: 0;
-  transform: none;
-}
 
 .js .Slideshow__Content .SectionHeader {
   opacity: 0;
@@ -10848,7 +10823,35 @@ shopify-payment-terms {
   .Slideshow__Content {
     padding: 0 70px;
   }
+  .Slideshow__Content--middleLeft,
+  .Slideshow__Content--bottomLeft {
+    text-align: left;
+  }
+  .Slideshow__Content--middleLeft .ButtonGroup,
+  .Slideshow__Content--bottomLeft .ButtonGroup {
+    justify-content: flex-start;
+  }
+  
+  .Slideshow__Content--middleRight,
+  .Slideshow__Content--bottomRight {
+    text-align: right;
+  }
+  .Slideshow__Content--middleRight .ButtonGroup,
+  .Slideshow__Content--bottomRight .ButtonGroup {
+    justify-content: flex-end;
+  }
+  
+  .Slideshow__Content--bottomLeft,
+  .Slideshow__Content--bottomCenter,
+  .Slideshow__Content--bottomRight {
+    top: auto;
+    bottom: 15%;
+    left: 0;
+    transform: none;
+  }
 }
+
+
 .store-availability-container {
   margin-top: 30px;
 }
@@ -11342,10 +11345,17 @@ body, a.ButtonGroup__Item {
   font-weight: 200 !important;
 }
 
-a, .Heading {
+a {
   font-family: 'F37Bergman-Bold', sans-serif !important;
   /* font-size: .9rem !important; */
 }
 
-/* End Custom Font */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'F37Bergman-Regular', sans-serif !important;
+}
 
+@media screen and (min-width: 1008px) {
+  
+}
+
+/* End Custom Font */
