@@ -109,7 +109,7 @@
           "footer-2": {
             "type": "newsletter",
             "settings": {
-              "title": "",
+              "title": "Join Newsletter",
               "content": "<p>Sign up to receive updates about our new collections, exclusive pieces, and special offers.<\/p>"
             }
           }
