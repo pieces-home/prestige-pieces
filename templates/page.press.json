@@ -88,9 +88,9 @@
         "f893d181-e1f5-4cea-866b-6202273d331e"
       ],
       "settings": {
-        "slider_enable": false,
+        "slider_enable": true,
         "slider_heading": "Press",
-        "slider_text": "Heading"
+        "slider_text": ""
       }
     }
   },
