@@ -5634,7 +5634,7 @@ body:not(.features--show-image-zooming) .Image--lazyLoaded.Image--zoomOut {
 @media screen and (min-width: 641px) {
   .SectionHeader__Heading--emphasize {
     /* font-size: calc(var(--base-text-font-size) - (var(--default-text-font-size) - 22px)) !important; */
-    font-size: 3rem !important;
+    font-size: 3rem !important;    
   }
 }
 @media screen and (min-width: 1008px) {
@@ -8649,7 +8649,7 @@ body:not(.features--show-image-zooming) .Image--lazyLoaded.Image--zoomOut {
   }
 
   .ImageHero--large {
-    min-height: 600px;
+    min-height: 100vh;
   }
 
   .ImageHero__TextContent {
@@ -11337,25 +11337,81 @@ shopify-payment-terms {
 }
 
 /* */
-
-/* Font Overide */
-
-body, a.ButtonGroup__Item {
+/* *//* *//* *//* *//* *//* */
+/* *//* Font Overide *//* *//*/
+/* *//* *//* *//* *//* *//* */
+body, .Button {
   font-family: 'Be Vietnam Pro', sans-serif !important;
   font-weight: 200 !important;
 }
 
-a {
+a, button {
   font-family: 'F37Bergman-Bold', sans-serif !important;
   /* font-size: .9rem !important; */
+}
+
+.SectionHeader__Heading.SectionHeader__Heading--emphasize.Heading.u-h1 {
+  font-size: 2.6rem !important;
+  margin-bottom: 0 !important;
+  /* line-height: 1.2 !important; */
+}
+
+.SectionHeader__SubHeading.Heading.u-h6 {
+  font-family: 'F37Bergman-Light', sans-serif !important;
+  font-size: 2rem !important;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'F37Bergman-Regular', sans-serif !important;
 }
 
+h3, h4, h5, h6 {
+  font-family: 'F37Bergman-Light', sans-serif !important;
+}
+
+.CollectionTitle {
+  top: 40%;
+  text-align: center;
+}
+
+/* @media screen and (min-width: 641px) {
+  .CollectionTitle {
+    top: auto;
+  }
+} */
+
 @media screen and (min-width: 1008px) {
+
+  body, .Button {
+    font-family: 'Be Vietnam Pro', sans-serif !important;
+    font-weight: 200 !important;
+  }
   
+  a, button {
+    font-family: 'F37Bergman-Bold', sans-serif !important;
+    /* font-size: .9rem !important; */
+  }
+  
+  .SectionHeader__Heading.SectionHeader__Heading--emphasize.Heading.u-h1 {
+    font-size: 4rem !important;
+    line-height: normal;
+  }
+  
+  .SectionHeader__SubHeading.Heading.u-h6 {
+    font-size: 3rem !important;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'F37Bergman-Regular', sans-serif !important;
+  }
+  
+  h3, h4, h5, h6 {
+    font-family: 'F37Bergman-Light', sans-serif !important;
+  }
+  .CollectionTitle {
+    top: auto;
+    text-align: left;
+  }
 }
 
 /* End Custom Font */
