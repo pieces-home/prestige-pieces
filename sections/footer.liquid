@@ -140,7 +140,9 @@
 
       <div class="Footer__Copyright">
         <a href="{{ routes.root_url }}" class="Footer__StoreName Heading u-h7 Link Link--secondary">© {{ shop.name }}</a>
+        {%- if section.settings.show_powered_by_link -%}
         <p class="Footer__ThemeAuthor">{{ powered_by_link }}</p>
+        {%- endif -%}
       </div>
 
       {%- if section.settings.show_payment_methods -%}
@@ -200,6 +202,12 @@
       "type": "checkbox",
       "id": "show_locale_selector",
       "label": "Show language selector",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_powered_by_link",
+      "label": "Show 'Powered by Shopify'",
       "default": true
     }
   ],
