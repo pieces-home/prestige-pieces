@@ -122,7 +122,8 @@
         "settings": {
           "show_payment_methods": false,
           "show_country_selector": false,
-          "show_locale_selector": true
+          "show_locale_selector": true,
+          "show_powered_by_link": false
         }
       },
       "popup": {
