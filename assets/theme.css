@@ -11351,7 +11351,7 @@ footer h2, form *:not(.Price, .ProductMeta__Title){
   font-weight: 300 !important;
 }
 
-nav a {
+nav a, button {
   font-family: 'F37Bergman-Bold', sans-serif !important;
   /* font-size: .9rem !important; */
 }
