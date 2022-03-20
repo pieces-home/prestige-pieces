@@ -1,12 +1,63 @@
 {
-    "sections": {
-      "main": {
-        "type": "press-page",
-        "settings": {
+  "sections": {
+    "main": {
+      "type": "press-page",
+      "blocks": {
+        "b889dae3-4626-4882-bc12-57d920f960e4": {
+          "type": "select",
+          "settings": {
+            "thumb_img": "shopify:\/\/shop_images\/logo1.png",
+            "press_title": "Straight from the Sheep",
+            "press_url": "https:\/\/nymag.com\/strategist\/2019\/02\/cheap-designer-rugs-start-ups.html"
+          }
+        },
+        "45f19ebe-2236-4817-9658-f69395aac51c": {
+          "type": "select",
+          "settings": {
+            "thumb_img": "shopify:\/\/shop_images\/logo2.png",
+            "press_title": "Athletic Motifs Star in New Rug series by Pieces",
+            "press_url": "http:\/\/m.interiordesign.net\/articles\/15242-athletic-motifs-star-in-new-rug-series-by-pieces\/"
+          }
+        },
+        "fcb50721-ec07-4fdd-8000-6c4b6c84353b": {
+          "type": "select",
+          "settings": {
+            "thumb_img": "shopify:\/\/shop_images\/logo3.png",
+            "press_title": "Does Good Sports-Inspired Decor Exist?",
+            "press_url": "https:\/\/www.architecturaldigest.com\/story\/does-good-sports-inspired-decor-exist"
+          }
+        },
+        "2d517634-8500-4176-98fe-04c9d4525a7b": {
+          "type": "select",
+          "settings": {
+            "thumb_img": "shopify:\/\/shop_images\/logo4.png",
+            "press_title": "Design fitness: confira 9 itens em clima esportivo",
+            "press_url": "https:\/\/casavogue.globo.com\/Design\/Objetos\/noticia\/2018\/09\/design-fitness-confira-9-itens-em-clima-esportivo.html"
+          }
+        },
+        "36642615-6620-4bf1-a2eb-c246bd556921": {
+          "type": "select",
+          "settings": {
+            "press_title": "8 Cool Décor Brands Industry Insiders Know (and You Don't)",
+            "press_url": "https:\/\/www.mydomaine.com\/cool-home-decor-brands"
+          }
         }
+      },
+      "block_order": [
+        "b889dae3-4626-4882-bc12-57d920f960e4",
+        "45f19ebe-2236-4817-9658-f69395aac51c",
+        "fcb50721-ec07-4fdd-8000-6c4b6c84353b",
+        "2d517634-8500-4176-98fe-04c9d4525a7b",
+        "36642615-6620-4bf1-a2eb-c246bd556921"
+      ],
+      "settings": {
+        "slider_enable": false,
+        "slider_heading": "Press",
+        "slider_text": "Heading"
       }
-    },
-    "order": [
-      "main"
-    ]
-  }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}
