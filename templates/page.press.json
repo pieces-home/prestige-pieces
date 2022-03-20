@@ -50,6 +50,14 @@
             "press_title": "11 Stunning Interiors From NYCxDesign to Predict Instagram Trends",
             "press_url": "https:\/\/www.wmagazine.com\/gallery\/nycxdesign-week-installations-exhibitions"
           }
+        },
+        "3d58d6ba-9316-4a30-b4b1-339fc6eb737a": {
+          "type": "select",
+          "settings": {
+            "thumb_img": "shopify:\/\/shop_images\/domino-logo.png",
+            "press_title": "12 Graphic Rugs That Add Instant Personality to Any Room",
+            "press_url": "https:\/\/www.domino.com\/content\/graphic-modern-rugs\/"
+          }
         }
       },
       "block_order": [
@@ -58,7 +66,8 @@
         "fcb50721-ec07-4fdd-8000-6c4b6c84353b",
         "2d517634-8500-4176-98fe-04c9d4525a7b",
         "36642615-6620-4bf1-a2eb-c246bd556921",
-        "1d4c28f2-7a52-4d09-a518-dfd68076d16f"
+        "1d4c28f2-7a52-4d09-a518-dfd68076d16f",
+        "3d58d6ba-9316-4a30-b4b1-339fc6eb737a"
       ],
       "settings": {
         "slider_enable": false,
