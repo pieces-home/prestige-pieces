@@ -1,6 +1,6 @@
 {
   "current": {
-    "heading_color": "#1c1b1b",
+    "heading_color": "#505050",
     "text_color": "#5c5c5c",
     "text_light_color": "#6a6a6a",
     "link_color": "#6a6a6a",
@@ -22,8 +22,8 @@
     "secondary_elements_background": "#1c1b1b",
     "secondary_elements_text_color": "#ffffff",
     "heading_font": "montserrat_n5",
-    "heading_size": "small",
-    "uppercase_heading": true,
+    "heading_size": "large",
+    "uppercase_heading": false,
     "text_font": "nunito_sans_n4",
     "base_text_font_size": 14,
     "show_page_transition": true,
@@ -95,8 +95,8 @@
           "footer-0": {
             "type": "text",
             "settings": {
-              "title": "About the shop",
-              "content": "<p>Use this text area to tell your customers about your brand and vision. You can change it in the theme settings.<\/p>",
+              "title": "About Pieces",
+              "content": "<p>Pieces is a home design product line created by Brooklyn-based creative agency, An Aesthetic Pursuit. Stemming from years of experience designing and styling homes, Pieces was born to fill the void between our clients’ desires for custom design work and their ability to acquire it.<\/p>",
               "show_social_media": true
             }
           },
@@ -109,8 +109,8 @@
           "footer-2": {
             "type": "newsletter",
             "settings": {
-              "title": "Newsletter",
-              "content": "<p>Subscribe to receive updates, access to exclusive deals, and more.<\/p>"
+              "title": "Join Newsletter",
+              "content": "<p>Sign up to receive updates about our new collections, exclusive pieces, and special offers.<\/p>"
             }
           }
         },
@@ -120,9 +120,10 @@
           "footer-2"
         ],
         "settings": {
-          "show_payment_methods": true,
-          "show_country_selector": true,
-          "show_locale_selector": true
+          "show_payment_methods": false,
+          "show_country_selector": false,
+          "show_locale_selector": true,
+          "show_powered_by_link": false
         }
       },
       "popup": {

@@ -9,10 +9,11 @@
             "image": "shopify:\/\/shop_images\/00-HP_SLIDER_3_Copy.jpg",
             "mobile_image": "shopify:\/\/shop_images\/00-HP_SLIDER-MOBILE_Copy_3_17afa5e3-2a7d-48cc-b50b-1fa70d59605d.jpg",
             "apply_overlay": false,
+            "link_slide": false,
             "content_position": "bottomLeft",
-            "subheading": "",
             "title": "Jewel Tones",
-            "button_1_text": "SHOP NOW",
+            "subheading": "",
+            "button_1_text": "shop now",
             "button_1_link": "shopify:\/\/collections\/jewel-tones",
             "button_2_text": "",
             "button_2_link": ""
@@ -39,7 +40,9 @@
         "title": "",
         "html": "<div style=\"height:50px; background-color: #FAEBDA\"><\/div>",
         "background_color": "#faebda",
-        "padding": true
+        "hide_mobile": false,
+        "hide_desktop": false,
+        "padding": false
       }
     },
     "1647186122d1f822ff": {
@@ -47,12 +50,24 @@
       "settings": {
         "section_size": "large",
         "video_url": "https:\/\/vimeo.com\/605093813",
-        "collection_url": "",
+        "collection_url": "shopify:\/\/collections\/home-union-x-pieces",
         "heading": "Home Union x Pieces",
         "heading_color": "#ffffff",
         "button_text": "Shop Now",
         "button_color": "#363636",
         "button_background": "#fdfaf3"
+      }
+    },
+    "164799066210c28f56": {
+      "type": "custom-html",
+      "settings": {
+        "subheading": "",
+        "title": "",
+        "html": "<div style=\"height:50px; background-color: #FAEBDA\"><\/div>",
+        "background_color": "#faebda",
+        "hide_mobile": false,
+        "hide_desktop": true,
+        "padding": false
       }
     },
     "16471861270237f67f": {
@@ -64,9 +79,10 @@
             "image": "shopify:\/\/shop_images\/00-HP_SLIDER_2_Copy_24fbeba5-5e51-40b5-84bf-8cfeb1944a6d.jpg",
             "mobile_image": "shopify:\/\/shop_images\/00-HP_SLIDER-MOBILE_Copy_3.jpg",
             "apply_overlay": false,
+            "link_slide": true,
             "content_position": "bottomLeft",
-            "subheading": "Plush Seating in New Colors",
             "title": "Meet Teddy",
+            "subheading": "Plush Seating in New Colors",
             "button_1_text": "",
             "button_1_link": "https:\/\/pieceshome.com\/collections\/all",
             "button_2_text": "",
@@ -138,8 +154,8 @@
             "image": "shopify:\/\/shop_images\/PIECES_MaineHouse3426-EDIT-Web_Res.jpg",
             "image_alignment": "center center",
             "content_position": "bottomLeft",
-            "subheading": "",
-            "title": "Pieces Homes Kennebunk",
+            "subheading": "Kennebunk",
+            "title": "Pieces Homes",
             "button_text": "Book a stay",
             "button_link": "http:\/\/pieceshomes.com",
             "apply_overlay": false
@@ -166,7 +182,7 @@
       ],
       "settings": {
         "image_size": "normal",
-        "add_spacing": true,
+        "add_spacing": false,
         "expand_collection": false,
         "stack_on_mobile": true,
         "text_color": "#ffffff",
@@ -213,6 +229,7 @@
     "slideshow",
     "16471976955fcdcd91",
     "1647186122d1f822ff",
+    "164799066210c28f56",
     "16471861270237f67f",
     "featured-collections",
     "collection-list",

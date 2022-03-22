@@ -26,14 +26,14 @@
       {%- endif -%}
     </div>
 
-    <div class="CollectionItem__Content CollectionItem__Content--{{ block.settings.content_position | default: 'bottomLeft' }}">
+    <div class="CollectionItem__Content CollectionItem__Content--{{ block.settings.content_position | default: 'bottomLeft' }} CollectionTitle">
       <header class="SectionHeader">
+        
+        <h2 class="SectionHeader__Heading SectionHeader__Heading--emphasize Heading u-h1">{{ block.settings.title | default: collection.title | escape }}</h2>
         {%- if block.settings.subheading != blank -%}
           <h3 class="SectionHeader__SubHeading Heading u-h6">{{ block.settings.subheading | escape }}</h3>
         {%- endif -%}
-
-        <h2 class="SectionHeader__Heading SectionHeader__Heading--emphasize Heading u-h1">{{ block.settings.title | default: collection.title | escape }}</h2>
-
+        
         <div class="SectionHeader__ButtonWrapper">
           {%- if block.settings.button_text != blank -%}
             <span class="CollectionItem__Link Button">{{ block.settings.button_text | escape }}</span>

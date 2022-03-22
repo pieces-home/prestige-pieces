@@ -1,0 +1,249 @@
+<style>
+    .press-header {
+      margin-top: 50px;
+      height: auto;
+      clear: both;
+      background-position: center center !important;
+      background-size: cover !important;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+  
+    .press-header .header-content {
+      margin: auto;
+      width: 510px;
+      font-size: 14px;
+      top: 25%;
+      line-height: 30px;
+    }
+  
+    .press-header h1 {
+      color: #333333;
+      font-size: 28px;
+    }
+  
+    .press-header p {
+      font-size: 16px;
+      color: #333333;
+    }
+  
+    #press-posts {
+      max-width: 1300px;
+      margin: 20px auto 0 auto;
+      display: table;
+    }
+  
+    .main-content {
+      padding: 0;
+      width: 100%;
+      max-width: 100%;
+    }
+  
+    .posts {
+      margin-top: 30px;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+  
+    .title {
+      font-size: 16px;
+      color: #4c162b;
+      line-height: 27px;
+      margin: 10px auto;
+      max-width: 214px;
+    }
+  
+    /*Grid System*/
+  
+    #shopify-section-footer {
+      clear: both;
+    }
+  
+    .grid,
+    .grid--rev,
+    .grid--full,
+    .grid-uniform {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      margin-left: -30px;
+    }
+  
+    .grid__item {
+      box-sizing: border-box;
+      float: left;
+      min-height: 1px;
+      padding-left: 30px;
+      vertical-align: top;
+      width: 100%;
+    }
+  
+    @media only screen and (max-width: 768px) and (min-width: 481px) {
+      .medium--one-third {
+        width: 33.333%;
+      }
+    }
+  
+    @media only screen and (max-width: 480px) {
+      .small--one-half {
+        width: 50%;
+      }
+    }
+  
+    @media only screen and (min-width: 769px) {
+      .large--one-quarter {
+        width: 25%;
+      }
+    }
+  
+    /*End Grid System*/
+  
+    @media (max-width: 600px) {
+      #press-posts .grid {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+  
+      .posts {
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+  
+      .header-content {
+        padding: 0 20px;
+      }
+    }
+  </style>
+  {% if section.settings.slider_enable %} {% assign bg_img =
+  section.settings.header_img %}
+  
+  <header
+    class="press-header"
+    style="background:{% if bg_img %}url({{
+      section.settings.header_img | img_url: '2000x'
+    }}){% else %} #fff {% endif %};"
+  >
+    <div class="header-content caption">
+      <h1 class="headline">{{ section.settings.slider_heading }}</h1>
+  
+      <!-- <p>{{ section.settings.slider_text }}</p> -->
+    </div>
+  </header>
+  
+  {% endif %}
+  
+  <section id="press-posts">
+    <div class="Container text-center">
+      <div class="grid">
+        {% for block in section.blocks %}
+  
+        <article
+          class="
+            grid__item
+            large--one-quarter
+            medium--one-third
+            small--one-half
+            posts
+          "
+        >
+          <a
+            href="{{ block.settings.press_url }}"
+            target="_blank"
+            data-lightbox="roadtrip"
+            class="thumb-container"
+            title="{{ block.settings.press_title }}"
+          >
+            <div class="match">
+              <img src="{{ block.settings.thumb_img | img_url: '400x' }}" />
+            </div>
+  
+            <p class="title">{{ block.settings.press_title }}</p>
+          </a>
+        </article>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  
+  <script src="{{ 'jquery.matchHeight.js' | asset_url }}"></script>
+  
+  <script>
+    $(function () {
+      $(".posts").matchHeight();
+    });
+  </script>
+  
+  {% schema %}
+  
+  { 
+    "name": "Press Page",
+  
+    "settings": [ 
+      { 
+        "type": "checkbox", 
+        "id":"slider_enable", 
+        "label": "Enable Slider"
+      }, 
+      
+      {
+        "type": "text",
+        "id": "slider_heading",
+        "default": "Heading",
+        "label": "Slider Heading"
+      },
+      {
+        "type": "text",
+        "id": "slider_text",
+        "default": "Heading",
+        "label": "Slider Text"
+      }
+    ],
+  
+    "blocks": [
+      {
+        "type": "select",
+        "name": "Press",
+        "settings": [
+          {
+            "type":"image_picker",
+            "id": "thumb_img",
+            "label": "Press Image"
+          },
+          { 
+            "type": "text",
+            "id": "press_title",
+            "default": "title",
+            "label": "Press Title"
+          }, 
+          { 
+            "type":"text",
+            "id": "press_url",
+            "label": "Press URL"
+          }
+        ] 
+      }
+    ], 
+  
+    "presets": [
+      {
+        "name": "Call to Action Blocks",
+        "category": "CTA button",
+        "blocks": [ 
+          {"type":"select" }, 
+          { "type": "select" } 
+        ] 
+      } 
+    ] 
+  } 
+  {% endschema %} 
+  {% stylesheet %}
+  {% endstylesheet %}
+  {% javascript %}
+  {% endjavascript %}
+  
