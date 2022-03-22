@@ -83,10 +83,10 @@
         "3ea7c497-53be-4300-a128-ea893b1e02b7"
       ],
       "settings": {
-        "image_size": "small",
+        "image_size": "large",
         "stack_images": true,
         "show_thumbnails": true,
-        "enable_image_zoom": true,
+        "enable_image_zoom": false,
         "enable_video_looping": false
       }
     },
