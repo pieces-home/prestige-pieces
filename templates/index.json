@@ -40,6 +40,8 @@
         "title": "",
         "html": "<div style=\"height:50px; background-color: #FAEBDA\"><\/div>",
         "background_color": "#faebda",
+        "hide_mobile": false,
+        "hide_desktop": false,
         "padding": true
       }
     },
@@ -54,6 +56,18 @@
         "button_text": "Shop Now",
         "button_color": "#363636",
         "button_background": "#fdfaf3"
+      }
+    },
+    "164799066210c28f56": {
+      "type": "custom-html",
+      "settings": {
+        "subheading": "",
+        "title": "",
+        "html": "<div style=\"height:50px; background-color: #FAEBDA\"><\/div>",
+        "background_color": "#faebda",
+        "hide_mobile": false,
+        "hide_desktop": true,
+        "padding": false
       }
     },
     "16471861270237f67f": {
@@ -215,6 +229,7 @@
     "slideshow",
     "16471976955fcdcd91",
     "1647186122d1f822ff",
+    "164799066210c28f56",
     "16471861270237f67f",
     "featured-collections",
     "collection-list",
