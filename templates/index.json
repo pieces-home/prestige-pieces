@@ -42,7 +42,7 @@
         "background_color": "#faebda",
         "hide_mobile": false,
         "hide_desktop": false,
-        "padding": true
+        "padding": false
       }
     },
     "1647186122d1f822ff": {
