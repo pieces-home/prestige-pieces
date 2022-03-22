@@ -9298,7 +9298,7 @@ body:not(.features--show-image-zooming) .Image--lazyLoaded.Image--zoomOut {
     top: var(--header-base-height);
     right: 0;
     width: 375px;
-    margin: 0 100px -40px 50px;
+    margin: 0 50px -40px 50px;
     padding-top: 0;
     padding-bottom: 40px;
   }
@@ -9319,7 +9319,7 @@ body:not(.features--show-image-zooming) .Image--lazyLoaded.Image--zoomOut {
 }
 @media screen and (min-width: 1140px) {
   .Product__Info {
-    width: 400px;
+    width: 450px;
   }
 }
 @media screen and (min-width: 1500px) {
