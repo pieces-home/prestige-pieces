@@ -15,7 +15,7 @@
         "show_filters": true,
         "show_filter_color_swatch": true,
         "expand_filters": true,
-        "filter_position": "drawer",
+        "filter_position": "sidebar",
         "filter_menu": "shop-by",
         "grid_items_per_page": 16,
         "grid_mobile_items_per_row": "2",
