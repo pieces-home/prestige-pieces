@@ -46,9 +46,9 @@
     "1647186122d1f822ff": {
       "type": "background-video",
       "settings": {
-        "section_size": "large",
+        "section_size": "preserveRatio",
         "video_url": "https:\/\/vimeo.com\/605093813",
-        "collection_url": "",
+        "collection_url": "shopify:\/\/collections\/home-union-x-pieces",
         "heading": "Home Union x Pieces",
         "heading_color": "#ffffff",
         "button_text": "Shop Now",
