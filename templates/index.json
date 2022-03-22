@@ -39,10 +39,10 @@
         "subheading": "",
         "title": "",
         "html": "<div style=\"height:50px; background-color: #FAEBDA\"><\/div>",
-        "background_color": "#ffffff",
+        "background_color": "#faebda",
         "hide_mobile": false,
         "hide_desktop": false,
-        "padding": false
+        "padding": true
       }
     },
     "1647186122d1f822ff": {
