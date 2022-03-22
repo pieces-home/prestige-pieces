@@ -1,4 +1,4 @@
-<section class="Section {%- if section.settings.padding == true -%} Section--spacingNormal {%- else -%} Section--spacingNone {%- endif -%}" id="section-{{ section.id }}">
+<section class="Section {%- if section.settings.padding != false -%} Section--spacingNormal {%- else -%} Section--spacingNone {%- endif -%} {%- if section.settings.hide_mobile != false-%} hidden-phone {%- else -%} {%- endif -%} {%- if section.settings.hide_desktop != false-%} hidden-tablet-and-up {%- else -%} {%- endif -%} "  id="section-{{ section.id }}">
   <div class="Container" style="background-color:{{section.settings.background_color}}">
     {%- if section.settings.subheading != blank or section.settings.title != blank -%}
       <header class="SectionHeader SectionHeader--center">
@@ -46,6 +46,18 @@
       "id": "background_color",
       "label": "Background Color",
       "default": "#ffffff"
+    },
+    {
+      "type": "checkbox",
+      "id": "hide_mobile",
+      "label": "Hide block on mobile devices",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "hide_desktop",
+      "label": "Hide block on desktop",
+      "default": false
     },
     {
       "type": "checkbox",
