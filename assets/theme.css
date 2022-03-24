@@ -2286,7 +2286,8 @@ body:not(.is-tabbing) .flickity-enabled:focus {
   }
 
   .Collapsible--large .Collapsible__Button {
-    padding: 34px 0;
+    /* padding: 34px 0; */
+    padding: 24px 0;
   }
 
   .Collapsible--large .Collapsible__Content {
@@ -9743,7 +9744,8 @@ shopify-payment-terms {
  * ----------------------------------------------------------------------------
  */
 .Product__Tabs {
-  margin: 50px 0;
+  /* margin: 50px 0; */
+  margin: 36px 0;
 }
 
 @media screen and (max-width: 640px) {
@@ -9759,11 +9761,13 @@ shopify-payment-terms {
 }
 @media screen and (min-width: 1008px) {
   .Product__Tabs {
-    margin: 80px 0;
+    /* margin: 80px 0; */
+    margin: 48px 0 0 0;
   }
 
   .Product__Tabs .Collapsible__Content {
-    padding-right: 80px;
+    /* padding-right: 80px; */
+    padding-right: 28px;
   }
 }
 /**
