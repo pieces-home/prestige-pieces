@@ -418,24 +418,45 @@
             {%- endunless -%}
           {%- endform -%}
 
+          
+          {%- comment -%}
+          Original functionality for product-aside
+          -------------------------------------          
           {%- if section.settings.stack_images and product_aside != blank and media_count > 0 -%}
-            <div class="Product__QuickNav hidden-pocket">
-              <div class="Product__QuickNavWrapper">
-                <a href="#ProductAside" class="Heading Link Link--secondary u-h7">{{ 'product.form.view_info' | t }} {% render 'icon' with 'select-arrow-right' %}</a>
-                <a href="#ProductGallery" class="Heading Link Link--secondary u-h7">{{ 'product.form.view_images' | t }} {% render 'icon' with 'select-arrow-right' %}</a>
-              </div>
+          <div class="Product__QuickNav hidden-pocket">
+            <div class="Product__QuickNavWrapper">
+              <a href="#ProductAside" class="Heading Link Link--secondary u-h7">{{ 'product.form.view_info' | t }} {% render 'icon' with 'select-arrow-right' %}</a>
+              <a href="#ProductGallery" class="Heading Link Link--secondary u-h7">{{ 'product.form.view_images' | t }} {% render 'icon' with 'select-arrow-right' %}</a>
             </div>
-          {%- endif -%}
+          </div>
+          {%- endif -%}    
+          -------------------------------------
+          {%- endcomment -%}
+          
+          
         </div>
+        {%- comment -%}
+          product_aside simplified and relocated within product info container
+        {%- endcomment -%}
+        {%- if product_aside != blank -%}
+            {{- product_aside -}}       
+        {%- endif -%}
       </div>
     </div>
 
+    {%- comment -%}
+    Original functionality for product-aside
+    ------------------------------------- 
     {%- if product_aside != blank -%}
       <div class="Product__Aside">
         <span id="ProductAside" class="Anchor"></span>
         {{- product_aside -}}
       </div>
     {%- endif -%}
+    -------------------------------------
+    {%- endcomment -%}
+
+
   </div>
 </section>
 
