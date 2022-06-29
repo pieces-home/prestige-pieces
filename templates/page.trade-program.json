@@ -1,7 +1,7 @@
 {
     "sections": {
       "main": {
-        "type": "trade-program",
+        "type": "main-trade-program",
         "settings": {
         }
       }
