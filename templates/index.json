@@ -76,13 +76,15 @@
         "1647186127411d4fe4-0": {
           "type": "image",
           "settings": {
+            "image": "shopify:\/\/shop_images\/00-HP_SLIDER_3_Copy.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/00-HP_SLIDER-MOBILE_Copy_3.jpg",
             "apply_overlay": false,
-            "link_slide": true,
+            "link_slide": false,
             "content_position": "bottomLeft",
-            "title": "Meet Teddy",
-            "subheading": "Plush Seating in New Colors",
-            "button_1_text": "",
-            "button_1_link": "https:\/\/pieceshome.com\/collections\/all",
+            "title": "Jewel Tones",
+            "subheading": "",
+            "button_1_text": "Shop Now",
+            "button_1_link": "shopify:\/\/collections\/jewel-tone-collection",
             "button_2_text": "",
             "button_2_link": ""
           }
