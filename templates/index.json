@@ -7,7 +7,6 @@
           "type": "image",
           "settings": {
             "image": "shopify:\/\/shop_images\/00-HP_SLIDER.jpg",
-            "mobile_image": "shopify:\/\/shop_images\/00-HP_SLIDER-MOBILE_76081977-f259-42f2-b1c7-a111a2425ee2.jpg",
             "apply_overlay": false,
             "link_slide": false,
             "content_position": "bottomLeft",
@@ -137,7 +136,7 @@
           "type": "collection",
           "settings": {
             "collection": "",
-            "image": "shopify:\/\/shop_images\/collection_block-00.jpg",
+            "image": "shopify:\/\/shop_images\/Vespucci-La_Festa-LS-01.jpg",
             "image_alignment": "bottom right",
             "content_position": "bottomLeft",
             "subheading": "",
@@ -151,7 +150,7 @@
           "type": "collection",
           "settings": {
             "collection": "",
-            "image": "shopify:\/\/shop_images\/PIECES_MaineHouse3426-EDIT-Web_Res.jpg",
+            "image": "shopify:\/\/shop_images\/PIECES_MaineHouse3426-EDIT-Web_Res.webp",
             "image_alignment": "bottom center",
             "content_position": "bottomLeft",
             "subheading": "Kennebunk",
@@ -165,8 +164,8 @@
           "type": "collection",
           "settings": {
             "collection": "",
-            "image": "shopify:\/\/shop_images\/00-HP_SLIDER_2_Copy.jpg",
-            "image_alignment": "center center",
+            "image": "shopify:\/\/shop_images\/Teddy_Chair-Sienna.jpg",
+            "image_alignment": "bottom center",
             "content_position": "middleCenter",
             "subheading": "",
             "title": "Seating",
