@@ -137,7 +137,7 @@
           "type": "collection",
           "settings": {
             "collection": "",
-            "image": "shopify:\/\/shop_images\/Vespucci-La_Festa-LS-01.jpg",
+            "image": "shopify:\/\/shop_images\/collection_block-00.jpg",
             "image_alignment": "bottom right",
             "content_position": "bottomLeft",
             "subheading": "",
@@ -151,9 +151,9 @@
           "type": "collection",
           "settings": {
             "collection": "",
-            "image": "shopify:\/\/shop_images\/PIECES_MaineHouse3426-EDIT-Web_Res.webp",
-            "image_alignment": "center center",
-            "content_position": "middleCenter",
+            "image": "shopify:\/\/shop_images\/PIECES_MaineHouse3426-EDIT-Web_Res.jpg",
+            "image_alignment": "bottom center",
+            "content_position": "bottomLeft",
             "subheading": "Kennebunk",
             "title": "Pieces Homes",
             "button_text": "Book a stay",
@@ -165,13 +165,13 @@
           "type": "collection",
           "settings": {
             "collection": "",
-            "image": "shopify:\/\/shop_images\/00-HP_SLIDER-MOBILE_Copy_3_6ffa2ca6-b790-474a-912c-9c1ae2189e0a.jpg",
-            "image_alignment": "bottom center",
+            "image": "shopify:\/\/shop_images\/00-HP_SLIDER_2_Copy.jpg",
+            "image_alignment": "center center",
             "content_position": "middleCenter",
             "subheading": "",
             "title": "Seating",
             "button_text": "View products",
-            "button_link": "",
+            "button_link": "\/collections\/all\/seating",
             "apply_overlay": false
           }
         }

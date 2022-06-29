@@ -74,7 +74,7 @@
         "type": "header",
         "settings": {
           "use_sticky_header": true,
-          "logo": "shopify:\/\/shop_images\/Piecees_V2_Logo_Black.webp",
+          "logo": "shopify:\/\/shop_images\/Piecees_V2_Logo_Black.png",
           "logo_max_width": 140,
           "mobile_logo_max_width": 100,
           "show_country_selector": false,
@@ -86,7 +86,7 @@
           "enable_transparent_header_collection": false,
           "show_transparent_header_border": false,
           "transparent_text_color": "#ffffff",
-          "transparent_logo": "shopify:\/\/shop_images\/Piecees_V2_Logo_White.webp"
+          "transparent_logo": "shopify:\/\/shop_images\/Piecees_V2_Logo_White.png"
         }
       },
       "footer": {
