@@ -1,12 +1,38 @@
 {
-    "sections": {
-      "main": {
-        "type": "main-trade-program",
-        "settings": {
-        }
+  "sections": {
+    "main": {
+      "type": "main-trade-program",
+      "settings": {
+        "show_large": false
       }
     },
-    "order": [
-      "main"
-    ]
-  }
+    "1656473594aed87df1": {
+      "type": "text-with-image",
+      "settings": {
+        "subheading": "Join our Trade Program",
+        "title": "",
+        "image": "shopify:\/\/shop_images\/PIECES_MaineHouse3426-EDIT-Web_Res.webp",
+        "image_position": "right",
+        "content": "<p>The Pieces’ Trade Program offers special pricing and volume discounts to verified professionals in the trade. No minimums and no limits.<\/p><p>Our trade program is open to all professional interior designers, architects, stagers, or decorators for both residential and commercial projects.<\/p><p>For more information or to receive a quote for your project, please email us at <a href=\"mail-to:info@pieceshome.com\">info@pieceshome.com<\/a><\/p>",
+        "link_text": "",
+        "link_url": ""
+      }
+    },
+    "16564737175effcb52": {
+      "type": "text-with-image",
+      "settings": {
+        "subheading": "Custom Pieces",
+        "title": "",
+        "image_position": "right",
+        "content": "<p>We do custom. Whether you are a vetted trade professional or an at-home design enthusiast looking for something bespoke, our team is able and willing to make your vision a reality.<\/p><p>Our products are fully made by hand to order. We have the flexibility to adjust dimensions, colors, and materials on our existing designs, or work with you to create something completely your own.<\/p>",
+        "link_text": "",
+        "link_url": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "1656473594aed87df1",
+    "16564737175effcb52"
+  ]
+}
