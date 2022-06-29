@@ -6,8 +6,8 @@
         "slide-0": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/00-HP_SLIDER_3_Copy.jpg",
-            "mobile_image": "shopify:\/\/shop_images\/00-HP_SLIDER-MOBILE_Copy_3_17afa5e3-2a7d-48cc-b50b-1fa70d59605d.jpg",
+            "image": "shopify:\/\/shop_images\/00-HP_SLIDER.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/00-HP_SLIDER-MOBILE.jpg",
             "apply_overlay": false,
             "link_slide": false,
             "content_position": "bottomLeft",
@@ -76,8 +76,6 @@
         "1647186127411d4fe4-0": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/00-HP_SLIDER_2_Copy_24fbeba5-5e51-40b5-84bf-8cfeb1944a6d.jpg",
-            "mobile_image": "shopify:\/\/shop_images\/00-HP_SLIDER-MOBILE_Copy_3.jpg",
             "apply_overlay": false,
             "link_slide": true,
             "content_position": "bottomLeft",
@@ -137,7 +135,6 @@
           "type": "collection",
           "settings": {
             "collection": "",
-            "image": "shopify:\/\/shop_images\/collection_block-00.jpg",
             "image_alignment": "center center",
             "content_position": "bottomLeft",
             "subheading": "",
@@ -151,7 +148,6 @@
           "type": "collection",
           "settings": {
             "collection": "",
-            "image": "shopify:\/\/shop_images\/PIECES_MaineHouse3426-EDIT-Web_Res.jpg",
             "image_alignment": "center center",
             "content_position": "bottomLeft",
             "subheading": "Kennebunk",
@@ -191,35 +187,6 @@
     },
     "16471861569d18b261": {
       "type": "apps",
-      "blocks": {
-        "d6d1d86c-33ef-4816-8403-ef9872fa28cc": {
-          "type": "shopify:\/\/apps\/section-feed\/blocks\/app-block\/43cd482b-515a-4e82-b170-05d391763cd2",
-          "settings": {
-            "title": "@pieces_by_an_aesthetic_pursuit",
-            "subheading": "",
-            "button_text": "Follow Us",
-            "button_link": "https:\/\/www.instagram.com\/pieces_by_an_aesthetic_pursuit\/?hl=en",
-            "layout": "grid",
-            "image_size": "large",
-            "add_spacing": true,
-            "rows_count": 2,
-            "show_author": false,
-            "show_caption": true,
-            "show_date": true,
-            "click_action": "open_instagram",
-            "heading_color": "#000000",
-            "subheading_color": "#000000",
-            "button_background": "#6a6a6a",
-            "button_color": "#ffffff",
-            "overlay_color": "#000000",
-            "overlay_text_color": "#ffffff",
-            "overlay_opacity": 28
-          }
-        }
-      },
-      "block_order": [
-        "d6d1d86c-33ef-4816-8403-ef9872fa28cc"
-      ],
       "settings": {
         "include_margins": true
       }
