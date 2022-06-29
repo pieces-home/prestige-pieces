@@ -166,11 +166,11 @@
             "collection": "",
             "image": "shopify:\/\/shop_images\/Teddy_Chair-Sienna.jpg",
             "image_alignment": "bottom center",
-            "content_position": "middleCenter",
+            "content_position": "bottomLeft",
             "subheading": "",
             "title": "Seating",
             "button_text": "View products",
-            "button_link": "\/collections\/all\/seating",
+            "button_link": "shopify:\/\/collections\/all",
             "apply_overlay": false
           }
         }
