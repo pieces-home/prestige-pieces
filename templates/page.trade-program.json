@@ -18,17 +18,6 @@
         "link_url": ""
       }
     },
-    "16564737175effcb52": {
-      "type": "text-with-image",
-      "settings": {
-        "subheading": "Custom Pieces",
-        "title": "",
-        "image_position": "right",
-        "content": "<p>We do custom. Whether you are a vetted trade professional or an at-home design enthusiast looking for something bespoke, our team is able and willing to make your vision a reality.<\/p><p>Our products are fully made by hand to order. We have the flexibility to adjust dimensions, colors, and materials on our existing designs, or work with you to create something completely your own.<\/p>",
-        "link_text": "",
-        "link_url": ""
-      }
-    },
     "1657163123bf7faff0": {
       "type": "apps",
       "blocks": {
@@ -45,12 +34,23 @@
       "settings": {
         "include_margins": true
       }
+    },
+    "16564737175effcb52": {
+      "type": "text-with-image",
+      "settings": {
+        "subheading": "Custom Pieces",
+        "title": "",
+        "image_position": "right",
+        "content": "<p>We do custom. Whether you are a vetted trade professional or an at-home design enthusiast looking for something bespoke, our team is able and willing to make your vision a reality.<\/p><p>Our products are fully made by hand to order. We have the flexibility to adjust dimensions, colors, and materials on our existing designs, or work with you to create something completely your own.<\/p>",
+        "link_text": "",
+        "link_url": ""
+      }
     }
   },
   "order": [
     "main",
     "1656473594aed87df1",
-    "16564737175effcb52",
-    "1657163123bf7faff0"
+    "1657163123bf7faff0",
+    "16564737175effcb52"
   ]
 }
