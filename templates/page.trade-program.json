@@ -26,10 +26,18 @@
           "settings": {
             "shortcode": "{formbuilder:ODUyNzA=}"
           }
+        },
+        "990abdf5-200c-4ebb-8773-e3c67b1b79b0": {
+          "type": "shopify:\/\/apps\/form-builder-with-file-upload\/blocks\/custom-form\/830f910d-3579-44cb-9d18-92197bb5bd98",
+          "settings": {
+            "formId": "e4230650-1e56-4ad7-bfdd-91a6ebb3af04",
+            "behavior": "standard"
+          }
         }
       },
       "block_order": [
-        "76680bfd-b52c-479a-ba11-2a567c4962d1"
+        "76680bfd-b52c-479a-ba11-2a567c4962d1",
+        "990abdf5-200c-4ebb-8773-e3c67b1b79b0"
       ],
       "settings": {
         "include_margins": true
