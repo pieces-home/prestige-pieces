@@ -28,11 +28,47 @@
         "link_text": "",
         "link_url": ""
       }
+    },
+    "16571630069d89db69": {
+      "type": "apps",
+      "blocks": {
+        "74fcf5f6-3e36-446e-8b1c-15e6b7784c5d": {
+          "type": "shopify:\/\/apps\/form-builder-contact-form\/blocks\/app-block\/e4bcb1eb-35b2-42e6-bc37-bfe0e1542c9d",
+          "settings": {
+            "shortcode": "<div class=\"globo-formbuilder\" data-id=\"xxxx\"><\/div>"
+          }
+        }
+      },
+      "block_order": [
+        "74fcf5f6-3e36-446e-8b1c-15e6b7784c5d"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "1657163123bf7faff0": {
+      "type": "apps",
+      "blocks": {
+        "76680bfd-b52c-479a-ba11-2a567c4962d1": {
+          "type": "shopify:\/\/apps\/form-builder-contact-form\/blocks\/app-block\/e4bcb1eb-35b2-42e6-bc37-bfe0e1542c9d",
+          "settings": {
+            "shortcode": "{formbuilder:ODUyNzA=}"
+          }
+        }
+      },
+      "block_order": [
+        "76680bfd-b52c-479a-ba11-2a567c4962d1"
+      ],
+      "settings": {
+        "include_margins": true
+      }
     }
   },
   "order": [
     "main",
     "1656473594aed87df1",
-    "16564737175effcb52"
+    "16564737175effcb52",
+    "16571630069d89db69",
+    "1657163123bf7faff0"
   ]
 }
