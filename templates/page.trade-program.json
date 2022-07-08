@@ -3,7 +3,8 @@
     "main": {
       "type": "main-trade-program",
       "settings": {
-        "show_large": false
+        "show_large": false,
+        "show_header": false
       }
     },
     "1656473594aed87df1": {
