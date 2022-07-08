@@ -33,12 +33,6 @@
     "1657163123bf7faff0": {
       "type": "apps",
       "blocks": {
-        "76680bfd-b52c-479a-ba11-2a567c4962d1": {
-          "type": "shopify:\/\/apps\/form-builder-contact-form\/blocks\/app-block\/e4bcb1eb-35b2-42e6-bc37-bfe0e1542c9d",
-          "settings": {
-            "shortcode": "{formbuilder:ODUyNzA=}"
-          }
-        },
         "990abdf5-200c-4ebb-8773-e3c67b1b79b0": {
           "type": "shopify:\/\/apps\/form-builder-with-file-upload\/blocks\/custom-form\/830f910d-3579-44cb-9d18-92197bb5bd98",
           "settings": {
@@ -54,7 +48,6 @@
         }
       },
       "block_order": [
-        "76680bfd-b52c-479a-ba11-2a567c4962d1",
         "990abdf5-200c-4ebb-8773-e3c67b1b79b0",
         "b7fdb451-1d4e-46fb-a2a8-76fdf2eebda9"
       ],
