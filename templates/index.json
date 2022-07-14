@@ -149,20 +149,6 @@
             "apply_overlay": false
           }
         },
-        "collection-1": {
-          "type": "collection",
-          "settings": {
-            "collection": "",
-            "image": "shopify:\/\/shop_images\/PIECES_MaineHouse3426-EDIT-Web_Res.jpg",
-            "image_alignment": "bottom center",
-            "content_position": "bottomLeft",
-            "subheading": "Kennebunk",
-            "title": "Pieces Homes",
-            "button_text": "Book a stay",
-            "button_link": "http:\/\/pieceshomes.com",
-            "apply_overlay": false
-          }
-        },
         "collection-2": {
           "type": "collection",
           "settings": {
@@ -176,12 +162,26 @@
             "button_link": "https:\/\/pieceshome.com\/collections\/all\/seating",
             "apply_overlay": false
           }
+        },
+        "collection-1": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "image": "shopify:\/\/shop_images\/PIECES_MaineHouse3426-EDIT-Web_Res.jpg",
+            "image_alignment": "bottom center",
+            "content_position": "bottomLeft",
+            "subheading": "Kennebunk",
+            "title": "Pieces Homes",
+            "button_text": "Book a stay",
+            "button_link": "http:\/\/pieceshomes.com",
+            "apply_overlay": false
+          }
         }
       },
       "block_order": [
         "collection-0",
-        "collection-1",
-        "collection-2"
+        "collection-2",
+        "collection-1"
       ],
       "settings": {
         "image_size": "normal",
@@ -194,6 +194,35 @@
     },
     "16471861569d18b261": {
       "type": "apps",
+      "blocks": {
+        "d8fc79ec-c499-423f-8ded-59f4e98f710d": {
+          "type": "shopify:\/\/apps\/section-feed\/blocks\/app-block\/43cd482b-515a-4e82-b170-05d391763cd2",
+          "settings": {
+            "title": "@pieces_by_an_aesthetic_pursuit",
+            "subheading": "",
+            "button_text": "",
+            "button_link": "",
+            "layout": "grid",
+            "image_size": "medium",
+            "add_spacing": true,
+            "rows_count": 2,
+            "show_author": false,
+            "show_caption": true,
+            "show_date": true,
+            "click_action": "open_instagram",
+            "heading_color": "#000000",
+            "subheading_color": "#000000",
+            "button_background": "#000000",
+            "button_color": "#ffffff",
+            "overlay_color": "#000000",
+            "overlay_text_color": "#ffffff",
+            "overlay_opacity": 65
+          }
+        }
+      },
+      "block_order": [
+        "d8fc79ec-c499-423f-8ded-59f4e98f710d"
+      ],
       "settings": {
         "include_margins": true
       }
