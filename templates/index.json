@@ -28,7 +28,7 @@
         "show_arrow": false,
         "autoplay": true,
         "cycle_speed": 5,
-        "text_color": "#ffffff",
+        "text_color": "#131313",
         "button_color": "#363636",
         "button_background": "#fdfaf3"
       }
