@@ -139,7 +139,7 @@
           "type": "collection",
           "settings": {
             "collection": "",
-            "image": "shopify:\/\/shop_images\/collection_block-00.jpg",
+            "image": "shopify:\/\/shop_images\/Vespucci-La_Festa-LS-01.webp",
             "image_alignment": "bottom right",
             "content_position": "bottomLeft",
             "subheading": "",
@@ -167,13 +167,13 @@
           "type": "collection",
           "settings": {
             "collection": "",
-            "image": "shopify:\/\/shop_images\/00-HP_SLIDER_2_Copy.jpg",
+            "image": "shopify:\/\/shop_images\/COLLECTION_3.jpg",
             "image_alignment": "center center",
             "content_position": "middleCenter",
             "subheading": "",
             "title": "Seating",
             "button_text": "View products",
-            "button_link": "\/collections\/all\/seating",
+            "button_link": "https:\/\/pieceshome.com\/collections\/all\/seating",
             "apply_overlay": false
           }
         }
