@@ -33,6 +33,33 @@
         "button_background": "#fdfaf3"
       }
     },
+    "featured-collections": {
+      "type": "featured-collections",
+      "disabled": true,
+      "blocks": {
+        "featured-collection-0": {
+          "type": "collection",
+          "settings": {
+            "collection": "planters",
+            "title": "",
+            "grid_items_count": 4,
+            "button_text": "View all"
+          }
+        }
+      },
+      "block_order": [
+        "featured-collection-0"
+      ],
+      "settings": {
+        "title": "",
+        "layout_mode": "grid",
+        "show_product_info": true,
+        "show_vendor": false,
+        "show_color_swatch": false,
+        "grid_mobile_items_per_row": "1",
+        "grid_desktop_items_per_row": 4
+      }
+    },
     "1647186122d1f822ff": {
       "type": "background-video",
       "settings": {
@@ -82,6 +109,7 @@
     },
     "16471976955fcdcd91": {
       "type": "custom-html",
+      "disabled": true,
       "settings": {
         "subheading": "",
         "title": "",
@@ -99,13 +127,14 @@
         "title": "",
         "image": "shopify:\/\/shop_images\/00-HP_SLIDER_2_Copy_9cb0f50b-e267-46f7-ac83-c7d4bb12510f.jpg",
         "image_position": "right",
-        "content": "<p>A treasure trove collection of our most iconic styles in a color-pallette inspired by precious and semi-precious gems.<\/p>",
+        "content": "<p>A treasure trove of our most iconic styles in a color pallette inspired by precious and semi-precious gems.<\/p>",
         "link_text": "Shop Now",
         "link_url": ""
       }
     },
     "164799066210c28f56": {
       "type": "custom-html",
+      "disabled": true,
       "settings": {
         "subheading": "",
         "title": "",
@@ -114,33 +143,6 @@
         "hide_mobile": false,
         "hide_desktop": false,
         "padding": false
-      }
-    },
-    "featured-collections": {
-      "type": "featured-collections",
-      "disabled": true,
-      "blocks": {
-        "featured-collection-0": {
-          "type": "collection",
-          "settings": {
-            "collection": "home-union-x-pieces",
-            "title": "",
-            "grid_items_count": 4,
-            "button_text": "View all"
-          }
-        }
-      },
-      "block_order": [
-        "featured-collection-0"
-      ],
-      "settings": {
-        "title": "",
-        "layout_mode": "grid",
-        "show_product_info": true,
-        "show_vendor": false,
-        "show_color_swatch": false,
-        "grid_mobile_items_per_row": "2",
-        "grid_desktop_items_per_row": 4
       }
     },
     "collection-list": {
@@ -241,12 +243,12 @@
   },
   "order": [
     "slideshow",
+    "featured-collections",
     "1647186122d1f822ff",
     "16471861270237f67f",
     "16471976955fcdcd91",
     "1657832718c76a1527",
     "164799066210c28f56",
-    "featured-collections",
     "collection-list",
     "16471861569d18b261"
   ]
