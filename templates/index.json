@@ -33,19 +33,6 @@
         "button_background": "#fdfaf3"
       }
     },
-    "16471976955fcdcd91": {
-      "type": "custom-html",
-      "disabled": true,
-      "settings": {
-        "subheading": "",
-        "title": "",
-        "html": "<div style=\"height:50px; background-color: #FAEBDA\"><\/div>",
-        "background_color": "#faebda",
-        "hide_mobile": false,
-        "hide_desktop": false,
-        "padding": false
-      }
-    },
     "1647186122d1f822ff": {
       "type": "background-video",
       "settings": {
@@ -59,21 +46,9 @@
         "button_background": "#fdfaf3"
       }
     },
-    "164799066210c28f56": {
-      "type": "custom-html",
-      "disabled": true,
-      "settings": {
-        "subheading": "",
-        "title": "",
-        "html": "<div style=\"height:50px; background-color: #FAEBDA\"><\/div>",
-        "background_color": "#faebda",
-        "hide_mobile": false,
-        "hide_desktop": true,
-        "padding": false
-      }
-    },
     "16471861270237f67f": {
       "type": "slideshow",
+      "disabled": true,
       "blocks": {
         "1647186127411d4fe4-0": {
           "type": "image",
@@ -103,6 +78,42 @@
         "text_color": "#ffffff",
         "button_color": "#363636",
         "button_background": "#fdfaf3"
+      }
+    },
+    "16471976955fcdcd91": {
+      "type": "custom-html",
+      "settings": {
+        "subheading": "",
+        "title": "",
+        "html": "<div style=\"height:50px; background-color: #FAEBDA\"><\/div>",
+        "background_color": "#faebda",
+        "hide_mobile": false,
+        "hide_desktop": false,
+        "padding": false
+      }
+    },
+    "1657832718c76a1527": {
+      "type": "text-with-image",
+      "settings": {
+        "subheading": "Jewel Tones",
+        "title": "",
+        "image": "shopify:\/\/shop_images\/00-HP_SLIDER_2_Copy_9cb0f50b-e267-46f7-ac83-c7d4bb12510f.jpg",
+        "image_position": "right",
+        "content": "<p>A treasure trove collection of our most iconic styles in a color-pallette inspired by precious and semi-precious gems.<\/p>",
+        "link_text": "Shop Now",
+        "link_url": ""
+      }
+    },
+    "164799066210c28f56": {
+      "type": "custom-html",
+      "settings": {
+        "subheading": "",
+        "title": "",
+        "html": "<div style=\"height:50px;\"><\/div>",
+        "background_color": "#ffffff",
+        "hide_mobile": false,
+        "hide_desktop": false,
+        "padding": false
       }
     },
     "featured-collections": {
@@ -230,10 +241,11 @@
   },
   "order": [
     "slideshow",
-    "16471976955fcdcd91",
     "1647186122d1f822ff",
-    "164799066210c28f56",
     "16471861270237f67f",
+    "16471976955fcdcd91",
+    "1657832718c76a1527",
+    "164799066210c28f56",
     "featured-collections",
     "collection-list",
     "16471861569d18b261"
