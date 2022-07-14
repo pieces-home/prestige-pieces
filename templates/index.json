@@ -6,8 +6,8 @@
         "slide-0": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/00-HP_SLIDER.jpg",
-            "mobile_image": "shopify:\/\/shop_images\/00-HP_SLIDER-MOBILE_76081977-f259-42f2-b1c7-a111a2425ee2.jpg",
+            "image": "shopify:\/\/shop_images\/00-HP_SLIDER_e282a5e4-bcba-4cce-b643-85c4e8145588.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/00-HP_SLIDER-MOBILE_783407f4-b3a4-4901-9b59-9ee6fc1d8c6e.jpg",
             "apply_overlay": false,
             "link_slide": false,
             "content_position": "bottomLeft",
