@@ -35,6 +35,7 @@
     },
     "16471976955fcdcd91": {
       "type": "custom-html",
+      "disabled": true,
       "settings": {
         "subheading": "",
         "title": "",
@@ -60,6 +61,7 @@
     },
     "164799066210c28f56": {
       "type": "custom-html",
+      "disabled": true,
       "settings": {
         "subheading": "",
         "title": "",
@@ -77,14 +79,14 @@
           "type": "image",
           "settings": {
             "image": "shopify:\/\/shop_images\/00-HP_SLIDER_3_Copy.jpg",
-            "mobile_image": "shopify:\/\/shop_images\/00-HP_SLIDER-MOBILE_Copy_3.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/00-HP_SLIDER-MOBILE_Copy_3_17afa5e3-2a7d-48cc-b50b-1fa70d59605d.jpg",
             "apply_overlay": false,
             "link_slide": false,
             "content_position": "bottomLeft",
             "title": "Jewel Tones",
             "subheading": "",
             "button_1_text": "Shop Now",
-            "button_1_link": "shopify:\/\/collections\/jewel-tone-collection",
+            "button_1_link": "shopify:\/\/collections\/jewel-tones",
             "button_2_text": "",
             "button_2_link": ""
           }
@@ -100,7 +102,7 @@
         "cycle_speed": 5,
         "text_color": "#ffffff",
         "button_color": "#363636",
-        "button_background": "#ffffff"
+        "button_background": "#fdfaf3"
       }
     },
     "featured-collections": {
