@@ -6918,7 +6918,8 @@ body:not(.features--show-image-zooming) .Image--lazyLoaded.Image--zoomOut {
   }
 
   .CollectionItem__Wrapper {
-    height: 600px;
+    /* height: 600px; */
+    height: 42vw;
   }
 
   .CollectionItem__Wrapper--small {
