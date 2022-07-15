@@ -75,7 +75,6 @@
     },
     "16471861270237f67f": {
       "type": "slideshow",
-      "disabled": true,
       "blocks": {
         "1647186127411d4fe4-0": {
           "type": "image",
@@ -122,6 +121,7 @@
     },
     "1657832718c76a1527": {
       "type": "text-with-image",
+      "disabled": true,
       "settings": {
         "subheading": "Jewel Tones",
         "title": "",
