@@ -11364,8 +11364,12 @@ body, span, a, .Button, .SectionHeader__Heading.Heading.u-h3 {
   font-family: 'Be Vietnam Pro', sans-serif !important;
   font-weight: 200 !important;
 }
+.Header__MainNav a, .Drawer__Container .SidebarMenu__Nav.SidebarMenu__Nav--primary *:not(.u-h7, .Text--subdued.Link.Link--primary) {
+  font-family: 'F37Bergman-Bold', sans-serif !important;
+  /* font-size: .9rem !important; */
+}
 
-.CollectionToolbar__Group *, footer h2, a.Link.Link--secondary, li.Linklist__Item a, .Collapsible__Button.Heading, form *:not(.Price, .ProductMeta__Title){
+a.MegaMenu__Title, .CollectionToolbar__Group *, footer h2, a.Link.Link--secondary, li.Linklist__Item a, .Collapsible__Button.Heading, form *:not(.Price, .ProductMeta__Title){
   font-family: 'Be Vietnam Pro', sans-serif !important;
   font-weight: 300 !important;
 }
@@ -11374,10 +11378,6 @@ body, span, a, .Button, .SectionHeader__Heading.Heading.u-h3 {
   font-weight: 200 !important;
 }
 
-nav a, nav button:not(.u-h7) {
-  font-family: 'F37Bergman-Bold', sans-serif !important;
-  /* font-size: .9rem !important; */
-}
 
 .SectionHeader__Heading.SectionHeader__Heading--emphasize.Heading.u-h1 {
   font-family: 'F37Bergman-Thin', sans-serif !important;
