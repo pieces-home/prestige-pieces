@@ -6,15 +6,15 @@
         "slide-0": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/00-HP_SLIDER_3_Copy.jpg",
-            "mobile_image": "shopify:\/\/shop_images\/00-HP_SLIDER-MOBILE_Copy_3_17afa5e3-2a7d-48cc-b50b-1fa70d59605d.jpg",
+            "image": "shopify:\/\/shop_images\/00-HP_SLIDER-BORDERED_73fb6a8c-0fff-4d62-b00d-5164637382e1.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/00-HP_SLIDER-MOBILE_ba10305c-ec2d-4403-85c4-c77504aa74d4.jpg",
             "apply_overlay": false,
             "link_slide": false,
             "content_position": "bottomLeft",
-            "title": "Jewel Tones",
+            "title": "Planters",
             "subheading": "",
             "button_1_text": "shop now",
-            "button_1_link": "shopify:\/\/collections\/jewel-tones",
+            "button_1_link": "shopify:\/\/collections\/all",
             "button_2_text": "",
             "button_2_link": ""
           }
@@ -26,81 +26,11 @@
       "settings": {
         "show_fullscreen": true,
         "show_arrow": false,
-        "autoplay": true,
+        "autoplay": false,
         "cycle_speed": 5,
         "text_color": "#ffffff",
         "button_color": "#363636",
         "button_background": "#fdfaf3"
-      }
-    },
-    "16471976955fcdcd91": {
-      "type": "custom-html",
-      "settings": {
-        "subheading": "",
-        "title": "",
-        "html": "<div style=\"height:50px; background-color: #FAEBDA\"><\/div>",
-        "background_color": "#faebda",
-        "hide_mobile": false,
-        "hide_desktop": false,
-        "padding": false
-      }
-    },
-    "1647186122d1f822ff": {
-      "type": "background-video",
-      "settings": {
-        "section_size": "large",
-        "video_url": "https:\/\/vimeo.com\/605093813",
-        "collection_url": "shopify:\/\/collections\/home-union-x-pieces",
-        "heading": "Home Union x Pieces",
-        "heading_color": "#ffffff",
-        "button_text": "Shop Now",
-        "button_color": "#363636",
-        "button_background": "#fdfaf3"
-      }
-    },
-    "164799066210c28f56": {
-      "type": "custom-html",
-      "settings": {
-        "subheading": "",
-        "title": "",
-        "html": "<div style=\"height:50px; background-color: #FAEBDA\"><\/div>",
-        "background_color": "#faebda",
-        "hide_mobile": false,
-        "hide_desktop": true,
-        "padding": false
-      }
-    },
-    "16471861270237f67f": {
-      "type": "slideshow",
-      "blocks": {
-        "1647186127411d4fe4-0": {
-          "type": "image",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/00-HP_SLIDER_2_Copy_24fbeba5-5e51-40b5-84bf-8cfeb1944a6d.jpg",
-            "mobile_image": "shopify:\/\/shop_images\/00-HP_SLIDER-MOBILE_Copy_3.jpg",
-            "apply_overlay": false,
-            "link_slide": true,
-            "content_position": "bottomLeft",
-            "title": "Meet Teddy",
-            "subheading": "Plush Seating in New Colors",
-            "button_1_text": "",
-            "button_1_link": "https:\/\/pieceshome.com\/collections\/all",
-            "button_2_text": "",
-            "button_2_link": ""
-          }
-        }
-      },
-      "block_order": [
-        "1647186127411d4fe4-0"
-      ],
-      "settings": {
-        "show_fullscreen": false,
-        "show_arrow": false,
-        "autoplay": true,
-        "cycle_speed": 5,
-        "text_color": "#ffffff",
-        "button_color": "#363636",
-        "button_background": "#ffffff"
       }
     },
     "featured-collections": {
@@ -110,7 +40,7 @@
         "featured-collection-0": {
           "type": "collection",
           "settings": {
-            "collection": "home-union-x-pieces",
+            "collection": "planters",
             "title": "",
             "grid_items_count": 4,
             "button_text": "View all"
@@ -126,8 +56,93 @@
         "show_product_info": true,
         "show_vendor": false,
         "show_color_swatch": false,
-        "grid_mobile_items_per_row": "2",
+        "grid_mobile_items_per_row": "1",
         "grid_desktop_items_per_row": 4
+      }
+    },
+    "1647186122d1f822ff": {
+      "type": "background-video",
+      "settings": {
+        "section_size": "large",
+        "video_url": "https:\/\/vimeo.com\/605093813",
+        "collection_url": "shopify:\/\/collections\/home-union-x-pieces",
+        "heading": "Home Union x Pieces",
+        "heading_color": "#ffffff",
+        "button_text": "Shop Now",
+        "button_color": "#363636",
+        "button_background": "#fdfaf3"
+      }
+    },
+    "16471861270237f67f": {
+      "type": "slideshow",
+      "blocks": {
+        "1647186127411d4fe4-0": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/00-HP_SLIDER_3_Copy.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/00-HP_SLIDER-MOBILE_Copy_3_17afa5e3-2a7d-48cc-b50b-1fa70d59605d.jpg",
+            "apply_overlay": false,
+            "link_slide": false,
+            "content_position": "bottomLeft",
+            "title": "Jewel Tones",
+            "subheading": "",
+            "button_1_text": "Shop Now",
+            "button_1_link": "shopify:\/\/collections\/jewel-tones",
+            "button_2_text": "",
+            "button_2_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "1647186127411d4fe4-0"
+      ],
+      "settings": {
+        "show_fullscreen": true,
+        "show_arrow": false,
+        "autoplay": true,
+        "cycle_speed": 5,
+        "text_color": "#ffffff",
+        "button_color": "#363636",
+        "button_background": "#fdfaf3"
+      }
+    },
+    "16471976955fcdcd91": {
+      "type": "custom-html",
+      "disabled": true,
+      "settings": {
+        "subheading": "",
+        "title": "",
+        "html": "<div style=\"height:50px;\"><\/div>",
+        "background_color": "#ffffff",
+        "hide_mobile": false,
+        "hide_desktop": false,
+        "padding": false
+      }
+    },
+    "1657832718c76a1527": {
+      "type": "text-with-image",
+      "disabled": true,
+      "settings": {
+        "subheading": "Jewel Tones",
+        "title": "",
+        "image": "shopify:\/\/shop_images\/00-HP_SLIDER_2_Copy_9cb0f50b-e267-46f7-ac83-c7d4bb12510f.jpg",
+        "image_position": "right",
+        "content": "<p>A treasure trove of our most iconic styles in a color pallette inspired by precious and semi-precious gems.<\/p>",
+        "link_text": "Shop Now",
+        "link_url": ""
+      }
+    },
+    "164799066210c28f56": {
+      "type": "custom-html",
+      "disabled": true,
+      "settings": {
+        "subheading": "",
+        "title": "",
+        "html": "<div style=\"height:50px;\"><\/div>",
+        "background_color": "#ffffff",
+        "hide_mobile": false,
+        "hide_desktop": false,
+        "padding": false
       }
     },
     "collection-list": {
@@ -137,8 +152,8 @@
           "type": "collection",
           "settings": {
             "collection": "",
-            "image": "shopify:\/\/shop_images\/collection_block-00.jpg",
-            "image_alignment": "center center",
+            "image": "shopify:\/\/shop_images\/Vespucci-La_Festa-LS-01.webp",
+            "image_alignment": "bottom right",
             "content_position": "bottomLeft",
             "subheading": "",
             "title": "Rugs",
@@ -147,12 +162,26 @@
             "apply_overlay": false
           }
         },
+        "collection-2": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "image": "shopify:\/\/shop_images\/COLLECTION_3.jpg",
+            "image_alignment": "center center",
+            "content_position": "bottomLeft",
+            "subheading": "",
+            "title": "Seating",
+            "button_text": "View products",
+            "button_link": "https:\/\/pieceshome.com\/collections\/all\/seating",
+            "apply_overlay": false
+          }
+        },
         "collection-1": {
           "type": "collection",
           "settings": {
             "collection": "",
             "image": "shopify:\/\/shop_images\/PIECES_MaineHouse3426-EDIT-Web_Res.jpg",
-            "image_alignment": "center center",
+            "image_alignment": "bottom center",
             "content_position": "bottomLeft",
             "subheading": "Kennebunk",
             "title": "Pieces Homes",
@@ -160,25 +189,12 @@
             "button_link": "http:\/\/pieceshomes.com",
             "apply_overlay": false
           }
-        },
-        "collection-2": {
-          "type": "collection",
-          "settings": {
-            "collection": "planters",
-            "image_alignment": "center center",
-            "content_position": "bottomLeft",
-            "subheading": "",
-            "title": "Planters",
-            "button_text": "View products",
-            "button_link": "",
-            "apply_overlay": false
-          }
         }
       },
       "block_order": [
         "collection-0",
-        "collection-1",
-        "collection-2"
+        "collection-2",
+        "collection-1"
       ],
       "settings": {
         "image_size": "normal",
@@ -192,15 +208,15 @@
     "16471861569d18b261": {
       "type": "apps",
       "blocks": {
-        "d6d1d86c-33ef-4816-8403-ef9872fa28cc": {
+        "d8fc79ec-c499-423f-8ded-59f4e98f710d": {
           "type": "shopify:\/\/apps\/section-feed\/blocks\/app-block\/43cd482b-515a-4e82-b170-05d391763cd2",
           "settings": {
             "title": "@pieces_by_an_aesthetic_pursuit",
             "subheading": "",
-            "button_text": "Follow Us",
-            "button_link": "https:\/\/www.instagram.com\/pieces_by_an_aesthetic_pursuit\/?hl=en",
+            "button_text": "",
+            "button_link": "",
             "layout": "grid",
-            "image_size": "large",
+            "image_size": "medium",
             "add_spacing": true,
             "rows_count": 2,
             "show_author": false,
@@ -209,16 +225,16 @@
             "click_action": "open_instagram",
             "heading_color": "#000000",
             "subheading_color": "#000000",
-            "button_background": "#6a6a6a",
+            "button_background": "#000000",
             "button_color": "#ffffff",
             "overlay_color": "#000000",
             "overlay_text_color": "#ffffff",
-            "overlay_opacity": 28
+            "overlay_opacity": 65
           }
         }
       },
       "block_order": [
-        "d6d1d86c-33ef-4816-8403-ef9872fa28cc"
+        "d8fc79ec-c499-423f-8ded-59f4e98f710d"
       ],
       "settings": {
         "include_margins": true
@@ -227,11 +243,12 @@
   },
   "order": [
     "slideshow",
-    "16471976955fcdcd91",
-    "1647186122d1f822ff",
-    "164799066210c28f56",
-    "16471861270237f67f",
     "featured-collections",
+    "1647186122d1f822ff",
+    "16471861270237f67f",
+    "16471976955fcdcd91",
+    "1657832718c76a1527",
+    "164799066210c28f56",
     "collection-list",
     "16471861569d18b261"
   ]

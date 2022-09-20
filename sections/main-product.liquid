@@ -322,6 +322,17 @@
                 {%- when 'variant_selector' -%}
                   {%- assign has_ouputted_variant_selector = true -%}
                   {%- render 'product-form', block: block, product: product -%}
+                
+                {%- when 'meta_fld_swatch_selector' -%}                
+                {% assign meta_variants = product.metafields.custom.product_variants.value %}
+                  {% if block.settings.show_swatch %}
+                    <span class="ProductForm__Label">Color: </span>
+                    {% for meta_variant in meta_variants %}                  
+                      <a href="{{ meta_variant.url }}"> 
+                        <div class="ColorSwatch" style="background-color: {{ meta_variant.metafields.custom.color.value }};"></div>
+                      </a>
+                    {% endfor %}                    
+                  {% endif %}
 
                 {%- when 'quantity_selector' -%}
                   <div class="ProductForm__QuantitySelector" {{ block.shopify_attributes }}>
@@ -652,6 +663,20 @@ This is the root container for the zoom functionality. Must not be removed, as o
           "default": false
         }
       ]
+    },
+    {
+      "type": "meta_fld_swatch_selector",
+      "name": "Metafield swatch selector",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "show_swatch",
+          "label": "Show swatch",
+          "default": true
+        }
+      ]
+      
     },
     {
       "type": "text",

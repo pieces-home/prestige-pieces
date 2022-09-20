@@ -21,7 +21,7 @@
     "newsletter_popup_text_color": "#ffffff",
     "secondary_elements_background": "#1c1b1b",
     "secondary_elements_text_color": "#ffffff",
-    "heading_font": "montserrat_n5",
+    "heading_font": "roboto_n4",
     "heading_size": "large",
     "uppercase_heading": false,
     "text_font": "nunito_sans_n4",
@@ -72,6 +72,25 @@
       },
       "header": {
         "type": "header",
+        "blocks": {
+          "25bd8a58-796d-47a6-92c0-f9da387dea41": {
+            "type": "mega_menu",
+            "settings": {
+              "navigation_mega_menu": "shop",
+              "push_1_image": "shopify:\/\/shop_images\/MEGA_MENU-1.jpg",
+              "push_1_heading": "Home Union x Pieces",
+              "push_1_subheading": "",
+              "push_1_url": "shopify:\/\/collections\/home-union-x-pieces",
+              "push_2_image": "shopify:\/\/shop_images\/MEGA_MENU-2.jpg",
+              "push_2_heading": "Planters",
+              "push_2_subheading": "",
+              "push_2_url": "shopify:\/\/collections\/planters"
+            }
+          }
+        },
+        "block_order": [
+          "25bd8a58-796d-47a6-92c0-f9da387dea41"
+        ],
         "settings": {
           "use_sticky_header": true,
           "logo": "shopify:\/\/shop_images\/Piecees_V2_Logo_Black.png",
@@ -84,7 +103,7 @@
           "show_icons": true,
           "enable_transparent_header": true,
           "enable_transparent_header_collection": false,
-          "show_transparent_header_border": true,
+          "show_transparent_header_border": false,
           "transparent_text_color": "#ffffff",
           "transparent_logo": "shopify:\/\/shop_images\/Piecees_V2_Logo_White.png"
         }
