@@ -38,11 +38,36 @@
           "type": "description",
           "settings": {
           }
-        },        
+        },
+        "e88257ce-5c72-4318-b7db-b2d40c5bb69e": {
+          "type": "content",
+          "settings": {
+            "title": "Product Details",
+            "content": "<p>{{ product.metafields.product_attributes.product_description | metafield_tag }}<\/p>",
+            "page": ""
+          }
+        },
+        "57c8aa4b-4e8b-4a2e-a807-d18345634aac": {
+          "type": "content",
+          "settings": {
+            "title": "",
+            "content": "",
+            "page": "shipping-returns"
+          }
+        },
         "share_buttons": {
           "type": "share_buttons",
           "disabled": true,
           "settings": {
+          }
+        },
+        "3ea7c497-53be-4300-a128-ea893b1e02b7": {
+          "type": "content",
+          "disabled": true,
+          "settings": {
+            "title": "More Details",
+            "content": "<p>We are color-obsessed and do our best to maintain the highest standards of color consistency within our range of products, however, due to the variations from the hand-dying process and from individual screen settings, colors on screen may not accurately reflect the true colors of the rug in real life.<\/p>",
+            "page": ""
           }
         }
       },
@@ -51,8 +76,11 @@
         "variant_selector",
         "quantity_selector",
         "buy_buttons",
-        "description",        
-        "share_buttons"        
+        "description",
+        "e88257ce-5c72-4318-b7db-b2d40c5bb69e",
+        "57c8aa4b-4e8b-4a2e-a807-d18345634aac",
+        "share_buttons",
+        "3ea7c497-53be-4300-a128-ea893b1e02b7"
       ],
       "settings": {
         "image_size": "large",
