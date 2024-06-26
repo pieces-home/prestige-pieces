@@ -22,3 +22,8 @@
  *   bubbles: true
  * }));
  */
+
+let targetElem = document.querySelectorAll(".Article__Body img")[1];
+let blogProductGrid = document.querySelector("div.product-grid");
+
+targetElem.insertAdjacentElement('beforebegin', blogProductGrid)
