@@ -1,20 +1,104 @@
 {
   "sections": {
+    "62fc4d0c-a6db-4b17-9e3e-4d04477440a2": {
+      "type": "slideshow",
+      "blocks": {
+        "template--15951308095544__62fc4d0c-a6db-4b17-9e3e-4d04477440a2-1678416690b0e28d54-0": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/00-HP_SLIDER-BORDERED_b73d45ce-bd2c-4d75-9149-5abcc9934a52.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/00-HP_SLIDER-MOBILE_14428b29-9e19-4461-9dd6-f05e20efd26d.jpg",
+            "apply_overlay": false,
+            "link_slide": true,
+            "content_position": "middleCenter",
+            "title": "Home Union x Pieces",
+            "subheading": "New Arrivals",
+            "button_1_text": "",
+            "button_1_link": "shopify:\/\/collections\/home-union-x-pieces",
+            "button_2_text": "",
+            "button_2_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--15951308095544__62fc4d0c-a6db-4b17-9e3e-4d04477440a2-1678416690b0e28d54-0"
+      ],
+      "custom_css": [
+
+      ],
+      "settings": {
+        "show_fullscreen": true,
+        "show_arrow": false,
+        "autoplay": false,
+        "cycle_speed": 5,
+        "text_color": "#ffffff",
+        "button_color": "#363636",
+        "button_background": "#ffffff"
+      }
+    },
+    "16471976955fcdcd91": {
+      "type": "custom-html",
+      "disabled": true,
+      "settings": {
+        "subheading": "",
+        "title": "",
+        "html": "<div style=\"height:50px;\"><\/div>",
+        "background_color": "#786f9c",
+        "hide_mobile": false,
+        "hide_desktop": false,
+        "padding": false
+      }
+    },
+    "1657832718c76a1527": {
+      "type": "text-with-image",
+      "custom_css": [
+        ".FeatureText--withImage {background-color: #b1241d; color: white;}",
+        ".FeatureText__Content h2 {color: white;}",
+        " {border-top: none; border-bottom: none;}",
+        ".FeatureText--imageRight .FeatureText__Content,.FeatureText--imageRight .AspectRatio {margin-right: auto;}",
+        ".FeatureText--withImage .FeatureText__ContentWrapper {padding-top: 50px; padding-bottom: 50px;}",
+        ".FeatureText {text-align: left;}"
+      ],
+      "settings": {
+        "subheading": "",
+        "title": "Pieces @ HOME",
+        "image": "shopify:\/\/shop_images\/CLAIRE-ESPARROS__PIECES-at-Home_RhettBaruch-LA0415-copy.jpg",
+        "image_position": "right",
+        "content": "<p>Pieces @ HOME is a series of vignettes showcasing individuals of taste and their unique takes on styling Pieces designs in their personal spaces. For this installation of the series, we sit down with Rhett Baruch & Patty Sanchez, the art and design duo behind Rhett Baruch Design.<\/p>",
+        "link_text": "Read More",
+        "link_url": "shopify:\/\/blogs\/pieces-at-home\/pieces-home-rhett-baruch-and-patty-sanchez"
+      }
+    },
+    "164799066210c28f56": {
+      "type": "custom-html",
+      "custom_css": [
+        "{border-top: none;}"
+      ],
+      "settings": {
+        "subheading": "",
+        "title": "",
+        "html": "<div style=\"height:50px;\"><\/div>",
+        "background_color": "#b1241d",
+        "hide_mobile": false,
+        "hide_desktop": true,
+        "padding": false
+      }
+    },
     "slideshow": {
       "type": "slideshow",
       "blocks": {
         "slide-0": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/00-HP_SLIDER-BORDERED_73fb6a8c-0fff-4d62-b00d-5164637382e1.jpg",
-            "mobile_image": "shopify:\/\/shop_images\/00-HP_SLIDER-MOBILE_ba10305c-ec2d-4403-85c4-c77504aa74d4.jpg",
+            "image": "shopify:\/\/shop_images\/00-HP_SLIDER_2_Copy_4_copy.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/00-HP_SLIDER-MOBILE_Copy_7.jpg",
             "apply_overlay": false,
             "link_slide": false,
             "content_position": "bottomLeft",
-            "title": "Planters",
+            "title": "Olympia Table",
             "subheading": "",
             "button_1_text": "shop now",
-            "button_1_link": "shopify:\/\/collections\/all",
+            "button_1_link": "https:\/\/pieceshome.com\/collections\/all?sort_by=created-descending",
             "button_2_text": "",
             "button_2_link": ""
           }
@@ -62,6 +146,7 @@
     },
     "1647186122d1f822ff": {
       "type": "background-video",
+      "disabled": true,
       "settings": {
         "section_size": "large",
         "video_url": "https:\/\/vimeo.com\/605093813",
@@ -71,6 +156,66 @@
         "button_text": "Shop Now",
         "button_color": "#363636",
         "button_background": "#fdfaf3"
+      }
+    },
+    "collection-list": {
+      "type": "collection-list",
+      "blocks": {
+        "collection-0": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "image": "shopify:\/\/shop_images\/Vespucci-La_Festa-LS-01.webp",
+            "image_alignment": "bottom right",
+            "content_position": "bottomLeft",
+            "subheading": "",
+            "title": "Rugs",
+            "button_text": "View products",
+            "button_link": "https:\/\/pieceshome.com\/collections\/all\/rugs",
+            "apply_overlay": false
+          }
+        },
+        "collection-1": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "image": "shopify:\/\/shop_images\/PIECES_MaineHouse3426-EDIT-Web_Res.jpg",
+            "image_alignment": "bottom center",
+            "content_position": "bottomLeft",
+            "subheading": "Kennebunk",
+            "title": "Pieces Homes",
+            "button_text": "Book a stay",
+            "button_link": "http:\/\/pieceshomes.com",
+            "apply_overlay": false
+          }
+        },
+        "collection-2": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "image": "shopify:\/\/shop_images\/00-HP_SLIDER-MOBILE_ba10305c-ec2d-4403-85c4-c77504aa74d4.jpg",
+            "image_alignment": "center center",
+            "content_position": "bottomLeft",
+            "subheading": "",
+            "title": "Planters",
+            "button_text": "View products",
+            "button_link": "shopify:\/\/collections\/planters",
+            "apply_overlay": false
+          }
+        }
+      },
+      "block_order": [
+        "collection-0",
+        "collection-1",
+        "collection-2"
+      ],
+      "settings": {
+        "image_size": "normal",
+        "add_spacing": false,
+        "expand_collection": false,
+        "stack_on_mobile": true,
+        "text_color": "#ffffff",
+        "button_color": "#363636"
       }
     },
     "16471861270237f67f": {
@@ -106,113 +251,14 @@
         "button_background": "#fdfaf3"
       }
     },
-    "16471976955fcdcd91": {
-      "type": "custom-html",
-      "disabled": true,
-      "settings": {
-        "subheading": "",
-        "title": "",
-        "html": "<div style=\"height:50px;\"><\/div>",
-        "background_color": "#ffffff",
-        "hide_mobile": false,
-        "hide_desktop": false,
-        "padding": false
-      }
-    },
-    "1657832718c76a1527": {
-      "type": "text-with-image",
-      "disabled": true,
-      "settings": {
-        "subheading": "Jewel Tones",
-        "title": "",
-        "image": "shopify:\/\/shop_images\/00-HP_SLIDER_2_Copy_9cb0f50b-e267-46f7-ac83-c7d4bb12510f.jpg",
-        "image_position": "right",
-        "content": "<p>A treasure trove of our most iconic styles in a color pallette inspired by precious and semi-precious gems.<\/p>",
-        "link_text": "Shop Now",
-        "link_url": ""
-      }
-    },
-    "164799066210c28f56": {
-      "type": "custom-html",
-      "disabled": true,
-      "settings": {
-        "subheading": "",
-        "title": "",
-        "html": "<div style=\"height:50px;\"><\/div>",
-        "background_color": "#ffffff",
-        "hide_mobile": false,
-        "hide_desktop": false,
-        "padding": false
-      }
-    },
-    "collection-list": {
-      "type": "collection-list",
-      "blocks": {
-        "collection-0": {
-          "type": "collection",
-          "settings": {
-            "collection": "",
-            "image": "shopify:\/\/shop_images\/Vespucci-La_Festa-LS-01.webp",
-            "image_alignment": "bottom right",
-            "content_position": "bottomLeft",
-            "subheading": "",
-            "title": "Rugs",
-            "button_text": "View products",
-            "button_link": "https:\/\/pieceshome.com\/collections\/all\/rugs",
-            "apply_overlay": false
-          }
-        },
-        "collection-2": {
-          "type": "collection",
-          "settings": {
-            "collection": "",
-            "image": "shopify:\/\/shop_images\/COLLECTION_3.jpg",
-            "image_alignment": "center center",
-            "content_position": "bottomLeft",
-            "subheading": "",
-            "title": "Seating",
-            "button_text": "View products",
-            "button_link": "https:\/\/pieceshome.com\/collections\/all\/seating",
-            "apply_overlay": false
-          }
-        },
-        "collection-1": {
-          "type": "collection",
-          "settings": {
-            "collection": "",
-            "image": "shopify:\/\/shop_images\/PIECES_MaineHouse3426-EDIT-Web_Res.jpg",
-            "image_alignment": "bottom center",
-            "content_position": "bottomLeft",
-            "subheading": "Kennebunk",
-            "title": "Pieces Homes",
-            "button_text": "Book a stay",
-            "button_link": "http:\/\/pieceshomes.com",
-            "apply_overlay": false
-          }
-        }
-      },
-      "block_order": [
-        "collection-0",
-        "collection-2",
-        "collection-1"
-      ],
-      "settings": {
-        "image_size": "normal",
-        "add_spacing": false,
-        "expand_collection": false,
-        "stack_on_mobile": true,
-        "text_color": "#ffffff",
-        "button_color": "#363636"
-      }
-    },
     "16471861569d18b261": {
       "type": "apps",
       "blocks": {
         "d8fc79ec-c499-423f-8ded-59f4e98f710d": {
-          "type": "shopify:\/\/apps\/section-feed\/blocks\/app-block\/43cd482b-515a-4e82-b170-05d391763cd2",
+          "type": "shopify:\/\/apps\/maestrooo-section-feed\/blocks\/app-block\/43cd482b-515a-4e82-b170-05d391763cd2",
           "settings": {
             "title": "@pieces_by_an_aesthetic_pursuit",
-            "subheading": "",
+            "subheading": "<p><\/p>",
             "button_text": "",
             "button_link": "",
             "layout": "grid",
@@ -239,17 +285,53 @@
       "settings": {
         "include_margins": true
       }
+    },
+    "171d83e4-c0ab-45e9-83df-6dfa49ff8c61": {
+      "type": "slideshow",
+      "disabled": true,
+      "blocks": {
+        "template--16710824591416__171d83e4-c0ab-45e9-83df-6dfa49ff8c61-1682958085603d3ecf-0": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/00-HP_SLIDER-BORDERED_3_Copy.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/00-HP_SLIDER-MOBILE_3_Copy.jpg",
+            "apply_overlay": false,
+            "link_slide": false,
+            "content_position": "bottomLeft",
+            "title": "",
+            "subheading": "",
+            "button_1_text": "Read More",
+            "button_1_link": "shopify:\/\/blogs\/pieces-at-home\/pieces-home-maurice-harris",
+            "button_2_text": "",
+            "button_2_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--16710824591416__171d83e4-c0ab-45e9-83df-6dfa49ff8c61-1682958085603d3ecf-0"
+      ],
+      "settings": {
+        "show_fullscreen": false,
+        "show_arrow": false,
+        "autoplay": false,
+        "cycle_speed": 5,
+        "text_color": "#ffffff",
+        "button_color": "#363636",
+        "button_background": "#ffffff"
+      }
     }
   },
   "order": [
-    "slideshow",
-    "featured-collections",
-    "1647186122d1f822ff",
-    "16471861270237f67f",
+    "62fc4d0c-a6db-4b17-9e3e-4d04477440a2",
     "16471976955fcdcd91",
     "1657832718c76a1527",
     "164799066210c28f56",
+    "slideshow",
+    "featured-collections",
+    "1647186122d1f822ff",
     "collection-list",
-    "16471861569d18b261"
+    "16471861270237f67f",
+    "16471861569d18b261",
+    "171d83e4-c0ab-45e9-83df-6dfa49ff8c61"
   ]
 }
