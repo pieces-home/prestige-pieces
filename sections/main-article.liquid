@@ -3,7 +3,10 @@
 {%- assign pinterest_description = article.description | strip_html | truncatewords: 15 | url_param_escape -%}
 {%- assign pinterest_image = article.image | img_url: '750x' | prepend: 'https:' -%}
 
-<article class="Article" data-section-id="{{ section.id }}" data-section-type="article">
+<article
+  class="Article"
+  data-section-id="{{ section.id }}"
+  data-section-type="article">
   <aside class="ArticleToolbar hidden-phone">
     <div class="ArticleToolbar__Left">
       <span class="Heading Text--subdued u-h8 hidden-tablet">{{ 'blog.article.now_reading' | t }}</span>
@@ -16,9 +19,21 @@
           <span class="ArticleToolbar__ShareLabel Heading Text--subdued u-h8">{{ 'blog.article.share' | t }}</span>
 
           <div class="HorizontalList">
-            <a class="HorizontalList__Item Text--subdued Link" href="https://www.facebook.com/sharer.php?u={{ share_url }}" target="_blank" rel="noopener">{%- render 'icon' with 'facebook' -%}</a>
-            <a class="HorizontalList__Item Text--subdued Link" href="https://twitter.com/share?{% if twitter_text != blank %}text={{twitter_text}}&{% endif %}url={{ share_url }}" target="_blank" rel="noopener">{%- render 'icon' with 'twitter' -%}</a>
-            <a class="HorizontalList__Item Text--subdued Link" href="https://pinterest.com/pin/create/button/?url={{ share_url }}{% if pinterest_image != blank %}&media={{ pinterest_image }}{% endif %}&description={{ pinterest_description }}" target="_blank" rel="noopener">{%- render 'icon' with 'pinterest' -%}</a>
+            <a
+              class="HorizontalList__Item Text--subdued Link"
+              href="https://www.facebook.com/sharer.php?u={{ share_url }}"
+              target="_blank"
+              rel="noopener">{%- render 'icon' with 'facebook' -%}</a>
+            <a
+              class="HorizontalList__Item Text--subdued Link"
+              href="https://twitter.com/share?{% if twitter_text != blank %}text={{twitter_text}}&{% endif %}url={{ share_url }}"
+              target="_blank"
+              rel="noopener">{%- render 'icon' with 'twitter' -%}</a>
+            <a
+              class="HorizontalList__Item Text--subdued Link"
+              href="https://pinterest.com/pin/create/button/?url={{ share_url }}{% if pinterest_image != blank %}&media={{ pinterest_image }}{% endif %}&description={{ pinterest_description }}"
+              target="_blank"
+              rel="noopener">{%- render 'icon' with 'pinterest' -%}</a>
           </div>
         </div>
       {%- endif -%}
@@ -43,10 +58,10 @@
 
   {%- if article.image and section.settings.show_article_image -%}
     <div class="Article__ImageWrapper" style="background-image: url({{ article.image | img_url: '1x1' }})">
-      <div class="Article__Image Image--lazyLoad Image--fadeIn"
-           data-optimumx="1.4"
-           data-bgset="{{ article.image | img_url: '400x' }} 400w, {{ article.image | img_url: '600x' }} 600w, {{ article.image | img_url: '800x' }} 800w, {{ article.image | img_url: '1200x' }} 1200w, {{ article.image | img_url: '1400x' }} 1400w, {{ article.image | img_url: '1600x' }} 1600w">
-      </div>
+      <div
+        class="Article__Image Image--lazyLoad Image--fadeIn"
+        data-optimumx="1.4"
+        data-bgset="{{ article.image | img_url: '400x' }} 400w, {{ article.image | img_url: '600x' }} 600w, {{ article.image | img_url: '800x' }} 800w, {{ article.image | img_url: '1200x' }} 1200w, {{ article.image | img_url: '1400x' }} 1400w, {{ article.image | img_url: '1600x' }} 1600w"></div>
     </div>
   {%- endif -%}
 
@@ -62,7 +77,6 @@
             <span class="Article__MetaItem">{{ article.tags.first }}</span>
           {%- endif -%}
         {%- endcapture -%}
-
         {%- if article_meta != blank -%}
           <div class="Article__Meta Heading Text--subdued u-h6">
             {{- article_meta -}}
@@ -74,6 +88,17 @@
 
       <div class="Article__Body Rte">
         {{ article.content }}
+        {% if article.metafields.custom.blog_products.value != null %}
+          <div class="product-grid">
+            <div class="blogProductItems">
+              {% for product in article.metafields.custom.blog_products.value %}
+                <div class="Grid__Cell custom--w custom--phone custom--tablet-and-up">
+                  {%- render 'product-item', product: product, show_product_info: true, show_vendor: section.settings.show_vendor, show_color_swatch: section.settings.show_color_swatch, show_labels: true -%}
+                </div>
+              {% endfor %}
+            </div>
+          </div>
+        {% endif %}
       </div>
 
       {%- capture article_footer -%}
@@ -89,7 +114,6 @@
           </div>
         {%- endif -%}
       {%- endcapture -%}
-
       {%- if article_footer != blank -%}
         <footer class="Article__Footer">
           {{ article_footer }}
@@ -119,7 +143,9 @@
                 </div>
               {%- endfor -%}
 
-              {% render 'pagination', paginate: paginate, hash: '#comments' %}
+              {% render 'pagination'
+                , paginate: paginate
+                , hash: '#comments' %}
             {%- endpaginate -%}
           </div>
         </div>
@@ -134,7 +160,10 @@
 
         <h2 class="Heading u-h1">{{ 'blog.comments.form_title' | t }}</h2>
 
-        {%- form 'new_comment', article, class: 'Article__CommentForm Form', id: '' -%}
+        {%- form 'new_comment'
+          , article
+          , class: 'Article__CommentForm Form'
+          , id: '' -%}
           {%- if form.posted_successfully? -%}
             <p class="Form__Alert Alert Alert--success">
               {%- if blog.moderated? -%}
@@ -152,7 +181,9 @@
                   {%- if field == 'form' -%}
                     <li class="Alert__ErrorItem">{{ form.errors.messages[field] }}</li>
                   {%- else -%}
-                    <li class="Alert__ErrorItem"><strong>{{ form.errors.translated_fields[field] }}</strong> {{ form.errors.messages[field] }}</li>
+                    <li class="Alert__ErrorItem">
+                      <strong>{{ form.errors.translated_fields[field] }}</strong>
+                      {{ form.errors.messages[field] }}</li>
                   {%- endif -%}
                 {%- endfor -%}
               </ul>
@@ -161,18 +192,38 @@
 
           <div class="Form__Group">
             <div class="Form__Item">
-              <input type="text" class="Form__Input" name="comment[author]" placeholder="{{ 'blog.comments.name_placeholder' | t }}" aria-label="{{ 'blog.comments.name_placeholder' | t }}" value="{{ form.author | escape | default: customer.name }}" required="required">
+              <input
+                type="text"
+                class="Form__Input"
+                name="comment[author]"
+                placeholder="{{ 'blog.comments.name_placeholder' | t }}"
+                aria-label="{{ 'blog.comments.name_placeholder' | t }}"
+                value="{{ form.author | escape | default: customer.name }}"
+                required="required">
               <label class="Form__FloatingLabel">{{ 'blog.comments.name_placeholder' | t }}</label>
             </div>
 
             <div class="Form__Item">
-              <input type="email" class="Form__Input" name="comment[email]" placeholder="{{ 'blog.comments.email_placeholder' | t }}" aria-label="{{ 'blog.comments.email_placeholder' | t }}" value="{{ form.email | escape | default: customer.email }}" required="required">
+              <input
+                type="email"
+                class="Form__Input"
+                name="comment[email]"
+                placeholder="{{ 'blog.comments.email_placeholder' | t }}"
+                aria-label="{{ 'blog.comments.email_placeholder' | t }}"
+                value="{{ form.email | escape | default: customer.email }}"
+                required="required">
               <label class="Form__FloatingLabel">{{ 'blog.comments.email_placeholder' | t }}</label>
             </div>
           </div>
 
           <div class="Form__Item">
-            <textarea name="comment[body]" rows="6" class="Form__Textarea" placeholder="{{ 'blog.comments.comment_placeholder' | t }}" aria-label="{{ 'blog.comments.comment_placeholder' | t }}" required="required">
+            <textarea
+              name="comment[body]"
+              rows="6"
+              class="Form__Textarea"
+              placeholder="{{ 'blog.comments.comment_placeholder' | t }}"
+              aria-label="{{ 'blog.comments.comment_placeholder' | t }}"
+              required="required">
               {{- form.body -}}
             </textarea>
 
@@ -195,21 +246,25 @@
         <div class="Grid Grid--m Grid--center">
           {%- if blog.next_article -%}
             <div class="Grid__Cell 1/2--tablet-and-up">
-              {%- render 'article-item', article: blog.next_article -%}
+              {%- render 'article-item'
+                , article: blog.next_article -%}
             </div>
           {%- elsif blog.articles_count > 3 -%}
             <div class="Grid__Cell 1/2--tablet-and-up">
-              {%- render 'article-item', article: blog.articles.last -%}
+              {%- render 'article-item'
+                , article: blog.articles.last -%}
             </div>
           {%- endif -%}
 
           {%- if blog.previous_article -%}
             <div class="Grid__Cell 1/2--tablet-and-up">
-              {%- render 'article-item', article: blog.previous_article -%}
+              {%- render 'article-item'
+                , article: blog.previous_article -%}
             </div>
           {%- elsif blog.articles_count > 3 -%}
             <div class="Grid__Cell 1/2--tablet-and-up">
-              {%- render 'article-item', article: blog.articles.first -%}
+              {%- render 'article-item'
+                , article: blog.articles.first -%}
             </div>
           {%- endif -%}
         </div>
@@ -219,46 +274,46 @@
 </article>
 
 {% schema %}
-{
-  "name": "Blog post page",
-  "settings": [
-    {
-      "type": "checkbox",
-      "id": "show_article_image",
-      "label": "Show article image",
-      "default": true
-    },
-    {
-      "type": "checkbox",
-      "id": "show_date",
-      "label": "Show article date",
-      "default": true
-    },
-    {
-      "type": "checkbox",
-      "id": "show_category",
-      "label": "Show article category",
-      "info": "The first article's tag is used as the main category.",
-      "default": false
-    },
-    {
-      "type": "checkbox",
-      "id": "show_author",
-      "label": "Show author",
-      "default": true
-    },
-    {
-      "type": "checkbox",
-      "id": "show_share_buttons",
-      "label": "Show share buttons",
-      "default": true
-    },
-    {
-      "type": "checkbox",
-      "id": "show_prev_next",
-      "label": "Show prev/next articles",
-      "default": true
-    }
-  ]
-}
+  {
+    "name": "Blog post page",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "show_article_image",
+        "label": "Show article image",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "show_date",
+        "label": "Show article date",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "show_category",
+        "label": "Show article category",
+        "info": "The first article's tag is used as the main category.",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "show_author",
+        "label": "Show author",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "show_share_buttons",
+        "label": "Show share buttons",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "show_prev_next",
+        "label": "Show prev/next articles",
+        "default": true
+      }
+    ]
+  }
 {% endschema %}
