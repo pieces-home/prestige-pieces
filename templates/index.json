@@ -9,17 +9,37 @@
 */
 {
   "sections": {
-    "16471976955fcdcd91": {
-      "type": "custom-html",
-      "disabled": true,
+    "16471861270237f67f": {
+      "type": "slideshow",
+      "blocks": {
+        "1647186127411d4fe4-0": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/00-HP_SLIDE_BRDRD.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/00-HP_SLIDE_MOBILE.jpg",
+            "apply_overlay": true,
+            "link_slide": false,
+            "content_position": "bottomLeft",
+            "title": "Rugs & Runners",
+            "subheading": "",
+            "button_1_text": "Shop Now",
+            "button_1_link": "shopify:\/\/collections\/jewel-tones",
+            "button_2_text": "",
+            "button_2_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "1647186127411d4fe4-0"
+      ],
       "settings": {
-        "subheading": "",
-        "title": "",
-        "html": "<div style=\"height:50px;\"><\/div>",
-        "background_color": "#786f9c",
-        "hide_mobile": false,
-        "hide_desktop": false,
-        "padding": false
+        "show_fullscreen": true,
+        "show_arrow": false,
+        "autoplay": true,
+        "cycle_speed": 5,
+        "text_color": "#ffffff",
+        "button_color": "#363636",
+        "button_background": "#fdfaf3"
       }
     },
     "1657832718c76a1527": {
@@ -93,6 +113,35 @@
         "button_background": "#ffffff"
       }
     },
+    "featured-collections": {
+      "type": "featured-collections",
+      "blocks": {
+        "featured-collection-0": {
+          "type": "collection",
+          "settings": {
+            "collection": "home-union-x-pieces",
+            "title": "",
+            "grid_items_count": 4,
+            "button_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "featured-collection-0"
+      ],
+      "custom_css": [
+        "header.SectionHeader.SectionHeader--center {display: none;}"
+      ],
+      "settings": {
+        "title": "",
+        "layout_mode": "grid",
+        "show_product_info": true,
+        "show_vendor": false,
+        "show_color_swatch": false,
+        "grid_mobile_items_per_row": "2",
+        "grid_desktop_items_per_row": 4
+      }
+    },
     "text_with_image_gg4pGp": {
       "type": "text-with-image",
       "custom_css": [
@@ -128,35 +177,6 @@
         "padding": false
       }
     },
-    "featured-collections": {
-      "type": "featured-collections",
-      "blocks": {
-        "featured-collection-0": {
-          "type": "collection",
-          "settings": {
-            "collection": "home-union-x-pieces",
-            "title": "",
-            "grid_items_count": 4,
-            "button_text": ""
-          }
-        }
-      },
-      "block_order": [
-        "featured-collection-0"
-      ],
-      "custom_css": [
-        ".SectionHeader SectionHeader--center {display: none;}"
-      ],
-      "settings": {
-        "title": "",
-        "layout_mode": "grid",
-        "show_product_info": false,
-        "show_vendor": false,
-        "show_color_swatch": false,
-        "grid_mobile_items_per_row": "2",
-        "grid_desktop_items_per_row": 4
-      }
-    },
     "1647186122d1f822ff": {
       "type": "background-video",
       "disabled": true,
@@ -174,39 +194,11 @@
     "collection-list": {
       "type": "collection-list",
       "blocks": {
-        "collection-0": {
-          "type": "collection",
-          "settings": {
-            "collection": "",
-            "image": "shopify:\/\/shop_images\/Vespucci-La_Festa-LS-01.webp",
-            "image_alignment": "bottom right",
-            "content_position": "bottomLeft",
-            "subheading": "",
-            "title": "Rugs",
-            "button_text": "View products",
-            "button_link": "https:\/\/pieceshome.com\/collections\/all\/rugs",
-            "apply_overlay": false
-          }
-        },
-        "collection-1": {
-          "type": "collection",
-          "settings": {
-            "collection": "",
-            "image": "shopify:\/\/shop_images\/PIECES_MaineHouse3426-EDIT-Web_Res.jpg",
-            "image_alignment": "bottom center",
-            "content_position": "bottomLeft",
-            "subheading": "Kennebunk",
-            "title": "Pieces Homes",
-            "button_text": "Book a stay",
-            "button_link": "http:\/\/pieceshomes.com",
-            "apply_overlay": false
-          }
-        },
         "collection-2": {
           "type": "collection",
           "settings": {
             "collection": "",
-            "image": "shopify:\/\/shop_images\/00-HP_SLIDER-MOBILE_ba10305c-ec2d-4403-85c4-c77504aa74d4.jpg",
+            "image": "shopify:\/\/shop_images\/PIECES_MiamiVilla-Planters0878-Recovered_1.jpg",
             "image_alignment": "center center",
             "content_position": "bottomLeft",
             "subheading": "",
@@ -215,12 +207,40 @@
             "button_link": "shopify:\/\/collections\/planters",
             "apply_overlay": false
           }
+        },
+        "collection-1": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "image": "shopify:\/\/shop_images\/PIECES_GEM-TONES_LoftCampaign55581_f3de655f-f8f6-42a8-9451-2f0c9d5fe012.jpg",
+            "image_alignment": "bottom center",
+            "content_position": "bottomLeft",
+            "subheading": "",
+            "title": "Jewel Tones",
+            "button_text": "",
+            "button_link": "shopify:\/\/collections\/jewel-tones",
+            "apply_overlay": false
+          }
+        },
+        "collection-0": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "image": "shopify:\/\/shop_images\/COLLECTION_3.jpg",
+            "image_alignment": "bottom right",
+            "content_position": "bottomLeft",
+            "subheading": "",
+            "title": "Seating",
+            "button_text": "View products",
+            "button_link": "https:\/\/pieceshome.com\/collections\/all\/seating",
+            "apply_overlay": false
+          }
         }
       },
       "block_order": [
-        "collection-0",
+        "collection-2",
         "collection-1",
-        "collection-2"
+        "collection-0"
       ],
       "settings": {
         "image_size": "normal",
@@ -229,39 +249,6 @@
         "stack_on_mobile": true,
         "text_color": "#ffffff",
         "button_color": "#363636"
-      }
-    },
-    "16471861270237f67f": {
-      "type": "slideshow",
-      "blocks": {
-        "1647186127411d4fe4-0": {
-          "type": "image",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/00-HP_SLIDER_3_Copy.jpg",
-            "mobile_image": "shopify:\/\/shop_images\/00-HP_SLIDER-MOBILE_Copy_3_17afa5e3-2a7d-48cc-b50b-1fa70d59605d.jpg",
-            "apply_overlay": false,
-            "link_slide": false,
-            "content_position": "bottomLeft",
-            "title": "Jewel Tones",
-            "subheading": "",
-            "button_1_text": "Shop Now",
-            "button_1_link": "shopify:\/\/collections\/jewel-tones",
-            "button_2_text": "",
-            "button_2_link": ""
-          }
-        }
-      },
-      "block_order": [
-        "1647186127411d4fe4-0"
-      ],
-      "settings": {
-        "show_fullscreen": true,
-        "show_arrow": false,
-        "autoplay": true,
-        "cycle_speed": 5,
-        "text_color": "#ffffff",
-        "button_color": "#363636",
-        "button_background": "#fdfaf3"
       }
     },
     "16471861569d18b261": {
@@ -331,16 +318,15 @@
     }
   },
   "order": [
-    "16471976955fcdcd91",
+    "16471861270237f67f",
     "1657832718c76a1527",
     "custom_html_brBYKj",
     "62fc4d0c-a6db-4b17-9e3e-4d04477440a2",
+    "featured-collections",
     "text_with_image_gg4pGp",
     "164799066210c28f56",
-    "featured-collections",
     "1647186122d1f822ff",
     "collection-list",
-    "16471861270237f67f",
     "16471861569d18b261",
     "shop_the_look_gx8c3k"
   ]
