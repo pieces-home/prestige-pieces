@@ -1,3 +1,12 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
 {
   "sections": {
     "62fc4d0c-a6db-4b17-9e3e-4d04477440a2": {
@@ -52,7 +61,7 @@
     "1657832718c76a1527": {
       "type": "text-with-image",
       "custom_css": [
-        ".FeatureText--withImage {background-color: #b1241d; color: white;}",
+        ".FeatureText--withImage {background-color: #016d60; color: white;}",
         ".FeatureText__Content h2 {color: white;}",
         " {border-top: none; border-bottom: none;}",
         ".FeatureText--imageRight .FeatureText__Content,.FeatureText--imageRight .AspectRatio {margin-right: auto;}",
@@ -62,11 +71,46 @@
       "settings": {
         "subheading": "",
         "title": "Pieces @ HOME",
-        "image": "shopify:\/\/shop_images\/CLAIRE-ESPARROS__PIECES-at-Home_RhettBaruch-LA0415-copy.jpg",
+        "image": "shopify:\/\/shop_images\/01-HP_AT_HOME.jpg",
         "image_position": "right",
-        "content": "<p>Pieces @ HOME is a series of vignettes showcasing individuals of taste and their unique takes on styling Pieces designs in their personal spaces. For this installation of the series, we sit down with Rhett Baruch & Patty Sanchez, the art and design duo behind Rhett Baruch Design.<\/p>",
+        "content": "<p>Pieces @ HOME is a series of vignettes showcasing individuals of taste and their unique takes on styling Pieces designs in their personal spaces. For this installation of the series, we sit down with art curator and founder of the Aloha From Hell Film Festival, Brooke Wise.<\/p>",
         "link_text": "Read More",
-        "link_url": "shopify:\/\/blogs\/pieces-at-home\/pieces-home-rhett-baruch-and-patty-sanchez"
+        "link_url": "shopify:\/\/blogs\/pieces-at-home\/pieces-home-brooke-wise"
+      }
+    },
+    "custom_html_brBYKj": {
+      "type": "custom-html",
+      "custom_css": [
+        "{border-top: none;}"
+      ],
+      "settings": {
+        "subheading": "",
+        "title": "",
+        "html": "<div style=\"height:50px;\"><\/div>",
+        "background_color": "#016d60",
+        "hide_mobile": false,
+        "hide_desktop": true,
+        "padding": false
+      }
+    },
+    "text_with_image_gg4pGp": {
+      "type": "text-with-image",
+      "custom_css": [
+        ".FeatureText--withImage {background-color: #ce8263; color: white;}",
+        ".FeatureText__Content h2 {color: white;}",
+        " {border-top: none; border-bottom: none;}",
+        ".FeatureText--imageRight .FeatureText__Content,.FeatureText--imageRight .AspectRatio {margin-right: auto;}",
+        ".FeatureText--withImage .FeatureText__ContentWrapper {padding-top: 50px; padding-bottom: 50px;}",
+        ".FeatureText {text-align: left;}"
+      ],
+      "settings": {
+        "subheading": "",
+        "title": "Stay With Us",
+        "image": "shopify:\/\/shop_images\/02-HP_AT_HOME.jpg",
+        "image_position": "left",
+        "content": "<p>Book your summer and holiday trips at Pieces Homes in Kennebunk, Maine. Perfect proximity to beaches, trails, and the best lobster rolls in the country. There are only a few dates left for the summer, but you can get a jump start on your fall and winter trips (p.s. we have a hot tub).<\/p>",
+        "link_text": "Book Now",
+        "link_url": "https:\/\/www.airbnb.com\/rooms\/40567990"
       }
     },
     "164799066210c28f56": {
@@ -78,48 +122,14 @@
         "subheading": "",
         "title": "",
         "html": "<div style=\"height:50px;\"><\/div>",
-        "background_color": "#b1241d",
+        "background_color": "#ce8263",
         "hide_mobile": false,
         "hide_desktop": true,
         "padding": false
       }
     },
-    "slideshow": {
-      "type": "slideshow",
-      "blocks": {
-        "slide-0": {
-          "type": "image",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/00-HP_SLIDER_2_Copy_4_copy.jpg",
-            "mobile_image": "shopify:\/\/shop_images\/00-HP_SLIDER-MOBILE_Copy_7.jpg",
-            "apply_overlay": false,
-            "link_slide": false,
-            "content_position": "bottomLeft",
-            "title": "Olympia Table",
-            "subheading": "",
-            "button_1_text": "shop now",
-            "button_1_link": "https:\/\/pieceshome.com\/collections\/all?sort_by=created-descending",
-            "button_2_text": "",
-            "button_2_link": ""
-          }
-        }
-      },
-      "block_order": [
-        "slide-0"
-      ],
-      "settings": {
-        "show_fullscreen": true,
-        "show_arrow": false,
-        "autoplay": false,
-        "cycle_speed": 5,
-        "text_color": "#ffffff",
-        "button_color": "#363636",
-        "button_background": "#fdfaf3"
-      }
-    },
     "featured-collections": {
       "type": "featured-collections",
-      "disabled": true,
       "blocks": {
         "featured-collection-0": {
           "type": "collection",
@@ -140,7 +150,7 @@
         "show_product_info": true,
         "show_vendor": false,
         "show_color_swatch": false,
-        "grid_mobile_items_per_row": "1",
+        "grid_mobile_items_per_row": "2",
         "grid_desktop_items_per_row": 4
       }
     },
@@ -285,53 +295,19 @@
       "settings": {
         "include_margins": true
       }
-    },
-    "171d83e4-c0ab-45e9-83df-6dfa49ff8c61": {
-      "type": "slideshow",
-      "disabled": true,
-      "blocks": {
-        "template--16710824591416__171d83e4-c0ab-45e9-83df-6dfa49ff8c61-1682958085603d3ecf-0": {
-          "type": "image",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/00-HP_SLIDER-BORDERED_3_Copy.jpg",
-            "mobile_image": "shopify:\/\/shop_images\/00-HP_SLIDER-MOBILE_3_Copy.jpg",
-            "apply_overlay": false,
-            "link_slide": false,
-            "content_position": "bottomLeft",
-            "title": "",
-            "subheading": "",
-            "button_1_text": "Read More",
-            "button_1_link": "shopify:\/\/blogs\/pieces-at-home\/pieces-home-maurice-harris",
-            "button_2_text": "",
-            "button_2_link": ""
-          }
-        }
-      },
-      "block_order": [
-        "template--16710824591416__171d83e4-c0ab-45e9-83df-6dfa49ff8c61-1682958085603d3ecf-0"
-      ],
-      "settings": {
-        "show_fullscreen": false,
-        "show_arrow": false,
-        "autoplay": false,
-        "cycle_speed": 5,
-        "text_color": "#ffffff",
-        "button_color": "#363636",
-        "button_background": "#ffffff"
-      }
     }
   },
   "order": [
     "62fc4d0c-a6db-4b17-9e3e-4d04477440a2",
     "16471976955fcdcd91",
     "1657832718c76a1527",
+    "custom_html_brBYKj",
+    "text_with_image_gg4pGp",
     "164799066210c28f56",
-    "slideshow",
     "featured-collections",
     "1647186122d1f822ff",
     "collection-list",
     "16471861270237f67f",
-    "16471861569d18b261",
-    "171d83e4-c0ab-45e9-83df-6dfa49ff8c61"
+    "16471861569d18b261"
   ]
 }
