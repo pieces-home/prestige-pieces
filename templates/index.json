@@ -9,42 +9,6 @@
 */
 {
   "sections": {
-    "62fc4d0c-a6db-4b17-9e3e-4d04477440a2": {
-      "type": "slideshow",
-      "blocks": {
-        "template--15951308095544__62fc4d0c-a6db-4b17-9e3e-4d04477440a2-1678416690b0e28d54-0": {
-          "type": "image",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/00-HP_SLIDER-BORDERED_b73d45ce-bd2c-4d75-9149-5abcc9934a52.jpg",
-            "mobile_image": "shopify:\/\/shop_images\/00-HP_SLIDER-MOBILE_14428b29-9e19-4461-9dd6-f05e20efd26d.jpg",
-            "apply_overlay": false,
-            "link_slide": true,
-            "content_position": "middleCenter",
-            "title": "Home Union x Pieces",
-            "subheading": "New Arrivals",
-            "button_1_text": "",
-            "button_1_link": "shopify:\/\/collections\/home-union-x-pieces",
-            "button_2_text": "",
-            "button_2_link": ""
-          }
-        }
-      },
-      "block_order": [
-        "template--15951308095544__62fc4d0c-a6db-4b17-9e3e-4d04477440a2-1678416690b0e28d54-0"
-      ],
-      "custom_css": [
-
-      ],
-      "settings": {
-        "show_fullscreen": true,
-        "show_arrow": false,
-        "autoplay": false,
-        "cycle_speed": 5,
-        "text_color": "#ffffff",
-        "button_color": "#363636",
-        "button_background": "#ffffff"
-      }
-    },
     "16471976955fcdcd91": {
       "type": "custom-html",
       "disabled": true,
@@ -91,6 +55,42 @@
         "hide_mobile": false,
         "hide_desktop": true,
         "padding": false
+      }
+    },
+    "62fc4d0c-a6db-4b17-9e3e-4d04477440a2": {
+      "type": "slideshow",
+      "blocks": {
+        "template--15951308095544__62fc4d0c-a6db-4b17-9e3e-4d04477440a2-1678416690b0e28d54-0": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/00-HP_SLIDER-BORDERED_b73d45ce-bd2c-4d75-9149-5abcc9934a52.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/00-HP_SLIDER-MOBILE_14428b29-9e19-4461-9dd6-f05e20efd26d.jpg",
+            "apply_overlay": false,
+            "link_slide": true,
+            "content_position": "middleCenter",
+            "title": "Home Union x Pieces",
+            "subheading": "New Arrivals",
+            "button_1_text": "",
+            "button_1_link": "shopify:\/\/collections\/home-union-x-pieces",
+            "button_2_text": "",
+            "button_2_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--15951308095544__62fc4d0c-a6db-4b17-9e3e-4d04477440a2-1678416690b0e28d54-0"
+      ],
+      "custom_css": [
+
+      ],
+      "settings": {
+        "show_fullscreen": true,
+        "show_arrow": false,
+        "autoplay": false,
+        "cycle_speed": 5,
+        "text_color": "#ffffff",
+        "button_color": "#363636",
+        "button_background": "#ffffff"
       }
     },
     "text_with_image_gg4pGp": {
@@ -295,19 +295,49 @@
       "settings": {
         "include_margins": true
       }
+    },
+    "shop_the_look_gx8c3k": {
+      "type": "shop-the-look",
+      "blocks": {
+        "look_byiHmF": {
+          "type": "look",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/PIECES_GEM-TONES_LoftCampaign55151_2add25d7-f6c7-4647-b493-5c82f1e16b3d.jpg",
+            "dot_style": "light",
+            "product_1": "wavy-rug-jewel",
+            "product_1_horizontal_position": 50,
+            "product_1_vertical_position": 83,
+            "product_2": "teddy-bear-chair",
+            "product_2_horizontal_position": 83,
+            "product_2_vertical_position": 21,
+            "product_3": "row-planter-pesto",
+            "product_3_horizontal_position": 52,
+            "product_3_vertical_position": 13
+          }
+        }
+      },
+      "block_order": [
+        "look_byiHmF"
+      ],
+      "settings": {
+        "subheading": "",
+        "title": "Shop Jewel Tones",
+        "show_mobile_product_info": true
+      }
     }
   },
   "order": [
-    "62fc4d0c-a6db-4b17-9e3e-4d04477440a2",
     "16471976955fcdcd91",
     "1657832718c76a1527",
     "custom_html_brBYKj",
+    "62fc4d0c-a6db-4b17-9e3e-4d04477440a2",
     "text_with_image_gg4pGp",
     "164799066210c28f56",
     "featured-collections",
     "1647186122d1f822ff",
     "collection-list",
     "16471861270237f67f",
-    "16471861569d18b261"
+    "16471861569d18b261",
+    "shop_the_look_gx8c3k"
   ]
 }
