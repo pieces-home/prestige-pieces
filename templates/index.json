@@ -142,55 +142,6 @@
         "grid_desktop_items_per_row": 4
       }
     },
-    "text_with_image_gg4pGp": {
-      "type": "text-with-image",
-      "custom_css": [
-        ".FeatureText--withImage {background-color: #ce8263; color: white;}",
-        ".FeatureText__Content h2 {color: white;}",
-        " {border-top: none; border-bottom: none;}",
-        ".FeatureText--imageRight .FeatureText__Content,.FeatureText--imageRight .AspectRatio {margin-right: auto;}",
-        ".FeatureText--withImage .FeatureText__ContentWrapper {padding-top: 50px; padding-bottom: 50px;}",
-        ".FeatureText {text-align: left;}"
-      ],
-      "settings": {
-        "subheading": "",
-        "title": "Stay With Us",
-        "image": "shopify:\/\/shop_images\/02-HP_AT_HOME.jpg",
-        "image_position": "left",
-        "content": "<p>Book your summer and holiday trips at Pieces Homes in Kennebunk, Maine. Perfect proximity to beaches, trails, and the best lobster rolls in the country. There are only a few dates left for the summer, but you can get a jump start on your fall and winter trips (p.s. we have a hot tub).<\/p>",
-        "link_text": "Book Now",
-        "link_url": "https:\/\/www.airbnb.com\/rooms\/40567990"
-      }
-    },
-    "164799066210c28f56": {
-      "type": "custom-html",
-      "custom_css": [
-        "{border-top: none;}"
-      ],
-      "settings": {
-        "subheading": "",
-        "title": "",
-        "html": "<div style=\"height:50px;\"><\/div>",
-        "background_color": "#ce8263",
-        "hide_mobile": false,
-        "hide_desktop": true,
-        "padding": false
-      }
-    },
-    "1647186122d1f822ff": {
-      "type": "background-video",
-      "disabled": true,
-      "settings": {
-        "section_size": "large",
-        "video_url": "https:\/\/vimeo.com\/605093813",
-        "collection_url": "shopify:\/\/collections\/home-union-x-pieces",
-        "heading": "Home Union x Pieces",
-        "heading_color": "#ffffff",
-        "button_text": "Shop Now",
-        "button_color": "#363636",
-        "button_background": "#fdfaf3"
-      }
-    },
     "collection-list": {
       "type": "collection-list",
       "blocks": {
@@ -249,6 +200,55 @@
         "stack_on_mobile": true,
         "text_color": "#ffffff",
         "button_color": "#363636"
+      }
+    },
+    "text_with_image_gg4pGp": {
+      "type": "text-with-image",
+      "custom_css": [
+        ".FeatureText--withImage {background-color: #ce8263; color: white;}",
+        ".FeatureText__Content h2 {color: white;}",
+        " {border-top: none; border-bottom: none;}",
+        ".FeatureText--imageRight .FeatureText__Content,.FeatureText--imageRight .AspectRatio {margin-right: auto;}",
+        ".FeatureText--withImage .FeatureText__ContentWrapper {padding-top: 50px; padding-bottom: 50px;}",
+        ".FeatureText {text-align: left;}"
+      ],
+      "settings": {
+        "subheading": "",
+        "title": "Stay With Us",
+        "image": "shopify:\/\/shop_images\/02-HP_AT_HOME.jpg",
+        "image_position": "left",
+        "content": "<p>Book your summer and holiday trips at Pieces Homes in Kennebunk, Maine. Perfect proximity to beaches, trails, and the best lobster rolls in the country. There are only a few dates left for the summer, but you can get a jump start on your fall and winter trips (p.s. we have a hot tub).<\/p>",
+        "link_text": "Book Now",
+        "link_url": "https:\/\/www.airbnb.com\/rooms\/40567990"
+      }
+    },
+    "164799066210c28f56": {
+      "type": "custom-html",
+      "custom_css": [
+        "{border-top: none;}"
+      ],
+      "settings": {
+        "subheading": "",
+        "title": "",
+        "html": "<div style=\"height:50px;\"><\/div>",
+        "background_color": "#ce8263",
+        "hide_mobile": false,
+        "hide_desktop": true,
+        "padding": false
+      }
+    },
+    "1647186122d1f822ff": {
+      "type": "background-video",
+      "disabled": true,
+      "settings": {
+        "section_size": "large",
+        "video_url": "https:\/\/vimeo.com\/605093813",
+        "collection_url": "shopify:\/\/collections\/home-union-x-pieces",
+        "heading": "Home Union x Pieces",
+        "heading_color": "#ffffff",
+        "button_text": "Shop Now",
+        "button_color": "#363636",
+        "button_background": "#fdfaf3"
       }
     },
     "16471861569d18b261": {
@@ -323,10 +323,10 @@
     "custom_html_brBYKj",
     "62fc4d0c-a6db-4b17-9e3e-4d04477440a2",
     "featured-collections",
+    "collection-list",
     "text_with_image_gg4pGp",
     "164799066210c28f56",
     "1647186122d1f822ff",
-    "collection-list",
     "16471861569d18b261",
     "shop_the_look_gx8c3k"
   ]
