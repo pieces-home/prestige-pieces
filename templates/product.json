@@ -3,35 +3,29 @@
     "main": {
       "type": "main-product",
       "blocks": {
-        "product_meta": {
-          "type": "product_meta",
+        "vendor": {
+          "type": "vendor",
           "settings": {
-            "show_vendor": false,
-            "show_sku": false,
-            "show_product_rating": false,
-            "show_taxes_included": false
           }
         },
-        "variant_selector": {
-          "type": "variant_selector",
+        "title": {
+          "type": "title",
           "settings": {
-            "selector_mode": "block",
-            "show_color_swatch": false,
-            "show_color_carousel": false,
-            "size_chart": ""
           }
         },
-        "quantity_selector": {
-          "type": "quantity_selector",
+        "price": {
+          "type": "price",
           "settings": {
-            "show_label": false
           }
         },
-        "buy_buttons": {
-          "type": "buy_buttons",
+        "payment_terms": {
+          "type": "payment_terms",
           "settings": {
-            "show_price_in_button": false,
-            "show_payment_button": true
+          }
+        },
+        "separator": {
+          "type": "separator",
+          "settings": {
           }
         },
         "description": {
@@ -39,76 +33,55 @@
           "settings": {
           }
         },
-        "e88257ce-5c72-4318-b7db-b2d40c5bb69e": {
-          "type": "content",
-          "settings": {
-            "title": "Product Details",
-            "content": "<p>{{ product.metafields.product_attributes.product_description | metafield_tag }}<\/p>",
-            "page": ""
-          }
-        },
-        "0b3aa950-f14a-4855-9b52-b409440f4864": {
-          "type": "content",
-          "settings": {
-            "title": "Care & Shedding",
-            "content": "<p>{{ product.metafields.custom.care_instructions | metafield_tag }}<\/p>",
-            "page": ""
-          }
-        },
-        "57c8aa4b-4e8b-4a2e-a807-d18345634aac": {
-          "type": "content",
-          "settings": {
-            "title": "",
-            "content": "",
-            "page": "shipping-returns"
-          }
-        },
-        "share_buttons": {
-          "type": "share_buttons",
-          "disabled": true,
+        "variant_picker": {
+          "type": "variant_picker",
           "settings": {
           }
         },
-        "313baf27-ddaa-49b5-9381-ca923b1d8215": {
-          "type": "meta_fld_swatch_selector",
-          "disabled": true,
+        "quantity_selector": {
+          "type": "quantity_selector",
           "settings": {
-            "show_swatch": true
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+          }
+        },
+        "pickup_availability": {
+          "type": "pickup_availability",
+          "settings": {
+          }
+        },
+        "complementary_products": {
+          "type": "complementary_products",
+          "settings": {
           }
         }
       },
       "block_order": [
-        "product_meta",
-        "variant_selector",
+        "vendor",
+        "title",
+        "price",
+        "payment_terms",
+        "separator",
+        "description",
+        "variant_picker",
         "quantity_selector",
         "buy_buttons",
-        "description",
-        "e88257ce-5c72-4318-b7db-b2d40c5bb69e",
-        "0b3aa950-f14a-4855-9b52-b409440f4864",
-        "57c8aa4b-4e8b-4a2e-a807-d18345634aac",
-        "share_buttons",
-        "313baf27-ddaa-49b5-9381-ca923b1d8215"
+        "complementary_products"
       ],
       "settings": {
-        "image_size": "large",
-        "stack_images": true,
-        "show_thumbnails": true,
-        "enable_image_zoom": false,
-        "enable_video_looping": false
       }
     },
-    "product-recommendations": {
-      "type": "product-recommendations",
+    "related-products": {
+      "type": "related-products",
       "settings": {
-        "heading": "Related Products",
-        "show_product_info": true,
-        "show_vendor": false,
-        "show_color_swatch": false
       }
     }
   },
   "order": [
     "main",
-    "product-recommendations"
+    "related-products"
   ]
 }

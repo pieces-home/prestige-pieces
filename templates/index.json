@@ -1,264 +1,541 @@
-/*
-* ------------------------------------------------------------
-* IMPORTANT: The contents of this file are auto-generated.
-*
-* This file may be updated by the Shopify admin theme editor
-* or related systems. Please exercise caution as any changes
-* made to this file may be overwritten.
-* ------------------------------------------------------------
-*/
 {
   "sections": {
-    "16471861270237f67f": {
+    "slideshow": {
       "type": "slideshow",
       "blocks": {
-        "1647186127411d4fe4-0": {
+        "slide-1": {
           "type": "image",
           "settings": {
             "image": "shopify:\/\/shop_images\/00-HP_SLIDE_BRDRD.jpg",
             "mobile_image": "shopify:\/\/shop_images\/00-HP_SLIDE_MOBILE.jpg",
-            "apply_overlay": true,
-            "link_slide": false,
-            "content_position": "bottomLeft",
-            "title": "Rugs & Runners",
-            "subheading": "",
-            "button_1_text": "Shop Now",
-            "button_1_link": "shopify:\/\/collections\/jewel-tones",
+            "subheading": "Tell your story",
+            "title": "Image slide",
+            "mobile_text_position": "place-self-end-start text-start",
+            "desktop_text_position": "sm:place-self-end-start sm:text-start",
+            "content_max_width": 760,
+            "button_1_text": "SHOP NOW",
+            "button_1_link": "",
+            "button_1_style": "solid",
+            "button_1_background": "#ffffff",
+            "button_1_text_color": "#000000",
             "button_2_text": "",
-            "button_2_link": ""
+            "button_2_link": "",
+            "button_2_style": "outline",
+            "button_2_background": "#ffffff",
+            "button_2_text_color": "#000000",
+            "background": "",
+            "background_opacity": 50,
+            "text_color": "#ffffff",
+            "border_color": "",
+            "gradient_overlay": "linear-gradient(180deg, rgba(54, 54, 54, 0.2), rgba(4, 4, 4, 0.65) 100%)"
           }
         }
       },
       "block_order": [
-        "1647186127411d4fe4-0"
+        "slide-1"
       ],
       "settings": {
-        "show_fullscreen": true,
-        "show_arrow": false,
+        "allow_transparent_header": true,
+        "show_next_section_button": false,
+        "media_size": "auto",
+        "show_initial_transition": false,
         "autoplay": true,
+        "autoplay_pause_on_video": true,
         "cycle_speed": 5,
-        "text_color": "#ffffff",
-        "button_color": "#363636",
-        "button_background": "#fdfaf3"
+        "background": "#000000",
+        "controls_color": "#ffffff"
       }
     },
-    "1657832718c76a1527": {
-      "type": "text-with-image",
+    "multiple_media_with_text_cK9Q6a": {
+      "type": "multiple-media-with-text",
+      "blocks": {
+        "image_UyyUbe": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/01-HP_AT_HOME_ecec7914-4c13-49a0-9c82-5c68d28a8088.jpg",
+            "rotation": 0
+          }
+        },
+        "image_KeqRTH": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/piecesathomelogo_inv.png",
+            "rotation": 0
+          }
+        }
+      },
+      "block_order": [
+        "image_UyyUbe",
+        "image_KeqRTH"
+      ],
       "custom_css": [
-        ".FeatureText--withImage {background-color: #016d60; color: white;}",
-        ".FeatureText__Content h2 {color: white;}",
-        " {border-top: none; border-bottom: none;}",
-        ".FeatureText--imageRight .FeatureText__Content,.FeatureText--imageRight .AspectRatio {margin-right: auto;}",
-        ".FeatureText--withImage .FeatureText__ContentWrapper {padding-top: 50px; padding-bottom: 50px;}",
-        ".FeatureText {text-align: left;}"
+        ".color-scheme {background-color: #016d60; color: white;}"
       ],
       "settings": {
-        "subheading": "",
-        "title": "Pieces @ HOME",
-        "image": "shopify:\/\/shop_images\/01-HP_AT_HOME.jpg",
-        "image_position": "right",
-        "content": "<p>Pieces @ HOME is a series of vignettes showcasing individuals of taste and their unique takes on styling Pieces designs in their personal spaces. For this installation of the series, we sit down with art curator and founder of the Aloha From Hell Film Festival, Brooke Wise.<\/p>",
-        "link_text": "Read More",
-        "link_url": "shopify:\/\/blogs\/pieces-at-home\/pieces-home-brooke-wise"
-      }
-    },
-    "custom_html_brBYKj": {
-      "type": "custom-html",
-      "custom_css": [
-        "{border-top: none;}"
-      ],
-      "settings": {
+        "color_scheme": "",
+        "reveal_on_scroll": true,
+        "separate_section_with_border": false,
+        "media_position_desktop": "before_text",
+        "media_position_mobile": "before_text",
+        "media_layout": "overlap",
+        "media_alignment": "center",
+        "media_alignment_offset": 0,
+        "media_mobile_alignment_offset": 0,
+        "text_alignment": "center",
         "subheading": "",
         "title": "",
-        "html": "<div style=\"height:50px;\"><\/div>",
-        "background_color": "#016d60",
-        "hide_mobile": false,
-        "hide_desktop": true,
-        "padding": false
+        "content": "<p>Pieces @ HOME is a series of vignettes showcasing individuals of taste and their unique takes on styling Pieces designs in their personal spaces. For this installation of the series, we sit down with art curator and founder of the Aloha From Hell Film Festival, Brooke Wise.<\/p>",
+        "button_1_text": "Read More",
+        "button_1_link": "shopify:\/\/blogs\/pieces-at-home\/pieces-home-brooke-wise",
+        "button_1_style": "link",
+        "button_2_text": "",
+        "button_2_link": "",
+        "button_2_style": "solid"
       }
     },
-    "62fc4d0c-a6db-4b17-9e3e-4d04477440a2": {
+    "media_grid_43kCLe": {
+      "type": "media-grid",
+      "blocks": {
+        "video_VPqgFa": {
+          "type": "video",
+          "settings": {
+            "color_scheme": "scheme-4",
+            "video": "shopify:\/\/files\/videos\/HU_FINAL_090821_1x1_WEB.mp4",
+            "autoplay": true,
+            "show_controls": true,
+            "column_count": "8",
+            "row_count": 2,
+            "title": "Home Union x Pieces",
+            "heading_tag": "h4",
+            "content": "",
+            "link_text": "Shop Now",
+            "link_url": "shopify:\/\/collections\/home-union-x-pieces",
+            "link_style": "link",
+            "text_position": "place-self-end-start text-start",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        },
+        "image_nxXDA4": {
+          "type": "image",
+          "settings": {
+            "color_scheme": "scheme-1",
+            "image": "shopify:\/\/shop_images\/Vespucci-Cuccidati-ST-01_1200x_d861e625-b97b-44ff-836c-9bb961373850.webp",
+            "column_count": "4",
+            "row_count": 1,
+            "title": "",
+            "heading_tag": "h4",
+            "content": "",
+            "link_text": "Vespucci",
+            "link_url": "shopify:\/\/products\/vespucci-rug-cuccidati",
+            "link_style": "link",
+            "text_position": "place-self-end-start text-start",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        },
+        "image_JaEtXc": {
+          "type": "image",
+          "settings": {
+            "color_scheme": "scheme-1",
+            "image": "shopify:\/\/shop_images\/Salerno_Runner-Verde-ST-01.jpg",
+            "column_count": "4",
+            "row_count": 1,
+            "title": "",
+            "heading_tag": "h4",
+            "content": "",
+            "link_text": "Salerno Runner",
+            "link_url": "shopify:\/\/products\/salerno-runner-verde",
+            "link_style": "link",
+            "text_position": "place-self-end-start text-start",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        }
+      },
+      "block_order": [
+        "video_VPqgFa",
+        "image_nxXDA4",
+        "image_JaEtXc"
+      ],
+      "custom_css": [
+        ".color-scheme {background-color: #d2bda2;}"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "separate_section_with_border": true,
+        "desktop_row_height": 400,
+        "mobile_row_height": 180,
+        "section_width": "full",
+        "spacing": "lg",
+        "subheading": "",
+        "title": "",
+        "content": ""
+      }
+    },
+    "image_with_text_LjWjxW": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_k3gpp8": {
+          "type": "heading",
+          "settings": {
+            "text": "Stay With Us",
+            "heading_tag": "h4"
+          }
+        },
+        "richtext_7tWdRR": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>Book your summer and holiday trips at Pieces Homes in Kennebunk, Maine. Perfect proximity to beaches, trails, and the best lobster rolls in the country. There are only a few dates left for the summer, but you can get a jump start on your fall and winter trips (p.s. we have a hot tub).<\/p>"
+          }
+        },
+        "link_nwFbcn": {
+          "type": "link",
+          "settings": {
+            "text": "Book Now",
+            "url": "https:\/\/www.airbnb.com\/rooms\/40567990"
+          }
+        }
+      },
+      "block_order": [
+        "heading_k3gpp8",
+        "richtext_7tWdRR",
+        "link_nwFbcn"
+      ],
+      "custom_css": [
+        ".color-scheme {background-color: #ce8263; color: white;}"
+      ],
+      "settings": {
+        "color_scheme": "scheme-2",
+        "separate_section_with_border": false,
+        "image": "shopify:\/\/shop_images\/02-HP_AT_HOME.jpg",
+        "reveal_on_scroll": false,
+        "image_position": "start",
+        "content_width": "md",
+        "remove_vertical_spacing": true
+      }
+    },
+    "slideshow_RETRqg": {
       "type": "slideshow",
       "blocks": {
-        "template--15951308095544__62fc4d0c-a6db-4b17-9e3e-4d04477440a2-1678416690b0e28d54-0": {
+        "image_zBjbRn": {
           "type": "image",
           "settings": {
             "image": "shopify:\/\/shop_images\/00-HP_SLIDER-BORDERED_b73d45ce-bd2c-4d75-9149-5abcc9934a52.jpg",
             "mobile_image": "shopify:\/\/shop_images\/00-HP_SLIDER-MOBILE_14428b29-9e19-4461-9dd6-f05e20efd26d.jpg",
-            "apply_overlay": false,
-            "link_slide": true,
-            "content_position": "middleCenter",
-            "title": "Home Union x Pieces",
-            "subheading": "",
-            "button_1_text": "",
-            "button_1_link": "shopify:\/\/collections\/home-union-x-pieces",
+            "subheading": "Tell your story",
+            "title": "Image slide",
+            "mobile_text_position": "place-self-end-start text-start",
+            "desktop_text_position": "sm:place-self-end-start sm:text-start",
+            "content_max_width": 760,
+            "button_1_text": "SHOP NOW",
+            "button_1_link": "",
+            "button_1_style": "solid",
+            "button_1_background": "#ffffff",
+            "button_1_text_color": "#000000",
             "button_2_text": "",
-            "button_2_link": ""
+            "button_2_link": "",
+            "button_2_style": "outline",
+            "button_2_background": "#ffffff",
+            "button_2_text_color": "#000000",
+            "background": "",
+            "background_opacity": 50,
+            "text_color": "#ffffff",
+            "border_color": "",
+            "gradient_overlay": "linear-gradient(180deg, rgba(54, 54, 54, 0.2), rgba(4, 4, 4, 0.65) 100%)"
           }
         }
       },
       "block_order": [
-        "template--15951308095544__62fc4d0c-a6db-4b17-9e3e-4d04477440a2-1678416690b0e28d54-0"
+        "image_zBjbRn"
       ],
-      "custom_css": [
-
+      "disabled": true,
+      "settings": {
+        "allow_transparent_header": true,
+        "show_next_section_button": false,
+        "media_size": "auto",
+        "show_initial_transition": false,
+        "autoplay": true,
+        "autoplay_pause_on_video": true,
+        "cycle_speed": 5,
+        "background": "#000000",
+        "controls_color": "#ffffff"
+      }
+    },
+    "media_grid_kt6TEA": {
+      "type": "media-grid",
+      "blocks": {
+        "image_U9iDXx": {
+          "type": "image",
+          "settings": {
+            "color_scheme": "scheme-1",
+            "image": "shopify:\/\/shop_images\/Wavy_Runner_Jewel-ST-01.jpg",
+            "column_count": "6",
+            "row_count": 1,
+            "title": "",
+            "heading_tag": "h4",
+            "content": "",
+            "link_text": "Wavy Runner",
+            "link_url": "shopify:\/\/products\/wavy-runner-jewel",
+            "link_style": "link",
+            "text_position": "place-self-end-start text-start",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        },
+        "image_PgCzcA": {
+          "type": "image",
+          "settings": {
+            "color_scheme": "scheme-4",
+            "image": "shopify:\/\/shop_images\/PIECES_GEM-TONES_LoftCampaign55151_2add25d7-f6c7-4647-b493-5c82f1e16b3d.jpg",
+            "column_count": "6",
+            "row_count": 3,
+            "title": "Jewel Tones",
+            "heading_tag": "h4",
+            "content": "",
+            "link_text": "Shop Now",
+            "link_url": "shopify:\/\/collections\/jewel-tones",
+            "link_style": "link",
+            "text_position": "place-self-end-start text-start",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        },
+        "image_bXcmm4": {
+          "type": "image",
+          "settings": {
+            "color_scheme": "scheme-1",
+            "image": "shopify:\/\/shop_images\/Teddy_Chair-Denim-ST-03.jpg",
+            "column_count": "6",
+            "row_count": 2,
+            "title": "",
+            "heading_tag": "h4",
+            "content": "",
+            "link_text": "Teddy Chair",
+            "link_url": "shopify:\/\/products\/teddy-bear-chair",
+            "link_style": "link",
+            "text_position": "place-self-end-start text-start",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        }
+      },
+      "block_order": [
+        "image_U9iDXx",
+        "image_PgCzcA",
+        "image_bXcmm4"
       ],
       "settings": {
-        "show_fullscreen": true,
-        "show_arrow": false,
-        "autoplay": false,
-        "cycle_speed": 5,
-        "text_color": "#ffffff",
-        "button_color": "#363636",
-        "button_background": "#ffffff"
+        "color_scheme": "",
+        "separate_section_with_border": false,
+        "desktop_row_height": 400,
+        "mobile_row_height": 180,
+        "section_width": "full",
+        "spacing": "lg",
+        "subheading": "",
+        "title": "",
+        "content": ""
       }
     },
     "featured-collections": {
       "type": "featured-collections",
       "blocks": {
-        "featured-collection-0": {
+        "collection-1": {
           "type": "collection",
           "settings": {
             "collection": "home-union-x-pieces",
+            "products_count": 4,
             "title": "",
-            "grid_items_count": 4,
-            "button_text": ""
+            "link_url": "",
+            "link_text": ""
           }
         }
       },
       "block_order": [
-        "featured-collection-0"
+        "collection-1"
       ],
-      "custom_css": [
-        "header.SectionHeader.SectionHeader--center {display: none;}"
-      ],
+      "disabled": true,
       "settings": {
-        "title": "",
-        "layout_mode": "grid",
-        "show_product_info": true,
-        "show_vendor": false,
-        "show_color_swatch": false,
-        "grid_mobile_items_per_row": "2",
-        "grid_desktop_items_per_row": 4
+        "color_scheme": "",
+        "separate_section_with_border": false,
+        "hide_product_information": false,
+        "stack_products": false,
+        "products_per_row_mobile": "2",
+        "products_per_row_desktop": 4,
+        "horizontal_spacing_factor": 1,
+        "vertical_spacing_factor": 1,
+        "subheading": ""
+      }
+    },
+    "multi-column": {
+      "type": "multi-column",
+      "blocks": {
+        "column-1": {
+          "type": "image_with_text",
+          "settings": {
+            "title": "Column title",
+            "heading_tag": "h3",
+            "content": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+            "link_url": "",
+            "link_text": ""
+          }
+        },
+        "column-2": {
+          "type": "image_with_text",
+          "settings": {
+            "title": "Column title",
+            "heading_tag": "h3",
+            "content": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+            "link_url": "",
+            "link_text": ""
+          }
+        },
+        "column-3": {
+          "type": "image_with_text",
+          "settings": {
+            "title": "Column title",
+            "heading_tag": "h3",
+            "content": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+            "link_url": "",
+            "link_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "column-1",
+        "column-2",
+        "column-3"
+      ],
+      "disabled": true,
+      "settings": {
+        "color_scheme": "",
+        "separate_section_with_border": true,
+        "columns_per_row": 3,
+        "stack_on_mobile": false,
+        "overlap_image": false,
+        "content_alignment": "start",
+        "text_alignment": "start",
+        "spacing": "md",
+        "subheading": "About",
+        "title": "Multi-column",
+        "content": ""
       }
     },
     "collection-list": {
       "type": "collection-list",
       "blocks": {
-        "collection-2": {
-          "type": "collection",
-          "settings": {
-            "collection": "",
-            "image": "shopify:\/\/shop_images\/PIECES_MiamiVilla-Planters0878-Recovered_1.jpg",
-            "image_alignment": "center center",
-            "content_position": "bottomLeft",
-            "subheading": "",
-            "title": "Planters",
-            "button_text": "View products",
-            "button_link": "shopify:\/\/collections\/planters",
-            "apply_overlay": false
-          }
-        },
         "collection-1": {
           "type": "collection",
           "settings": {
+            "color_scheme": "",
             "collection": "",
-            "image": "shopify:\/\/shop_images\/PIECES_GEM-TONES_LoftCampaign55581_f3de655f-f8f6-42a8-9451-2f0c9d5fe012.jpg",
-            "image_alignment": "bottom center",
-            "content_position": "bottomLeft",
+            "expand_collection": false,
+            "content_position": "place-self-end-start text-start",
             "subheading": "",
-            "title": "Jewel Tones",
-            "button_text": "",
-            "button_link": "shopify:\/\/collections\/jewel-tones",
-            "apply_overlay": false
+            "title": "",
+            "button_text": "View products",
+            "button_link": "",
+            "button_style": "solid",
+            "overlay_color": "#000000",
+            "overlay_opacity": 30
           }
         },
-        "collection-0": {
+        "collection-2": {
           "type": "collection",
           "settings": {
+            "color_scheme": "",
             "collection": "",
-            "image": "shopify:\/\/shop_images\/COLLECTION_3.jpg",
-            "image_alignment": "bottom right",
-            "content_position": "bottomLeft",
+            "expand_collection": false,
+            "content_position": "place-self-end-start text-start",
             "subheading": "",
-            "title": "Seating",
+            "title": "",
             "button_text": "View products",
-            "button_link": "https:\/\/pieceshome.com\/collections\/all\/seating",
-            "apply_overlay": false
+            "button_link": "",
+            "button_style": "solid",
+            "overlay_color": "#000000",
+            "overlay_opacity": 30
           }
         }
       },
       "block_order": [
-        "collection-2",
         "collection-1",
-        "collection-0"
+        "collection-2"
       ],
-      "settings": {
-        "image_size": "normal",
-        "add_spacing": false,
-        "expand_collection": false,
-        "stack_on_mobile": true,
-        "text_color": "#ffffff",
-        "button_color": "#363636"
-      }
-    },
-    "text_with_image_gg4pGp": {
-      "type": "text-with-image",
-      "custom_css": [
-        ".FeatureText--withImage {background-color: #ce8263; color: white;}",
-        ".FeatureText__Content h2 {color: white;}",
-        " {border-top: none; border-bottom: none;}",
-        ".FeatureText--imageRight .FeatureText__Content,.FeatureText--imageRight .AspectRatio {margin-right: auto;}",
-        ".FeatureText--withImage .FeatureText__ContentWrapper {padding-top: 50px; padding-bottom: 50px;}",
-        ".FeatureText {text-align: left;}"
-      ],
-      "settings": {
-        "subheading": "",
-        "title": "Stay With Us",
-        "image": "shopify:\/\/shop_images\/02-HP_AT_HOME.jpg",
-        "image_position": "left",
-        "content": "<p>Book your summer and holiday trips at Pieces Homes in Kennebunk, Maine. Perfect proximity to beaches, trails, and the best lobster rolls in the country. There are only a few dates left for the summer, but you can get a jump start on your fall and winter trips (p.s. we have a hot tub).<\/p>",
-        "link_text": "Book Now",
-        "link_url": "https:\/\/www.airbnb.com\/rooms\/40567990"
-      }
-    },
-    "164799066210c28f56": {
-      "type": "custom-html",
-      "custom_css": [
-        "{border-top: none;}"
-      ],
-      "settings": {
-        "subheading": "",
-        "title": "",
-        "html": "<div style=\"height:50px;\"><\/div>",
-        "background_color": "#ce8263",
-        "hide_mobile": false,
-        "hide_desktop": true,
-        "padding": false
-      }
-    },
-    "1647186122d1f822ff": {
-      "type": "background-video",
       "disabled": true,
       "settings": {
-        "section_size": "large",
-        "video_url": "https:\/\/vimeo.com\/605093813",
-        "collection_url": "shopify:\/\/collections\/home-union-x-pieces",
-        "heading": "Home Union x Pieces",
-        "heading_color": "#ffffff",
-        "button_text": "Shop Now",
-        "button_color": "#363636",
-        "button_background": "#fdfaf3"
+        "color_scheme": "",
+        "separate_section_with_border": true,
+        "image_size": "auto",
+        "show_text_outside": false,
+        "space_items": true,
+        "stack_collections": true,
+        "collections_per_row_mobile": "1",
+        "collections_per_row_desktop": 3,
+        "subheading": "",
+        "title": "",
+        "content": ""
       }
     },
-    "16471861569d18b261": {
+    "image-with-text-scroll": {
+      "type": "images-with-text-scroll",
+      "blocks": {
+        "item-1": {
+          "type": "image_with_text",
+          "settings": {
+            "subheading": "",
+            "title": "#1",
+            "content": "<p>Welcome your customers to your store by sharing temporary offers or explaining to them what your products are about.<\/p>",
+            "link_text": "",
+            "link_url": "",
+            "link_style": "solid"
+          }
+        },
+        "item-2": {
+          "type": "image_with_text",
+          "settings": {
+            "subheading": "",
+            "title": "#2",
+            "content": "<p>Create trust with your customers by explaining the story of your brand. Share your values or what is important to you.<\/p>",
+            "link_text": "",
+            "link_url": "",
+            "link_style": "solid"
+          }
+        },
+        "item-3": {
+          "type": "image_with_text",
+          "settings": {
+            "subheading": "",
+            "title": "#3",
+            "content": "<p>Share information about your product with your customers. Describe a product, and share info about your production process...<\/p>",
+            "link_text": "",
+            "link_url": "",
+            "link_style": "solid"
+          }
+        }
+      },
+      "block_order": [
+        "item-1",
+        "item-2",
+        "item-3"
+      ],
+      "disabled": true,
+      "settings": {
+        "color_scheme": "",
+        "image_position": "start",
+        "text_alignment": "center",
+        "heading_tag": "h3",
+        "overlay_color": "#000000",
+        "overlay_opacity": 0
+      }
+    },
+    "17198834906fa317ec": {
       "type": "apps",
       "blocks": {
-        "d8fc79ec-c499-423f-8ded-59f4e98f710d": {
+        "maestrooo_section_feed_app_block_YyjGcV": {
           "type": "shopify:\/\/apps\/maestrooo-section-feed\/blocks\/app-block\/43cd482b-515a-4e82-b170-05d391763cd2",
           "settings": {
             "title": "@pieces_by_an_aesthetic_pursuit",
-            "subheading": "<p><\/p>",
+            "subheading": "",
             "button_text": "",
             "button_link": "",
             "layout": "grid",
@@ -275,59 +552,32 @@
             "button_color": "#ffffff",
             "overlay_color": "#000000",
             "overlay_text_color": "#ffffff",
-            "overlay_opacity": 65
+            "overlay_opacity": 50
           }
         }
       },
       "block_order": [
-        "d8fc79ec-c499-423f-8ded-59f4e98f710d"
+        "maestrooo_section_feed_app_block_YyjGcV"
       ],
       "settings": {
-        "include_margins": true
-      }
-    },
-    "shop_the_look_gx8c3k": {
-      "type": "shop-the-look",
-      "blocks": {
-        "look_byiHmF": {
-          "type": "look",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/PIECES_GEM-TONES_LoftCampaign55151_2add25d7-f6c7-4647-b493-5c82f1e16b3d.jpg",
-            "dot_style": "light",
-            "product_1": "wavy-rug-jewel",
-            "product_1_horizontal_position": 50,
-            "product_1_vertical_position": 83,
-            "product_2": "teddy-bear-chair",
-            "product_2_horizontal_position": 83,
-            "product_2_vertical_position": 21,
-            "product_3": "row-planter-pesto",
-            "product_3_horizontal_position": 52,
-            "product_3_vertical_position": 13
-          }
-        }
-      },
-      "block_order": [
-        "look_byiHmF"
-      ],
-      "disabled": true,
-      "settings": {
-        "subheading": "",
-        "title": "Shop Jewel Tones",
-        "show_mobile_product_info": true
+        "color_scheme": "",
+        "separate_section_with_border": false,
+        "remove_vertical_spacing": true,
+        "remove_horizontal_spacing": false
       }
     }
   },
   "order": [
-    "16471861270237f67f",
-    "1657832718c76a1527",
-    "custom_html_brBYKj",
-    "62fc4d0c-a6db-4b17-9e3e-4d04477440a2",
+    "slideshow",
+    "multiple_media_with_text_cK9Q6a",
+    "media_grid_43kCLe",
+    "image_with_text_LjWjxW",
+    "slideshow_RETRqg",
+    "media_grid_kt6TEA",
     "featured-collections",
+    "multi-column",
     "collection-list",
-    "text_with_image_gg4pGp",
-    "164799066210c28f56",
-    "1647186122d1f822ff",
-    "16471861569d18b261",
-    "shop_the_look_gx8c3k"
+    "image-with-text-scroll",
+    "17198834906fa317ec"
   ]
 }
