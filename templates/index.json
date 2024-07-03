@@ -8,8 +8,9 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/00-HP_SLIDE_BRDRD.jpg",
             "mobile_image": "shopify:\/\/shop_images\/00-HP_SLIDE_MOBILE.jpg",
-            "subheading": "Tell your story",
-            "title": "Image slide",
+            "subheading": "",
+            "title": "Rugs & Runners",
+            "heading_tag": "h1",
             "mobile_text_position": "place-self-end-start text-start",
             "desktop_text_position": "sm:place-self-end-start sm:text-start",
             "content_max_width": 760,
@@ -75,6 +76,7 @@
         "color_scheme": "",
         "reveal_on_scroll": true,
         "separate_section_with_border": false,
+        "section_width": "lg",
         "media_position_desktop": "before_text",
         "media_position_mobile": "before_text",
         "media_layout": "overlap",
@@ -106,7 +108,7 @@
             "column_count": "8",
             "row_count": 2,
             "title": "Home Union x Pieces",
-            "heading_tag": "h4",
+            "heading_tag": "h2",
             "content": "",
             "link_text": "Shop Now",
             "link_url": "shopify:\/\/collections\/home-union-x-pieces",
@@ -180,7 +182,7 @@
           "type": "heading",
           "settings": {
             "text": "Stay With Us",
-            "heading_tag": "h4"
+            "heading_tag": "h2"
           }
         },
         "richtext_7tWdRR": {
@@ -225,6 +227,7 @@
             "mobile_image": "shopify:\/\/shop_images\/00-HP_SLIDER-MOBILE_14428b29-9e19-4461-9dd6-f05e20efd26d.jpg",
             "subheading": "Tell your story",
             "title": "Image slide",
+            "heading_tag": "h4",
             "mobile_text_position": "place-self-end-start text-start",
             "desktop_text_position": "sm:place-self-end-start sm:text-start",
             "content_max_width": 760,
@@ -291,7 +294,7 @@
             "column_count": "6",
             "row_count": 3,
             "title": "Jewel Tones",
-            "heading_tag": "h4",
+            "heading_tag": "h2",
             "content": "",
             "link_text": "Shop Now",
             "link_url": "shopify:\/\/collections\/jewel-tones",
