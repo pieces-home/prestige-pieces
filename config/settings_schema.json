@@ -52,6 +52,10 @@
           {
             "value": "xl",
             "label": "t:global.sizes.x_large"
+          },
+          {
+            "value": "xxl",
+            "label": "t:global.sizes.xx_large"
           }
         ],
         "default": "md"
