@@ -19,6 +19,7 @@
             "mobile_image": "shopify://shop_images/CESPARROS_PIECES-PLAID-CAMPAIGN_2025_9036-_FINAL_2dc3fc1f-3feb-49ba-a4f7-68a0214b2da4.jpg",
             "subheading": "new arrivals",
             "title": "Plaid Collection",
+            "heading_tag": "h4",
             "mobile_text_position": "place-self-end-center text-center",
             "desktop_text_position": "sm:place-self-center sm:text-center",
             "content_max_width": 760,
@@ -84,6 +85,7 @@
         "color_scheme": "",
         "reveal_on_scroll": true,
         "separate_section_with_border": false,
+        "section_width": "xl",
         "media_position_desktop": "before_text",
         "media_position_mobile": "before_text",
         "media_layout": "overlap",
@@ -189,7 +191,7 @@
           "type": "heading",
           "settings": {
             "text": "Stay With Us",
-            "heading_tag": "h4"
+            "heading_tag": "h1"
           }
         },
         "richtext_7tWdRR": {
@@ -234,6 +236,7 @@
             "mobile_image": "shopify://shop_images/00-HP_SLIDER-MOBILE_14428b29-9e19-4461-9dd6-f05e20efd26d.jpg",
             "subheading": "Tell your story",
             "title": "Image slide",
+            "heading_tag": "h4",
             "mobile_text_position": "place-self-end-start text-start",
             "desktop_text_position": "sm:place-self-end-start sm:text-start",
             "content_max_width": 760,
@@ -262,7 +265,7 @@
       "settings": {
         "allow_transparent_header": true,
         "show_next_section_button": false,
-        "media_size": "auto",
+        "media_size": "fill",
         "show_initial_transition": false,
         "autoplay": true,
         "autoplay_pause_on_video": true,
@@ -437,47 +440,66 @@
           "type": "collection",
           "settings": {
             "color_scheme": "",
-            "collection": "",
+            "collection": "rugs",
+            "image": "shopify://shop_images/Clay_Cour_-Rug_V01_R01_2_5d7cff60-2249-4237-954f-3a7a3827a492.jpg",
             "expand_collection": false,
             "content_position": "place-self-end-start text-start",
             "subheading": "",
-            "title": "",
-            "button_text": "View products",
+            "title": "Area Rugs",
+            "button_text": "",
             "button_link": "",
-            "button_style": "solid",
+            "button_style": "link",
             "overlay_color": "#000000",
-            "overlay_opacity": 30
+            "overlay_opacity": 10
           }
         },
         "collection-2": {
           "type": "collection",
           "settings": {
             "color_scheme": "",
-            "collection": "",
+            "collection": "planters",
+            "image": "shopify://shop_images/00-HP_SLIDER-MOBILE_76081977-f259-42f2-b1c7-a111a2425ee2.jpg",
             "expand_collection": false,
             "content_position": "place-self-end-start text-start",
             "subheading": "",
-            "title": "",
-            "button_text": "View products",
+            "title": "Planters",
+            "button_text": "",
             "button_link": "",
             "button_style": "solid",
             "overlay_color": "#000000",
-            "overlay_opacity": 30
+            "overlay_opacity": 10
+          }
+        },
+        "collection_bTm3BD": {
+          "type": "collection",
+          "settings": {
+            "color_scheme": "scheme-4",
+            "collection": "",
+            "image": "shopify://shop_images/Salerno_Runner-Biscotti-LS-01.jpg",
+            "expand_collection": false,
+            "content_position": "place-self-end-start text-start",
+            "subheading": "",
+            "title": "Runners",
+            "button_text": "",
+            "button_link": "",
+            "button_style": "solid",
+            "overlay_color": "#000000",
+            "overlay_opacity": 10
           }
         }
       },
       "block_order": [
         "collection-1",
-        "collection-2"
+        "collection-2",
+        "collection_bTm3BD"
       ],
-      "disabled": true,
       "settings": {
         "color_scheme": "",
         "separate_section_with_border": true,
-        "image_size": "auto",
+        "image_size": "lg",
         "show_text_outside": false,
         "space_items": true,
-        "stack_collections": true,
+        "stack_collections": false,
         "collections_per_row_mobile": "1",
         "collections_per_row_desktop": 3,
         "subheading": "",

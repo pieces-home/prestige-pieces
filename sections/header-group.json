@@ -61,9 +61,9 @@
         "enable_sticky": true,
         "hide_on_scroll": false,
         "show_separation_border": false,
-        "reduce_padding": true,
-        "logo": "shopify://shop_images/Piecees_V2_Logo_Black.png",
-        "logo_max_width": 140,
+        "reduce_padding": false,
+        "logo": "shopify://shop_images/Piecees_V2_Logo_Black_89430f45-e274-420f-ba3a-15c1f3203ecf.png",
+        "logo_max_width": 120,
         "logo_mobile_max_width": 100,
         "menu": "menu",
         "sidebar_menu": "",
@@ -81,7 +81,7 @@
         "show_country_flag": true,
         "show_locale_selector": false,
         "transparent_header_text_color": "#ffffff",
-        "transparent_logo": "shopify://shop_images/Piecees_V2_Logo_White.png"
+        "transparent_logo": "shopify://shop_images/Piecees_V2_Logo_White_843bc583-1a91-4ac5-a835-e600c2f689db.png"
       }
     }
   },
