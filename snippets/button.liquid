@@ -25,6 +25,7 @@ Supported variables
 * form: the form ID that this button is linked to
 * external: if set to true and that a href is passed, it opens into a new window
 * aria_controls: the ID of the element controlled
+* focusable: if set to false, a tabindex="-1" is added to ensure the button is not focusable
 * block: an optional block to output theme editor attributes
 {%- endcomment -%}
 
@@ -101,6 +102,10 @@ Supported variables
 
     if external and href != blank
       echo ' target="_blank"'
+    endif
+
+    if focusable == false
+      echo ' tabindex="-1"'
     endif
   endcapture
 %}

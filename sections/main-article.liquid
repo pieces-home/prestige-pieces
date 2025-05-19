@@ -1,140 +1,7 @@
-{%- comment -%}
-----------------------------------------------------------------------------------------------------------------------
-PRODUCT CARD COMPONENT
-----------------------------------------------------------------------------------------------------------------------
-
-This component is used in collection and featured collection to render a single product as a card
-
-********************************************
-Supported variables
-********************************************
-
-* product: the product to render
-* stacked: define if the product is stacked or not on mobile
-* reveal: if set to true, the card will be revealed on scroll through animation
-* position: the position of the card in the list. If specified, the theme will eagerly load the first 3 cards images
-* show_badges: show or not the badges (default to true if nothing is set).
-* show_rating: show or not the rating. If nothing is set, the theme uses the default product card setting
-* show_vendor: show or not the vendor. If nothing is set, the theme uses the default product card setting
-* show_quick_buy: show or not the quick buy (which open a modal if the product contains more than 1 choice)
-* show_secondary_image: show or not the secondary media on hover. If nothing is set, the theme uses the default product card setting
-* show_swatches: show or not the swatches. The swatch type is inferred from setting, and will default to true if nothing is set.
-* hide_product_information: if set to true, all content (vendor, badge, title...) are not rendered, to create image-based grid
-* quick_buy_context: a unique text to dissociate quick buy if the same product is embedded multiple times
-{%- endcomment -%}
-
-
-{% comment %}
-  change the hardcoded values below to edit how the product displays within the article
-{% endcomment %}
-{%- liquid
-  if hide_product_information
-    assign show_badges = false
-    assign show_rating = false
-    assign show_vendor = false
-    assign show_title = false
-    assign show_prices = false
-    assign show_swatches = false
-    assign show_quick_buy = true
-    assign show_secondary_image = true
-  else
-    assign show_badges = false
-    assign show_rating = false
-    assign show_vendor = false
-    assign show_quick_buy = true
-    assign show_title = true
-    assign show_prices = true
-    assign show_secondary_image = true
-    assign show_swatches = false
-  endif
--%}
-
-{%- liquid
-  assign active_values_count = 0
-
-  # First, we retrieve, based on the merchant settings, the user preferences and the available space the most appropriate size
-  assign products_mobile_grid_mode = cart.attributes.products_mobile_grid_mode
-
-  if request.design_mode
-    # In the theme editor we do not use the choice selected manually, to reduce confusion when changing the theme editor values
-    assign products_desktop_grid_mode = section.settings.products_size_desktop
-  elsif section.settings.show_grid_mode_selector
-    assign products_desktop_grid_mode = cart.attributes.products_desktop_grid_mode | default: section.settings.products_size_desktop
-  else
-    assign products_desktop_grid_mode = section.settings.products_size_desktop
-  endif
-
-  if products_mobile_grid_mode == blank or request.design_mode
-    if section.settings.products_per_row_mobile == '1'
-      assign products_mobile_grid_mode = 'large'
-    else
-      assign products_mobile_grid_mode = 'medium'
-    endif
-  endif
--%}
-
-<style>
-  #shopify-section-{{ section.id }} {
-    --product-list-horizontal-spacing-factor: 1;
-    --product-list-vertical-spacing-factor: 1;
-
-    {% comment %}On mobile, it's simple! No sidebar or whatever{% endcomment %}
-    --collection-items-per-row-medium: 2;
-    --collection-items-per-row-large: 2;
-  }
-
-  #shopify-section-{{ section.id }} .product-list {
-    --product-list-max-items-per-row-allowed: 99 !important; {% comment %}On collection page, we explicitly set a number of items so we don't want this{% endcomment %}
-  }
-
-  @media screen and (min-width: 700px) {
-    #shopify-section-{{ section.id }} {
-      {% comment %}On tablet, we do not have any sidebar, so we can fix it{% endcomment %}
-      --collection-items-per-row-compact: 4;
-      --collection-items-per-row-medium: 3;
-      --collection-items-per-row-large: 2;
-    }
-  }
-
-  @media screen and (min-width: 1000px) {
-    #shopify-section-{{ section.id }} {
-      {%- comment -%}Starting from 1000px it starts to get funky, as we can have or not the sidebar{%- endcomment -%}
-
-      {%- if section.settings.filter_layout == 'sidebar' and show_filters -%}
-        --collection-items-per-row-compact: 4;
-        --collection-items-per-row-medium: 3;
-        --collection-items-per-row-large: 2;
-      {%- else -%}
-        --collection-items-per-row-compact: 6;
-        --collection-items-per-row-medium: 4;
-        --collection-items-per-row-large: 3;
-      {%- endif -%}
-    }
-
-    #shopify-section-{{ section.id }} .collection {
-      {%- if section.settings.filter_layout == 'sidebar' and show_filters -%}
-        --collection-grid-template: var(--collection-sidebar-width, 0) minmax(0,1fr);
-      {%- endif -%}
-    }
-  }
-
-  @media screen and (min-width: 1400px) {
-    #shopify-section-{{ section.id }} {
-      {%- comment -%}Starting from 1400px we can afford having more content even in sidebar mode{%- endcomment -%}
-
-      {%- if section.settings.filter_layout == 'sidebar' and show_filters -%}
-        --collection-items-per-row-compact: 6;
-        --collection-items-per-row-medium: 4;
-        --collection-items-per-row-large: 3;
-      {%- endif -%}
-    }
-  }
-</style>
-
 <style>
   #shopify-section-{{ section.id }} {
     --article-image-height: {% if section.settings.image_size == 'auto' %}auto{% elsif section.settings.image_size == 'small' %}min(300px, 30vmax){% elsif section.settings.image_size == 'medium' %}min(500px, 45vmax){% else %}min(700px, 60vmax){% endif %}
-}
+  }
 </style>
 
 {%- assign color_scheme_hash = section.settings.color_scheme.settings.background_gradient | default: section.settings.color_scheme.settings.background | md5 -%}
@@ -154,11 +21,7 @@ Supported variables
               <span class="text-subdued">{{ 'blog_post.share' | t }}</span>
 
               {%- if section.settings.show_share_buttons -%}
-                {%- render 'share-buttons'
-                  , layout: 'list'
-                  , url: article.url
-                  , title: article.title
-                  , description: article.content -%}
+                {%- render 'share-buttons', layout: 'list', url: article.url, title: article.title, description: article.content -%}
               {%- endif -%}
             </div>
 
@@ -202,9 +65,7 @@ Supported variables
           {%- if section.settings.show_date or section.settings.show_category and article.tags.size > 0 -%}
             <div class="h-stack gap-4">
               {%- if section.settings.show_date -%}
-                <span class="h6 text-subdued">
-                  <time>{{- article.published_at | date: format: 'abbreviated_date' -}}</time>
-                </span>
+                <span class="h6 text-subdued"><time>{{- article.published_at | date: format: 'abbreviated_date' -}}</time></span>
               {%- endif -%}
 
               {%- if section.settings.show_category and article.tags.size > 0 -%}
@@ -222,42 +83,50 @@ Supported variables
 
         <div class="prose">
           {{- article.content -}}
-          {% if article.metafields.custom.blog_products.value != null %}
-            <div class="collection">
-              <div class="collection__main">
-                <product-list
-                  id="product-list-{{ section.id }}"
-                  class="product-list"
-                  collection-mobile-layout="{{ products_mobile_grid_mode }}"
-                  collection-desktop-layout="{{ products_desktop_grid_mode }}">
-                  {%- for product in article.metafields.custom.blog_products.value -%}
-                    {%- render 'product-card'
-                      , product: product
-                      , hide_product_information: false
-                      , stacked: false
-                      , show_swatches: false
-                      , position: forloop.index -%}
-                  {%- endfor -%}
-                </product-list>
-              </div>
-            </div>
-          {% endif %}
         </div>
       </div>
 
       {%- if section.settings.show_author or section.settings.show_share_buttons -%}
+        {%- if section.settings.show_author and article.user.bio != blank or article.user.image != blank or article.user.homepage != blank -%}
+          {%- assign has_extended_profile = true -%}
+        {%- else -%}
+          {%- assign has_extended_profile = false -%}
+        {%- endif -%}
+
         <div class="article__footer">
-          {%- if section.settings.show_author -%}
-            <p class="h6 text-subdued">{{ 'blog.post.written_by' | t: author: article.author }}</p>
+          {%- if has_extended_profile -%}
+            <div class="article__author">
+              {%- if article.user.image != blank -%}
+                {{- article.user.image | image_url: width: article.user.image.width | image_tag: loading: 'lazy', sizes: '60px', widths: '60,120,180', class: 'article__author-image' -}}
+              {%- endif -%}
+
+              <div class="v-stack gap-3 justify-items-start">
+                <p class="h6">{{ 'blog.post.written_by' | t: author: article.author }}</p>
+
+                {%- if article.user.bio != blank -%}
+                  <div class="prose">
+                    {{- article.user.bio -}}
+                  </div>
+                {%- endif -%}
+
+                {%- if article.user.homepage != blank -%}
+                  <a href="{{ article.user.homepage }}" class="link" target="_blank">{{ 'blog.post.visit_author_website' | t }}</a>
+                {%- endif -%}
+              </div>
+            </div>
           {%- endif -%}
 
-          {%- if section.settings.show_share_buttons -%}
-            {%- render 'share-buttons'
-              , layout: 'block'
-              , url: article.url
-              , title: article.title
-              , description: article.content -%}
-          {%- endif -%}
+          <div class="article__footer-bottom">
+            {%- if section.settings.show_author and has_extended_profile == false -%}
+              <p class="h6 text-subdued">{{ 'blog.post.written_by' | t: author: article.author }}</p>
+            {%- elsif section.settings.show_share_buttons -%}
+              <p class="h6 text-subdued">{{ 'blog.post.share' | t }}</p>
+            {%- endif -%}
+
+            {%- if section.settings.show_share_buttons -%}
+              {%- render 'share-buttons', layout: 'block', url: article.url, title: article.title, description: article.content -%}
+            {%- endif -%}
+          </div>
         </div>
       {%- endif -%}
     </div>
@@ -284,9 +153,7 @@ Supported variables
                 {%- endfor -%}
               </div>
 
-              {%- render 'pagination'
-                , paginate: paginate
-                , hash: '#comments' -%}
+              {%- render 'pagination', paginate: paginate, hash: '#comments' -%}
             {%- endpaginate -%}
           </div>
         {%- endif -%}
@@ -300,9 +167,7 @@ Supported variables
             </div>
           </div>
 
-          {%- form 'new_comment'
-            , article
-            , class: 'form' -%}
+          {%- form 'new_comment', article, class: 'form' -%}
             {%- if form.posted_successfully? -%}
               {%- capture content -%}
                 {%- if blog.moderated? -%}
@@ -311,46 +176,27 @@ Supported variables
                   {{- 'blog.comments.comment_published' | t -}}
                 {%- endif -%}
               {%- endcapture -%}
-              {%- render 'banner'
-                , status: 'success'
-                , content: content -%}
+
+              {%- render 'banner', status: 'success', content: content -%}
 
             {%- else -%}
               {%- if form.errors -%}
                 {%- assign content = form.errors | default_errors -%}
-                {%- render 'banner'
-                  , status: 'error'
-                  , content: content -%}
+                {%- render 'banner', status: 'error', content: content -%}
               {%- endif -%}
             {%- endif -%}
 
             <div class="fieldset">
               <div class="fieldset-row">
                 {%- assign label = 'blog.comments.name' | t -%}
-                {%- render 'input'
-                  , type: 'text'
-                  , name: 'comment[author]'
-                  , label: label
-                  , value: customer.name
-                  , required: true
-                  , autocomplete: 'name' -%}
+                {%- render 'input', type: 'text', name: 'comment[author]', label: label, value: customer.name, required: true, autocomplete: 'name' -%}
 
                 {%- assign label = 'blog.comments.email' | t -%}
-                {%- render 'input'
-                  , type: 'email'
-                  , name: 'comment[email]'
-                  , label: label
-                  , value: customer.email
-                  , required: true
-                  , autocomplete: 'email' -%}
+                {%- render 'input', type: 'email', name: 'comment[email]', label: label, value: customer.email, required: true, autocomplete: 'email' -%}
               </div>
 
               {%- assign label = 'blog.comments.message' | t -%}
-              {%- render 'input'
-                , name: 'comment[body]'
-                , label: label
-                , multiline: 4
-                , required: true -%}
+              {%- render 'input', name: 'comment[body]', label: label, multiline: 4, required: true -%}
             </div>
 
             {%- if blog.moderated? -%}
@@ -359,9 +205,7 @@ Supported variables
 
             <div class="align-self-start">
               {%- assign button_content = 'blog.comments.submit' | t -%}
-              {%- render 'button'
-                , type: 'submit'
-                , content: button_content -%}
+              {%- render 'button', type: 'submit', content: button_content -%}
             </div>
           {%- endform -%}
         </div>
@@ -371,130 +215,130 @@ Supported variables
 </div>
 
 {% schema %}
-  {
-    "name": "t:sections.main_article.name",
-    "class": "shopify-section--main-article",
-    "tag": "section",
-    "settings": [
-      {
-        "type": "color_scheme",
-        "id": "color_scheme",
-        "label": "t:global.colors.scheme",
-        "default": "scheme-1"
-      },
-      {
-        "type": "paragraph",
-        "content": "t:sections.main_article.comments_category_info"
-      },
-      {
-        "type": "header",
-        "content": "t:global.image.image"
-      },
-      {
-        "type": "checkbox",
-        "id": "show_image",
-        "label": "t:sections.main_article.show_image",
-        "default": true
-      },
-      {
-        "type": "checkbox",
-        "id": "enable_parallax",
-        "label": "t:sections.main_article.enable_parallax",
-        "default": true
-      },
-      {
-        "type": "select",
-        "id": "image_size",
-        "label": "t:sections.main_article.image_height",
-        "options": [
-          {
-            "label": "t:global.sizes.original_image_ratio",
-            "value": "auto"
-          },
-          {
-            "label": "t:global.sizes.small",
-            "value": "small"
-          },
-          {
-            "label": "t:global.sizes.medium",
-            "value": "medium"
-          },
-          {
-            "label": "t:global.sizes.large",
-            "value": "large"
-          }
-        ],
-        "default": "medium"
-      },
-      {
-        "type": "header",
-        "content": "t:global.text.content"
-      },
-      {
-        "type": "select",
-        "id": "content_width",
-        "label": "t:global.sizes.content_width",
-        "options": [
-          {
-            "label": "t:global.sizes.x_small",
-            "value": "xs"
-          },
-          {
-            "label": "t:global.sizes.small",
-            "value": "sm"
-          },
-          {
-            "label": "t:global.sizes.medium",
-            "value": "md"
-          },
-          {
-            "label": "t:global.sizes.large",
-            "value": "lg"
-          }
-        ],
-        "default": "xs"
-      },
-      {
-        "type": "checkbox",
-        "id": "show_date",
-        "label": "t:global.blog.show_date",
-        "default": true
-      },
-      {
-        "type": "checkbox",
-        "id": "show_category",
-        "label": "t:global.blog.show_category",
-        "info": "t:global.blog.show_category_info",
-        "default": true
-      },
-      {
-        "type": "checkbox",
-        "id": "show_author",
-        "label": "t:global.blog.show_author",
-        "default": true
-      },
-      {
-        "type": "checkbox",
-        "id": "show_share_buttons",
-        "label": "t:sections.main_article.show_share_buttons",
-        "default": true
-      },
-      {
-        "type": "header",
-        "content": "t:sections.main_article.toolbar_category"
-      },
-      {
-        "type": "checkbox",
-        "id": "show_sticky_bar",
-        "label": "t:sections.main_article.show_sticky_bar",
-        "default": true
-      },
-      {
-        "type": "color_scheme",
-        "id": "toolbar_color_scheme",
-        "label": "t:global.colors.scheme",
-        "default": "scheme-3"
-      }
-    ]
-  }
+{
+  "name": "t:sections.main_article.name",
+  "class": "shopify-section--main-article",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:global.colors.scheme",
+      "default": "scheme-1"
+    },
+    {
+      "type": "paragraph",
+      "content": "t:sections.main_article.comments_category_info"
+    },
+    {
+      "type": "header",
+      "content": "t:global.image.image"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_image",
+      "label": "t:sections.main_article.show_image",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_parallax",
+      "label": "t:sections.main_article.enable_parallax",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "image_size",
+      "label": "t:sections.main_article.image_height",
+      "options": [
+        {
+          "label": "t:global.sizes.original_image_ratio",
+          "value": "auto"
+        },
+        {
+          "label": "t:global.sizes.small",
+          "value": "small"
+        },
+        {
+          "label": "t:global.sizes.medium",
+          "value": "medium"
+        },
+        {
+          "label": "t:global.sizes.large",
+          "value": "large"
+        }
+      ],
+      "default": "medium"
+    },
+    {
+      "type": "header",
+      "content": "t:global.text.content"
+    },
+    {
+      "type": "select",
+      "id": "content_width",
+      "label": "t:global.sizes.content_width",
+      "options": [
+        {
+          "label": "t:global.sizes.x_small",
+          "value": "xs"
+        },
+        {
+          "label": "t:global.sizes.small",
+          "value": "sm"
+        },
+        {
+          "label": "t:global.sizes.medium",
+          "value": "md"
+        },
+        {
+          "label": "t:global.sizes.large",
+          "value": "lg"
+        }
+      ],
+      "default": "xs"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_date",
+      "label": "t:global.blog.show_date",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_category",
+      "label": "t:global.blog.show_category",
+      "info": "t:global.blog.show_category_info",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_author",
+      "label": "t:global.blog.show_author",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_share_buttons",
+      "label": "t:sections.main_article.show_share_buttons",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "t:sections.main_article.toolbar_category"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_sticky_bar",
+      "label": "t:sections.main_article.show_sticky_bar",
+      "default": true
+    },
+    {
+      "type": "color_scheme",
+      "id": "toolbar_color_scheme",
+      "label": "t:global.colors.scheme",
+      "default": "scheme-3"
+    }
+  ]
+}
 {% endschema %}

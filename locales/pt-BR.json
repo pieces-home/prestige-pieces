@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin language editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "general": {
     "page": "Página {{ page }}",
@@ -48,7 +57,9 @@
     },
     "localization": {
       "country": "País",
-      "language": "Língua"
+      "language": "Língua",
+      "change_country_accessibility_text": "Alterar país ou moeda",
+      "change_language_accessibility_text": "Alterar idioma"
     },
     "privacy_banner": {
       "accept": "Aceitar",
@@ -75,10 +86,7 @@
       "cart": "Carrinho",
       "primary_navigation": "Menu primário",
       "secondary_navigation": "Menu secundário",
-      "open_menu": "Abrir menu de navegação",
-      "open_search": "Abrir pesquisa",
-      "open_account": "Abrir página de conta",
-      "open_cart": "Abrir carrinho"
+      "menu": "Menu"
     }
   },
   "product": {
@@ -121,7 +129,15 @@
       "change_quantity": "Mudar quantidade",
       "increase_quantity": "Aumentar quantidade",
       "decrease_quantity": "Diminuir quantidade",
+      "minimum_of": "Mínimo de {{ min }}",
+      "maximum_of": "Máximo de {{ max }}",
+      "increment_of": "Incremento de {{ step }}",
       "cannot_add_more": "Você não pode adicionar mais"
+    },
+    "volume_pricing": {
+      "title": "Preços por volume",
+      "minimum": "Mais de {{ quantity }}",
+      "price_at_each": "{{ price }}/cada"
     },
     "rating_count": {
       "zero": "Sem avaliações",
@@ -130,6 +146,7 @@
     },
     "inventory": {
       "in_stock": "Em estoque",
+      "low_stock": "Restam apenas algumas unidades",
       "oversell_stock": "Reestoque próximo",
       "incoming_stock": "Reestoque em {{ next_incoming_date }}",
       "low_stock_with_quantity_count": {
@@ -187,6 +204,7 @@
     },
     "post": {
       "written_by": "Por {{ author }}",
+      "visit_author_website": "Visitar o site do autor",
       "share": "Compartilhar",
       "tags": "Tags"
     },
@@ -323,7 +341,7 @@
       "address2": "Complemento",
       "city": "Cidade",
       "zip": "CEP",
-      "country": "País\/Região",
+      "country": "País/Região",
       "province": "Estado",
       "set_default": "Usar como endereço padrão"
     }
@@ -338,9 +356,9 @@
       "weight": "Peso",
       "subtotal": "Subtotal",
       "total": "Total",
-      "taxes_and_shipping_policy_at_checkout_html": "Tributos e <a href=\"{{ link }}\" class=\"link\">frete<\/a> calculados na finalização da compra",
+      "taxes_and_shipping_policy_at_checkout_html": "Tributos e <a href=\"{{ link }}\" class=\"link\">frete</a> calculados na finalização da compra",
       "taxes_included_but_shipping_at_checkout": "Tributos incluídos e frete calculado na finalização da compra",
-      "taxes_included_and_shipping_policy_html": "Tributos incluídos. <a href=\"{{ link }}\" class=\"link\">Frete<\/a> calculado na finalização da compra.",
+      "taxes_included_and_shipping_policy_html": "Tributos incluídos. <a href=\"{{ link }}\" class=\"link\">Frete</a> calculado na finalização da compra.",
       "taxes_and_shipping_at_checkout": "Tributos e frete calculados na finalização da compra",
       "add_order_note": "Adicionar observações sobre o pedido",
       "edit_order_note": "Editar observações sobre o pedido",
@@ -354,7 +372,8 @@
       "product": "Produto",
       "total": "Total",
       "quantity": "Quantidade",
-      "remove": "Remover"
+      "remove": "Remover",
+      "remove_with_title": "Remover {{ title }}"
     },
     "free_shipping_bar": {
       "limit_unreached_html": "Gaste mais {{ remaining_amount }} e tenha frete grátis!",
@@ -444,7 +463,7 @@
   },
   "sections": {
     "before_after": {
-      "not_enough_blocks": "Para mostrar a comparação antes\/depois, por favor adicione mais blocos na seção",
+      "not_enough_blocks": "Para mostrar a comparação antes/depois, por favor adicione mais blocos na seção",
       "percentage_shown": "Porcentagem vísivel da imagem 'depois'",
       "cursor_accessibility_text": "Use as teclas de seta esquerda e direita para navegar entre as fotos antes e depois."
     },
@@ -462,6 +481,29 @@
     "shop_the_look": {
       "view_products": "Ver produtos",
       "view_product": "Ver produto"
+    },
+    "quick_order_list": {
+      "products": "Produtos",
+      "variants": "Variações",
+      "quantity": "Quantidade",
+      "price": "Preço",
+      "total": "Total",
+      "remove": "Remover",
+      "quantity_rules": "Regras de quantidade",
+      "volume_pricing": "Preços por volume",
+      "volume_pricing_available": "Preços por volume disponíveis",
+      "show_variants": "Mostrar variações",
+      "minimum_of": "Mínimo: {{ min }}",
+      "maximum_of": "Máximo: {{ max }}",
+      "increment_of": "Incremento: {{ step }}",
+      "view_cart": "Ver carrinho",
+      "remove_all": "Remover todos",
+      "item_count": {
+        "zero": "{{ count }} itens",
+        "one": "{{ count }} item",
+        "other": "{{ count }} itens"
+      },
+      "product_subtotal": "Subtotal do produto"
     }
   }
 }

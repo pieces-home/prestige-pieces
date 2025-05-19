@@ -22,7 +22,12 @@ Supported variables
       if variant.available
         if variant.inventory_management and variant.inventory_policy == 'deny' and variant.inventory_quantity <= low_threshold and low_threshold > 0
           assign inventory_status = 'warning'
-          assign inventory_text = 'product.inventory.low_stock_with_quantity_count' | t: count: variant.inventory_quantity
+
+          if show_in_stock_quantity
+            assign inventory_text = 'product.inventory.low_stock_with_quantity_count' | t: count: variant.inventory_quantity
+          else 
+            assign inventory_text = 'product.inventory.low_stock' | t
+          endif
         else
           if variant.inventory_policy == 'continue' and variant.inventory_quantity <= 0 and variant.requires_shipping
             if variant.incoming and variant.next_incoming_date
@@ -36,7 +41,7 @@ Supported variables
           else
             assign inventory_status = 'success'
 
-            if show_in_stock_quantity and variant.inventory_management
+            if show_in_stock_quantity
               assign inventory_text = 'product.inventory.in_stock_with_quantity_count' | t: count: variant.inventory_quantity
             else
               assign inventory_text = 'product.inventory.in_stock' | t

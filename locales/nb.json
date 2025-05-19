@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin language editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "general": {
     "page": "Side {{ page }}",
@@ -48,7 +57,9 @@
     },
     "localization": {
       "country": "Land",
-      "language": "Språk"
+      "language": "Språk",
+      "change_country_accessibility_text": "Endre land eller valuta",
+      "change_language_accessibility_text": "Endre språk"
     },
     "privacy_banner": {
       "accept": "Godta",
@@ -75,10 +86,7 @@
       "cart": "Handlekurv",
       "primary_navigation": "Primær navigasjon",
       "secondary_navigation": "Sekundær navigasjon",
-      "open_menu": "Åpne navigeringsmeny",
-      "open_search": "Åpne søk",
-      "open_account": "Åpne kontoside",
-      "open_cart": "Åpne handlekurv"
+      "menu": "Meny"
     }
   },
   "product": {
@@ -121,7 +129,15 @@
       "change_quantity": "Endre antall",
       "increase_quantity": "Øk antall",
       "decrease_quantity": "Reduser antall",
+      "minimum_of": "Minimum på {{ min }}",
+      "maximum_of": "Maksimum på {{ max }}",
+      "increment_of": "Økning på {{ step }}",
       "cannot_add_more": "Du kan ikke legge til flere"
+    },
+    "volume_pricing": {
+      "title": "Volumprissetting",
+      "minimum": "{{ quantity }}+",
+      "price_at_each": "til {{ price }}/pr. stk"
     },
     "rating_count": {
       "zero": "Ingen vurderinger",
@@ -130,6 +146,7 @@
     },
     "inventory": {
       "in_stock": "På lager",
+      "low_stock": "Bare noen få enheter igjen",
       "in_stock_with_quantity_count": {
         "one": "{{ count }} på lager",
         "other": "{{ count }} på lager"
@@ -194,6 +211,7 @@
     },
     "post": {
       "written_by": "Av {{ author }}",
+      "visit_author_website": "Besøk forfatterens nettsted",
       "share": "Del",
       "tags": "Etiketter"
     },
@@ -356,7 +374,8 @@
       "product": "Produkt",
       "total": "Totalt",
       "quantity": "Antall",
-      "remove": "Fjern"
+      "remove": "Fjern",
+      "remove_with_title": "Fjern {{ title }}"
     },
     "free_shipping_bar": {
       "limit_unreached_html": "Bruk {{ remaining_amount }} til og få gratis frakt!",
@@ -466,6 +485,29 @@
     "shop_the_look": {
       "view_products": "Vis produkter",
       "view_product": "Vis produkt"
+    },
+    "quick_order_list": {
+      "products": "Produkter",
+      "variants": "Varianter",
+      "quantity": "Antall",
+      "price": "Pris",
+      "total": "Totalt",
+      "remove": "Fjern",
+      "quantity_rules": "Antallsregler",
+      "volume_pricing": "Volumprising",
+      "volume_pricing_available": "Volumprising tilgjengelig",
+      "show_variants": "Vis varianter",
+      "minimum_of": "Minimum: {{ min }}",
+      "maximum_of": "Maksimum: {{ max }}",
+      "increment_of": "Økning: {{ step }}",
+      "view_cart": "Vis handlekurv",
+      "remove_all": "Fjern alle",
+      "item_count": {
+        "zero": "{{ count }} varer",
+        "one": "{{ count }} vare",
+        "other": "{{ count }} varer"
+      },
+      "product_subtotal": "Produktsubtotal"
     }
   }
 }

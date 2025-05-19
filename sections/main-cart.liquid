@@ -51,10 +51,15 @@
                     <td>{%- render 'line-item', line_item: line_item, show_quantity_selector: true -%}</td>
 
                     <td class="text-center">
-                      <line-item-quantity class="v-stack justify-items-center gap-2">
-                        {%- render 'quantity-selector', line_item: line_item, size: 'sm', add_updates: true -%}
-                        <a href="{{ line_item.url_to_remove }}" class="link text-xs">{{ 'cart.order.remove' | t }}</a>
-                      </line-item-quantity>
+                      <div class="v-stack gap-2">
+                        <line-item-quantity class="v-stack justify-items-center gap-2">
+                          {%- render 'quantity-selector', line_item: line_item, size: 'sm' -%}
+
+                          <a href="{{ line_item.url_to_remove }}" class="link text-xs" aria-label="{{ 'cart.order.remove_with_title' | t: title: line_item.title | escape }}">
+                            {{- 'cart.order.remove' | t -}}
+                          </a>
+                        </line-item-quantity>
+                      </div>
                     </td>
 
                     <td class="text-end">
@@ -135,7 +140,7 @@
                   {%- endif -%}
                 {%- endif -%}
 
-                {%- if section.settings.show_accelerated_payment_buttons and additional_checkout_buttons -%}
+                {%- if section.settings.show_accelerated_buttons and additional_checkout_buttons -%}
                   <div class="additional-checkout-buttons additional-checkout-buttons--vertical">
                     {{- content_for_additional_checkout_buttons -}}
                   </div>

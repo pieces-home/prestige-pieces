@@ -24,7 +24,7 @@ Supported variables
       assign current_block_group_name = ''
 
       if context == 'quick_buy'
-        assign allow_blocks = '@app vendor title price payment_terms separator variant_picker product_variations line_item_property buy_buttons' | split: ' '
+        assign allow_blocks = '@app vendor title price quantity_selector payment_terms separator variant_picker product_variations line_item_property buy_buttons' | split: ' '
       endif
 
       if allow_blocks != blank
@@ -149,7 +149,7 @@ Supported variables
 
           {%- when 'badges' -%}
             {%- if product != blank -%}
-              {%- render 'product-badges', product: product, variant: product.selected_or_first_available_variant, types: 'custom,discount' -%}
+              {%- render 'product-badges', product: product, variant: product.selected_or_first_available_variant, types: 'custom,discount', context: 'product' -%}
             {%- endif -%}
 
           {%- when 'price' -%}
@@ -311,8 +311,37 @@ Supported variables
 
           {%- when 'quantity_selector' -%}
             {%- if product.available -%}
-              {% render 'quantity-selector', variant: product.selected_or_first_available_variant, form: product_form_id %}
+              <div class="v-stack gap-1 justify-items-start">
+                {%- liquid
+                  assign variant = product.selected_or_first_available_variant
+                  assign quantity_rules = ''
+
+                  render 'quantity-selector', variant: variant, form: product_form_id
+
+                  if variant.quantity_rule.min > 1
+                    assign rule = 'product.quantity.minimum_of' | t: min: variant.quantity_rule.min
+                    assign quantity_rules = quantity_rules | append: ' / ' | append: rule
+                  endif
+
+                  if variant.quantity_rule.max != nil
+                    assign rule = 'product.quantity.maximum_of' | t: max: variant.quantity_rule.max
+                    assign quantity_rules = quantity_rules | append: ' / ' | append: rule
+                  endif
+
+                  if variant.quantity_rule.increment > 1
+                    assign rule = 'product.quantity.increment_of' | t: step: variant.quantity_rule.increment
+                    assign quantity_rules = quantity_rules | append: ' / ' | append: rule
+                  endif
+                -%}
+
+                {%- if quantity_rules != blank -%}
+                  <p class="text-subdued text-sm">{{ quantity_rules | remove_first: ' / ' | capitalize }}</p>
+                {%- endif -%}
+              </div>
             {%- endif -%}
+
+          {%- when 'volume_pricing' -%}
+            {%- render 'volume-pricing-table', variant: variant -%}
 
           {%- when 'inventory' -%}
             {%- render 'inventory',

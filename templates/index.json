@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "slideshow": {
@@ -6,13 +15,12 @@
         "slide-1": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/00-HP_SLIDE_BRDRD.jpg",
-            "mobile_image": "shopify:\/\/shop_images\/00-HP_SLIDE_MOBILE.jpg",
-            "subheading": "",
-            "title": "Rugs & Runners",
-            "heading_tag": "h1",
-            "mobile_text_position": "place-self-end-start text-start",
-            "desktop_text_position": "sm:place-self-end-start sm:text-start",
+            "image": "shopify://shop_images/CESPARROS_PIECES-PLAID-CAMPAIGN_2025_8893-_FINAL.jpg",
+            "mobile_image": "shopify://shop_images/CESPARROS_PIECES-PLAID-CAMPAIGN_2025_9036-_FINAL_2dc3fc1f-3feb-49ba-a4f7-68a0214b2da4.jpg",
+            "subheading": "new arrivals",
+            "title": "Plaid Collection",
+            "mobile_text_position": "place-self-end-center text-center",
+            "desktop_text_position": "sm:place-self-center sm:text-center",
             "content_max_width": 760,
             "button_1_text": "SHOP NOW",
             "button_1_link": "",
@@ -28,7 +36,7 @@
             "background_opacity": 50,
             "text_color": "#ffffff",
             "border_color": "",
-            "gradient_overlay": "linear-gradient(180deg, rgba(54, 54, 54, 0.2), rgba(4, 4, 4, 0.65) 100%)"
+            "gradient_overlay": "radial-gradient(rgba(4, 4, 4, 0.65), rgba(54, 54, 54, 0.06) 26%)"
           }
         }
       },
@@ -38,7 +46,7 @@
       "settings": {
         "allow_transparent_header": true,
         "show_next_section_button": false,
-        "media_size": "auto",
+        "media_size": "lg",
         "show_initial_transition": false,
         "autoplay": true,
         "autoplay_pause_on_video": true,
@@ -53,14 +61,14 @@
         "image_UyyUbe": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/01-HP_AT_HOME_ecec7914-4c13-49a0-9c82-5c68d28a8088.jpg",
+            "image": "shopify://shop_images/01-HP_AT_HOME_ecec7914-4c13-49a0-9c82-5c68d28a8088.jpg",
             "rotation": 0
           }
         },
         "image_KeqRTH": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/piecesathomelogo_inv.png",
+            "image": "shopify://shop_images/piecesathomelogo_inv.png",
             "rotation": 0
           }
         }
@@ -76,7 +84,6 @@
         "color_scheme": "",
         "reveal_on_scroll": true,
         "separate_section_with_border": false,
-        "section_width": "lg",
         "media_position_desktop": "before_text",
         "media_position_mobile": "before_text",
         "media_layout": "overlap",
@@ -86,9 +93,9 @@
         "text_alignment": "center",
         "subheading": "",
         "title": "",
-        "content": "<p>Pieces @ HOME is a series of vignettes showcasing individuals of taste and their unique takes on styling Pieces designs in their personal spaces. For this installation of the series, we sit down with art curator and founder of the Aloha From Hell Film Festival, Brooke Wise.<\/p>",
+        "content": "<p>Pieces @ HOME is a series of vignettes showcasing individuals of taste and their unique takes on styling Pieces designs in their personal spaces. For this installation of the series, we sit down with art curator and founder of the Aloha From Hell Film Festival, Brooke Wise.</p>",
         "button_1_text": "Read More",
-        "button_1_link": "shopify:\/\/blogs\/pieces-at-home\/pieces-home-brooke-wise",
+        "button_1_link": "shopify://blogs/pieces-at-home/pieces-home-brooke-wise",
         "button_1_style": "link",
         "button_2_text": "",
         "button_2_link": "",
@@ -102,16 +109,16 @@
           "type": "video",
           "settings": {
             "color_scheme": "scheme-4",
-            "video": "shopify:\/\/files\/videos\/HU_FINAL_090821_1x1_WEB.mp4",
+            "video": "shopify://files/videos/HU_FINAL_090821_1x1_WEB.mp4",
             "autoplay": true,
             "show_controls": true,
             "column_count": "8",
             "row_count": 2,
             "title": "Home Union x Pieces",
-            "heading_tag": "h2",
+            "heading_tag": "h4",
             "content": "",
             "link_text": "Shop Now",
-            "link_url": "shopify:\/\/collections\/home-union-x-pieces",
+            "link_url": "shopify://collections/home-union-x-pieces",
             "link_style": "link",
             "text_position": "place-self-end-start text-start",
             "overlay_color": "#000000",
@@ -122,14 +129,14 @@
           "type": "image",
           "settings": {
             "color_scheme": "scheme-1",
-            "image": "shopify:\/\/shop_images\/Vespucci-Cuccidati-ST-01_1200x_d861e625-b97b-44ff-836c-9bb961373850.webp",
+            "image": "shopify://shop_images/Vespucci-Cuccidati-ST-01_1200x_d861e625-b97b-44ff-836c-9bb961373850.webp",
             "column_count": "4",
             "row_count": 1,
             "title": "",
             "heading_tag": "h4",
             "content": "",
             "link_text": "Vespucci",
-            "link_url": "shopify:\/\/products\/vespucci-rug-cuccidati",
+            "link_url": "shopify://products/vespucci-rug-cuccidati",
             "link_style": "link",
             "text_position": "place-self-end-start text-start",
             "overlay_color": "#000000",
@@ -140,14 +147,14 @@
           "type": "image",
           "settings": {
             "color_scheme": "scheme-1",
-            "image": "shopify:\/\/shop_images\/Salerno_Runner-Verde-ST-01.jpg",
+            "image": "shopify://shop_images/Salerno_Runner-Verde-ST-01.jpg",
             "column_count": "4",
             "row_count": 1,
             "title": "",
             "heading_tag": "h4",
             "content": "",
             "link_text": "Salerno Runner",
-            "link_url": "shopify:\/\/products\/salerno-runner-verde",
+            "link_url": "shopify://products/salerno-runner-verde",
             "link_style": "link",
             "text_position": "place-self-end-start text-start",
             "overlay_color": "#000000",
@@ -182,20 +189,20 @@
           "type": "heading",
           "settings": {
             "text": "Stay With Us",
-            "heading_tag": "h2"
+            "heading_tag": "h4"
           }
         },
         "richtext_7tWdRR": {
           "type": "richtext",
           "settings": {
-            "content": "<p>Book your summer and holiday trips at Pieces Homes in Kennebunk, Maine. Perfect proximity to beaches, trails, and the best lobster rolls in the country. There are only a few dates left for the summer, but you can get a jump start on your fall and winter trips (p.s. we have a hot tub).<\/p>"
+            "content": "<p>Book your summer and holiday trips at Pieces Homes in Kennebunk, Maine. Perfect proximity to beaches, trails, and the best lobster rolls in the country. There are only a few dates left for the summer, but you can get a jump start on your fall and winter trips (p.s. we have a hot tub).</p>"
           }
         },
         "link_nwFbcn": {
           "type": "link",
           "settings": {
             "text": "Book Now",
-            "url": "https:\/\/www.airbnb.com\/rooms\/40567990"
+            "url": "https://www.airbnb.com/rooms/40567990"
           }
         }
       },
@@ -210,7 +217,7 @@
       "settings": {
         "color_scheme": "scheme-2",
         "separate_section_with_border": false,
-        "image": "shopify:\/\/shop_images\/02-HP_AT_HOME.jpg",
+        "image": "shopify://shop_images/02-HP_AT_HOME.jpg",
         "reveal_on_scroll": false,
         "image_position": "start",
         "content_width": "md",
@@ -223,11 +230,10 @@
         "image_zBjbRn": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/00-HP_SLIDER-BORDERED_b73d45ce-bd2c-4d75-9149-5abcc9934a52.jpg",
-            "mobile_image": "shopify:\/\/shop_images\/00-HP_SLIDER-MOBILE_14428b29-9e19-4461-9dd6-f05e20efd26d.jpg",
+            "image": "shopify://shop_images/00-HP_SLIDER-BORDERED_b73d45ce-bd2c-4d75-9149-5abcc9934a52.jpg",
+            "mobile_image": "shopify://shop_images/00-HP_SLIDER-MOBILE_14428b29-9e19-4461-9dd6-f05e20efd26d.jpg",
             "subheading": "Tell your story",
             "title": "Image slide",
-            "heading_tag": "h4",
             "mobile_text_position": "place-self-end-start text-start",
             "desktop_text_position": "sm:place-self-end-start sm:text-start",
             "content_max_width": 760,
@@ -272,14 +278,14 @@
           "type": "image",
           "settings": {
             "color_scheme": "scheme-1",
-            "image": "shopify:\/\/shop_images\/Wavy_Runner_Jewel-ST-01.jpg",
+            "image": "shopify://shop_images/Wavy_Runner_Jewel-ST-01.jpg",
             "column_count": "6",
             "row_count": 1,
             "title": "",
             "heading_tag": "h4",
             "content": "",
             "link_text": "Wavy Runner",
-            "link_url": "shopify:\/\/products\/wavy-runner-jewel",
+            "link_url": "shopify://products/wavy-runner-jewel",
             "link_style": "link",
             "text_position": "place-self-end-start text-start",
             "overlay_color": "#000000",
@@ -290,14 +296,14 @@
           "type": "image",
           "settings": {
             "color_scheme": "scheme-4",
-            "image": "shopify:\/\/shop_images\/PIECES_GEM-TONES_LoftCampaign55151_2add25d7-f6c7-4647-b493-5c82f1e16b3d.jpg",
+            "image": "shopify://shop_images/PIECES_GEM-TONES_LoftCampaign55151_2add25d7-f6c7-4647-b493-5c82f1e16b3d.jpg",
             "column_count": "6",
             "row_count": 3,
             "title": "Jewel Tones",
-            "heading_tag": "h2",
+            "heading_tag": "h4",
             "content": "",
             "link_text": "Shop Now",
-            "link_url": "shopify:\/\/collections\/jewel-tones",
+            "link_url": "shopify://collections/jewel-tones",
             "link_style": "link",
             "text_position": "place-self-end-start text-start",
             "overlay_color": "#000000",
@@ -308,14 +314,14 @@
           "type": "image",
           "settings": {
             "color_scheme": "scheme-1",
-            "image": "shopify:\/\/shop_images\/Teddy_Chair-Denim-ST-03.jpg",
+            "image": "shopify://shop_images/Teddy_Chair-Denim-ST-03.jpg",
             "column_count": "6",
             "row_count": 2,
             "title": "",
             "heading_tag": "h4",
             "content": "",
             "link_text": "Teddy Chair",
-            "link_url": "shopify:\/\/products\/teddy-bear-chair",
+            "link_url": "shopify://products/teddy-bear-chair",
             "link_style": "link",
             "text_position": "place-self-end-start text-start",
             "overlay_color": "#000000",
@@ -378,7 +384,7 @@
           "settings": {
             "title": "Column title",
             "heading_tag": "h3",
-            "content": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+            "content": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
             "link_url": "",
             "link_text": ""
           }
@@ -388,7 +394,7 @@
           "settings": {
             "title": "Column title",
             "heading_tag": "h3",
-            "content": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+            "content": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
             "link_url": "",
             "link_text": ""
           }
@@ -398,7 +404,7 @@
           "settings": {
             "title": "Column title",
             "heading_tag": "h3",
-            "content": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+            "content": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
             "link_url": "",
             "link_text": ""
           }
@@ -487,7 +493,7 @@
           "settings": {
             "subheading": "",
             "title": "#1",
-            "content": "<p>Welcome your customers to your store by sharing temporary offers or explaining to them what your products are about.<\/p>",
+            "content": "<p>Welcome your customers to your store by sharing temporary offers or explaining to them what your products are about.</p>",
             "link_text": "",
             "link_url": "",
             "link_style": "solid"
@@ -498,7 +504,7 @@
           "settings": {
             "subheading": "",
             "title": "#2",
-            "content": "<p>Create trust with your customers by explaining the story of your brand. Share your values or what is important to you.<\/p>",
+            "content": "<p>Create trust with your customers by explaining the story of your brand. Share your values or what is important to you.</p>",
             "link_text": "",
             "link_url": "",
             "link_style": "solid"
@@ -509,7 +515,7 @@
           "settings": {
             "subheading": "",
             "title": "#3",
-            "content": "<p>Share information about your product with your customers. Describe a product, and share info about your production process...<\/p>",
+            "content": "<p>Share information about your product with your customers. Describe a product, and share info about your production process...</p>",
             "link_text": "",
             "link_url": "",
             "link_style": "solid"
@@ -533,35 +539,6 @@
     },
     "17198834906fa317ec": {
       "type": "apps",
-      "blocks": {
-        "maestrooo_section_feed_app_block_YyjGcV": {
-          "type": "shopify:\/\/apps\/maestrooo-section-feed\/blocks\/app-block\/43cd482b-515a-4e82-b170-05d391763cd2",
-          "settings": {
-            "title": "@pieces_by_an_aesthetic_pursuit",
-            "subheading": "",
-            "button_text": "",
-            "button_link": "",
-            "layout": "grid",
-            "image_size": "medium",
-            "add_spacing": true,
-            "rows_count": 2,
-            "show_author": false,
-            "show_caption": true,
-            "show_date": true,
-            "click_action": "open_instagram",
-            "heading_color": "#000000",
-            "subheading_color": "#000000",
-            "button_background": "#000000",
-            "button_color": "#ffffff",
-            "overlay_color": "#000000",
-            "overlay_text_color": "#ffffff",
-            "overlay_opacity": 50
-          }
-        }
-      },
-      "block_order": [
-        "maestrooo_section_feed_app_block_YyjGcV"
-      ],
       "settings": {
         "color_scheme": "",
         "separate_section_with_border": false,

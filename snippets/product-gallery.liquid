@@ -64,7 +64,7 @@ Supported variables
 {%- comment -%}
 IMPLEMENTATION NOTE: Shopify does not natively offer a way to create a set of images per variant. This is often
 pretty limited when you have a lot of colors and would like to only see the images specific to a given color. To
-goes around that, Prestige offers a hack using alt tags whose usage is described here: https://prestige-theme.helpscoutdocs.com/article/425-variant-images-set
+goes around that, Prestige offers a hack using alt tags whose usage is described here: https://support.maestrooo.com/article/721-variant-images-set
 The implementation is rather complex and inefficient due to a lot of string parsings, but it is, unfortunately, the
 only way to do it on Shopify right now.
 {%- endcomment -%}
@@ -159,7 +159,7 @@ only way to do it on Shopify right now.
               NOTE: for the product gallery, the autoplay does not work in a similar way. It is always false at the product level,
               and the product-gallery component itself will autoplay (if needed)
               {%- endcomment -%}
-              {%- render 'media', media: media, sizes: sizes, preload: preload, controls: true, playsinline: true, muted: enable_media_autoplay, loop: enable_video_looping, group: 'product' -%}
+              {%- render 'media', media: media, sizes: sizes, preload: preload, controls: true, playsinline: true, muted: enable_media_autoplay, loop: enable_video_looping, group: 'product', product: product -%}
             </div>
           {%- endfor -%}
         {%- else -%}

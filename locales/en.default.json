@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin language editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "general": {
     "page": "Page {{ page }}",
@@ -48,7 +57,9 @@
     },
     "localization": {
       "country": "Country",
-      "language": "Language"
+      "language": "Language",
+      "change_country_accessibility_text": "Change country or currency",
+      "change_language_accessibility_text": "Change language"
     },
     "privacy_banner": {
       "accept": "Accept",
@@ -75,10 +86,7 @@
       "cart": "Cart",
       "primary_navigation": "Primary navigation",
       "secondary_navigation": "Secondary navigation",
-      "open_menu": "Open navigation menu",
-      "open_search": "Open search",
-      "open_account": "Open account page",
-      "open_cart": "Open cart"
+      "menu": "Navigation menu"
     }
   },
   "product": {
@@ -121,7 +129,15 @@
       "change_quantity": "Change quantity",
       "increase_quantity": "Increase quantity",
       "decrease_quantity": "Decrease quantity",
+      "minimum_of": "Minimum of {{ min }}",
+      "maximum_of": "Maximum of {{ max }}",
+      "increment_of": "Increment of {{ step }}",
       "cannot_add_more": "You cannot add more"
+    },
+    "volume_pricing": {
+      "title": "Volume pricing",
+      "minimum": "{{ minimum_quantity }}+",
+      "price_at_each": "{{ price }}/ea"
     },
     "rating_count": {
       "zero": "No reviews",
@@ -130,6 +146,7 @@
     },
     "inventory": {
       "in_stock": "In stock",
+      "low_stock": "Only a few units left",
       "in_stock_with_quantity_count": {
         "one": "{{ count }} in stock",
         "other": "{{ count }} in stock"
@@ -187,6 +204,7 @@
     },
     "post": {
       "written_by": "Written by {{ author }}",
+      "visit_author_website": "Visit author's website",
       "share": "Share",
       "tags": "Tags"
     },
@@ -336,9 +354,9 @@
       "weight": "Weight",
       "subtotal": "Subtotal",
       "total": "Total",
-      "taxes_and_shipping_policy_at_checkout_html": "Taxes and <a href=\"{{ link }}\" class=\"link\">shipping<\/a> calculated at checkout",
+      "taxes_and_shipping_policy_at_checkout_html": "Taxes and <a href=\"{{ link }}\" class=\"link\">shipping</a> calculated at checkout",
       "taxes_included_but_shipping_at_checkout": "Tax included and shipping calculated at checkout",
-      "taxes_included_and_shipping_policy_html": "Tax included. <a href=\"{{ link }}\" class=\"link\">Shipping<\/a> calculated at checkout.",
+      "taxes_included_and_shipping_policy_html": "Tax included. <a href=\"{{ link }}\" class=\"link\">Shipping</a> calculated at checkout.",
       "taxes_and_shipping_at_checkout": "Taxes and shipping calculated at checkout",
       "add_order_note": "Add order note",
       "edit_order_note": "Edit order note",
@@ -354,7 +372,8 @@
       "product": "Product",
       "total": "Total",
       "quantity": "Quantity",
-      "remove": "Remove"
+      "remove": "Remove",
+      "remove_with_title": "Remove {{ title }}"
     },
     "free_shipping_bar": {
       "limit_unreached_html": "Spend {{ remaining_amount }} more and get free shipping!",
@@ -444,7 +463,7 @@
   },
   "sections": {
     "before_after": {
-      "not_enough_blocks": "To show before\/after comparison, add more blocks in the section.",
+      "not_enough_blocks": "To show before/after comparison, add more blocks in the section.",
       "percentage_shown": "Percentage of after photo shown",
       "cursor_accessibility_text": "Use the left and right arrow keys to navigate between before and after photos."
     },
@@ -462,6 +481,29 @@
     "shop_the_look": {
       "view_products": "View products",
       "view_product": "View product"
+    },
+    "quick_order_list": {
+      "products": "Products",
+      "variants": "Variants",
+      "quantity": "Quantity",
+      "price": "Price",
+      "total": "Total",
+      "remove": "Remove",
+      "quantity_rules": "Quantity rules",
+      "volume_pricing": "Volume pricing",
+      "volume_pricing_available": "Volume pricing available",
+      "show_variants": "Show variants",
+      "minimum_of": "Minimum: {{ min }}",
+      "maximum_of": "Maximum: {{ max }}",
+      "increment_of": "Increment: {{ step }}",
+      "view_cart": "View cart",
+      "remove_all": "Remove all",
+      "item_count": {
+        "zero": "{{ count }} items",
+        "one": "{{ count }} item",
+        "other": "{{ count }} items"
+      },
+      "product_subtotal": "Product subtotal"
     }
   }
 }

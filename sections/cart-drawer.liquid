@@ -18,9 +18,9 @@
       assign cross_sell_products_count = 0
 
       for product in section.settings.cross_sell_products
-        assign products_in_cart = cart.items | where: 'product_id', product.id
+        assign items_for_product = cart | line_items_for: product
 
-        if products_in_cart.size == 0 and product.available
+        if items_for_product.size == 0 and product.available
           assign cross_sell_products_count = cross_sell_products_count | plus: 1
         endif
       endfor

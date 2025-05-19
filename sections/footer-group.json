@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "type": "footer",
   "name": "Footer group",
@@ -12,7 +21,7 @@
             "icon_width": 24,
             "mobile_icon_width": 24,
             "title": "Free delivery worldwide",
-            "content": "<p>Short content about your store<\/p>"
+            "content": "<p>Short content about your store</p>"
           }
         },
         "icon-2": {
@@ -22,7 +31,7 @@
             "icon_width": 24,
             "mobile_icon_width": 24,
             "title": "Satisfied or refunded",
-            "content": "<p>Short content about your store<\/p>"
+            "content": "<p>Short content about your store</p>"
           }
         },
         "icon-3": {
@@ -32,7 +41,7 @@
             "icon_width": 24,
             "mobile_icon_width": 24,
             "title": "Top-notch support",
-            "content": "<p>Short content about your store<\/p>"
+            "content": "<p>Short content about your store</p>"
           }
         },
         "icon-4": {
@@ -42,7 +51,7 @@
             "icon_width": 24,
             "mobile_icon_width": 24,
             "title": "Secure payments",
-            "content": "<p>Short content about your store<\/p>"
+            "content": "<p>Short content about your store</p>"
           }
         }
       },
@@ -69,7 +78,7 @@
           "type": "text",
           "settings": {
             "title": "About",
-            "content": "<p>Pieces is a home design product line created by Brooklyn-based creative agency, An Aesthetic Pursuit. Stemming from years of experience designing and styling homes, Pieces was born to fill the void between our clients’ desires for custom design work and their ability to acquire it.<\/p>",
+            "content": "<p>Pieces is a home design product line created by Brooklyn-based creative agency, An Aesthetic Pursuit. Stemming from years of experience designing and styling homes, Pieces was born to fill the void between our clients’ desires for custom design work and their ability to acquire it.</p>",
             "enable_follow_on_shop": false
           }
         },
@@ -85,7 +94,7 @@
           "type": "newsletter",
           "settings": {
             "title": "Newsletter",
-            "content": "<p>Sign up to our newsletter to receive exclusive offers.<\/p>",
+            "content": "<p>Sign up to our newsletter to receive exclusive offers.</p>",
             "button_background": "",
             "button_text_color": ""
           }

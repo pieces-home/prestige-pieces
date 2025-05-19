@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin language editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "general": {
     "page": "Стр. {{ page }}",
@@ -48,7 +57,9 @@
     },
     "localization": {
       "country": "Страна",
-      "language": "Язык"
+      "language": "Язык",
+      "change_country_accessibility_text": "Изменить страну или валюту",
+      "change_language_accessibility_text": "Изменить язык"
     },
     "privacy_banner": {
       "accept": "Принять",
@@ -75,10 +86,7 @@
       "cart": "Корзина",
       "primary_navigation": "Основная навигация",
       "secondary_navigation": "Дополнительная навигация",
-      "open_menu": "Открыть меню навигации",
-      "open_search": "Открыть поиск",
-      "open_account": "Открыть страницу аккаунта",
-      "open_cart": "Открыть корзину"
+      "menu": "Меню"
     }
   },
   "product": {
@@ -123,7 +131,15 @@
       "change_quantity": "Изменить количество",
       "increase_quantity": "Увеличить количество",
       "decrease_quantity": "Уменьшить количество",
+      "minimum_of": "Минимум {{ min }}",
+      "maximum_of": "Максимум {{ max }}",
+      "increment_of": "Шаг {{ step }}",
       "cannot_add_more": "Больше добавить нельзя"
+    },
+    "volume_pricing": {
+      "title": "Оптовая цена",
+      "minimum": "{{ quantity }}+",
+      "price_at_each": "{{ price }}/кажд."
     },
     "rating_count": {
       "zero": "Нет отзывов",
@@ -134,6 +150,7 @@
     },
     "inventory": {
       "in_stock": "В наличии",
+      "low_stock": "Осталось всего несколько единиц",
       "in_stock_with_quantity_count": {
         "one": "{{ count }} в наличии",
         "other": "{{ count }} в наличии"
@@ -202,6 +219,7 @@
     },
     "post": {
       "written_by": "Автор: {{ author }}",
+      "visit_author_website": "Посетить сайт автора",
       "share": "Поделиться",
       "tags": "Теги"
     },
@@ -366,7 +384,8 @@
       "product": "Товар",
       "total": "Итого",
       "quantity": "Количество",
-      "remove": "Удалить"
+      "remove": "Удалить",
+      "remove_with_title": "Удалить {{ title }}"
     },
     "free_shipping_bar": {
       "limit_unreached_html": "Потратьте еще {{ remaining_amount }}, и мы доставим заказ бесплатно!",
@@ -480,6 +499,29 @@
     "shop_the_look": {
       "view_products": "Просмотреть товары",
       "view_product": "Просмотреть товар"
+    },
+    "quick_order_list": {
+      "products": "Продукты",
+      "variants": "Варианты",
+      "quantity": "Количество",
+      "price": "Цена",
+      "total": "Итого",
+      "remove": "Удалить",
+      "quantity_rules": "Правила количества",
+      "volume_pricing": "Цены за объем",
+      "volume_pricing_available": "Доступны цены за объем",
+      "show_variants": "Показать варианты",
+      "minimum_of": "Минимум: {{ min }}",
+      "maximum_of": "Максимум: {{ max }}",
+      "increment_of": "Шаг: {{ step }}",
+      "view_cart": "Просмотреть корзину",
+      "remove_all": "Удалить все",
+      "item_count": {
+        "zero": "{{ count }} товаров",
+        "one": "{{ count }} товар",
+        "other": "{{ count }} товара"
+      },
+      "product_subtotal": "Промежуточный итог"
     }
   }
 }

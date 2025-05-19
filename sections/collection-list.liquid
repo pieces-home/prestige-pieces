@@ -79,7 +79,7 @@
                 {%- endif -%}
 
                 {%- if block.settings.button_text != blank -%}
-                  {%- render 'button', type: 'button', content: block.settings.button_text, style: block.settings.button_style -%}
+                  {%- render 'button', type: 'button', content: block.settings.button_text, style: block.settings.button_style, focusable: false -%}
                 {%- endif -%}
               </div>
             {%- endcapture -%}

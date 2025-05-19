@@ -87,7 +87,7 @@
 
                 {%- when 'accordion' -%}
                   {%- liquid
-                    assign accordion_title = block.settings.title | default: block.settings.page.title
+                    assign accordion_title = block.settings.page.title | default: block.settings.title 
                     assign accordion_content = block.settings.page.content | default: block.settings.liquid | default: block.settings.content
 
                     if accordion_title != blank and accordion_content != blank
@@ -681,6 +681,17 @@ quick buy information in a template, that will be extracted in JS, which ensures
         {
           "type": "paragraph",
           "content": "t:sections.main_product.blocks.quantity_selector.instructions"
+        }
+      ]
+    },
+    {
+      "type": "volume_pricing",
+      "name": "t:sections.main_product.blocks.volume_pricing.name",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "paragraph",
+          "content": "t:sections.main_product.blocks.volume_pricing.instructions"
         }
       ]
     },

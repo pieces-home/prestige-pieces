@@ -1,9 +1,18 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "current": {
     "icon_stroke_width": 1.5,
     "section_vertical_spacing": "md",
-    "button_border_radius": 0,
-    "input_border_radius": 0,
+    "button_border_radius": 8,
+    "input_border_radius": 8,
     "product_rating_color": "#1c1c1c",
     "product_on_sale_accent": "#e32c2b",
     "product_sold_out_badge_background": "#efefef",
@@ -13,8 +22,7 @@
     "error_color": "#cb2b2b",
     "heading_font": "univers_next_n4",
     "heading_text_transform": "normal",
-    "heading_font_size_factor": 1.1,
-    "heading_letter_spacing": 0,
+    "heading_letter_spacing": 18,
     "text_font": "univers_next_n4",
     "text_font_size_desktop": 14,
     "button_letter_spacing": 18,
@@ -25,12 +33,10 @@
     "stagger_menu_apparition": false,
     "show_product_rating": false,
     "cart_icon": "shopping_bag",
-    "social_facebook": "https:\/\/www.facebook.com\/piecesbyanaestheticpursuit\/",
-    "social_instagram": "https:\/\/www.instagram.com\/pieces_by_an_aesthetic_pursuit\/",
-    "favicon": "shopify:\/\/shop_images\/Big_P.jpg",
-    "content_for_index": [
-
-    ],
+    "social_facebook": "https://www.facebook.com/piecesbyanaestheticpursuit/",
+    "social_instagram": "https://www.instagram.com/pieces_by_an_aesthetic_pursuit/",
+    "favicon": "shopify://shop_images/Big_P.jpg",
+    "content_for_index": [],
     "color_schemes": {
       "scheme-1": {
         "settings": {
@@ -81,9 +87,9 @@
   "presets": {
     "Allure": {
       "section_vertical_spacing": "md",
-      "heading_font": "univers_next_n4",
+      "heading_font": "instrument_sans_n4",
       "heading_letter_spacing": 18,
-      "text_font": "univers_next_n4",
+      "text_font": "nunito_n4",
       "text_font_size_desktop": 14,
       "button_letter_spacing": 18,
       "color_schemes": {
@@ -138,9 +144,9 @@
     },
     "Couture": {
       "section_vertical_spacing": "md",
-      "heading_font": "futura_n4",
+      "heading_font": "jost_n4",
       "heading_letter_spacing": 18,
-      "text_font": "century_gothic_n4",
+      "text_font": "poppins_n4",
       "text_font_size_desktop": 14,
       "button_letter_spacing": 18,
       "color_schemes": {
@@ -195,9 +201,9 @@
     },
     "Vogue": {
       "section_vertical_spacing": "xs",
-      "heading_font": "din_neuzeit_grotesk_n3",
+      "heading_font": "jost_n4",
       "heading_letter_spacing": 18,
-      "text_font": "futura_n4",
+      "text_font": "jost_n4",
       "text_font_size_desktop": 14,
       "button_letter_spacing": 18,
       "color_schemes": {

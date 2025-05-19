@@ -106,11 +106,15 @@ initialize_fn = function() {
       <slot part="scroller"></slot>
     `));
   const fragment = document.createDocumentFragment();
-  for (let i = 1; i <= 5; ++i) {
-    const node = this.firstElementChild.cloneNode(true);
-    node.setAttribute("aria-hidden", "true");
-    node.style.cssText = `position: absolute; inset-inline-start: ${100 * i * -__privateGet(this, _MarqueeText_instances, direction_get)}%;`;
-    fragment.appendChild(node);
+  const duplicateCount = Math.ceil(this.clientWidth / this.firstElementChild.clientWidth);
+  for (let i = 1; i <= duplicateCount; ++i) {
+    for (let y = 0; y < 2; ++y) {
+      const node = this.firstElementChild.cloneNode(true);
+      const value = 100 * i * (y % 2 === 0 ? -1 : 1);
+      node.setAttribute("aria-hidden", "true");
+      node.style.cssText = `position: absolute; inset-inline-start: calc(${value}%);`;
+      fragment.appendChild(node);
+    }
   }
   this.append(fragment);
   __privateSet(this, _currentAnimation, animate(__privateGet(this, _MarqueeText_instances, scroller_get), { transform: ["translateX(0)", `translateX(calc(var(--transform-logical-flip) * ${__privateGet(this, _MarqueeText_instances, direction_get) * 100}%))`] }, {
@@ -999,7 +1003,9 @@ var ScrollCarousel = class extends HTMLElement {
     return this.hasAttribute("adaptive-height");
   }
   get isScrollable() {
-    return this.scrollWidth !== this.clientWidth || this.scrollHeight !== this.clientHeight;
+    const differenceWidth = this.scrollWidth - this.clientWidth;
+    const differenceHeight = this.scrollHeight - this.clientHeight;
+    return differenceWidth > 1 || differenceHeight > 1;
   }
   /**
    * -------------------------------------------------------------------------------------------------------------------
@@ -1040,6 +1046,7 @@ var ScrollCarousel = class extends HTMLElement {
     this.allCells.forEach((cell, index) => {
       cell.toggleAttribute("hidden", indexes.includes(index));
     });
+    __privateSet(this, _forceChangeEvent, true);
     this.dispatchEvent(new CustomEvent("carousel:filter", { detail: { filteredIndexes: indexes } }));
   }
 };
@@ -1243,10 +1250,12 @@ adaptHeight_fn = function() {
   }
 };
 preloadImages_fn2 = function() {
-  const previousSlide = this.cells[Math.max(this.selectedIndex - 1, 0)], nextSlide = this.cells[Math.min(this.selectedIndex + 1, this.cells.length - 1)];
-  [previousSlide, this.selectedCell, nextSlide].filter((item) => item !== null).forEach((item) => {
-    Array.from(item.querySelectorAll('img[loading="lazy"]')).forEach((img) => img.removeAttribute("loading"));
-    Array.from(item.querySelectorAll('video[preload="none"]')).forEach((video) => video.setAttribute("preload", "metadata"));
+  requestAnimationFrame(() => {
+    const previousSlide = this.cells[Math.max(this.selectedIndex - 1, 0)], nextSlide = this.cells[Math.min(this.selectedIndex + 1, this.cells.length - 1)];
+    [previousSlide, this.selectedCell, nextSlide].filter((item) => item !== null).forEach((item) => {
+      Array.from(item.querySelectorAll('img[loading="lazy"]')).forEach((img) => img.removeAttribute("loading"));
+      Array.from(item.querySelectorAll('video[preload="none"]')).forEach((video) => video.setAttribute("preload", "metadata"));
+    });
   });
 };
 if (!window.customElements.get("scroll-carousel")) {
@@ -1430,41 +1439,53 @@ onChangeLinkClicked_fn = function(event, target) {
   __privateMethod(this, _LineItemQuantity_instances, changeLineItemQuantity_fn).call(this, url.searchParams.get("id"), parseInt(url.searchParams.get("quantity")));
 };
 changeLineItemQuantity_fn = async function(lineKey, targetQuantity) {
-  if (window.themeVariables.settings.pageType === "cart") {
-    window.location.href = `${Shopify.routes.root}cart/change?id=${lineKey}&quantity=${targetQuantity}`;
+  document.documentElement.dispatchEvent(new CustomEvent("theme:loading:start", { bubbles: true }));
+  const lineItem = this.closest("line-item");
+  lineItem?.dispatchEvent(new CustomEvent("line-item:will-change", { bubbles: true, detail: { targetQuantity } }));
+  let sectionsToBundle = [];
+  document.documentElement.dispatchEvent(new CustomEvent("cart:prepare-bundled-sections", { bubbles: true, detail: { sections: sectionsToBundle } }));
+  const response = await fetch(`${Shopify.routes.root}cart/change.js`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      id: lineKey,
+      quantity: targetQuantity,
+      sections: sectionsToBundle.join(",")
+    })
+  });
+  document.documentElement.dispatchEvent(new CustomEvent("theme:loading:end", { bubbles: true }));
+  if (!response.ok) {
+    const responseContent = await response.json();
+    this.parentElement.querySelector('[role="alert"]')?.remove();
+    const errorSvg = `<svg width="13" height="13" fill="none" viewBox="0 0 13 13">
+        <circle cx="6.5" cy="6.5" r="6.5" fill="#BF1515"/>
+        <path fill="#fff" d="M6.75 7.97a.387.387 0 0 1-.3-.12.606.606 0 0 1-.12-.34l-.3-3.82c-.02-.247.033-.443.16-.59.127-.153.313-.23.56-.23.24 0 .42.077.54.23.127.147.18.343.16.59l-.3 3.82a.522.522 0 0 1-.12.34.344.344 0 0 1-.28.12Zm0 2.08a.744.744 0 0 1-.55-.21.751.751 0 0 1-.2-.54c0-.213.067-.387.2-.52.14-.14.323-.21.55-.21.233 0 .413.07.54.21.133.133.2.307.2.52 0 .22-.067.4-.2.54-.127.14-.307.21-.54.21Z"/>
+      </svg>`;
+    this.insertAdjacentHTML("afterend", `<p class="h-stack gap-2 justify-center text-xs" role="alert">${errorSvg} ${responseContent["description"]}</p>`);
+    this.querySelector("quantity-selector")?.restoreDefaultValue();
   } else {
-    document.documentElement.dispatchEvent(new CustomEvent("theme:loading:start", { bubbles: true }));
-    const lineItem = this.closest("line-item");
-    lineItem?.dispatchEvent(new CustomEvent("line-item:will-change", { bubbles: true, detail: { targetQuantity } }));
-    let sectionsToBundle = [];
-    document.documentElement.dispatchEvent(new CustomEvent("cart:prepare-bundled-sections", { bubbles: true, detail: { sections: sectionsToBundle } }));
-    const cartContent = await (await fetch(`${Shopify.routes.root}cart/change.js`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        id: lineKey,
-        quantity: targetQuantity,
-        sections: sectionsToBundle.join(",")
-      })
-    })).json();
-    document.documentElement.dispatchEvent(new CustomEvent("theme:loading:end", { bubbles: true }));
-    const lineItemAfterChange = cartContent["items"].filter((lineItem2) => lineItem2["key"] === lineKey);
-    lineItem?.dispatchEvent(new CustomEvent("line-item:change", {
-      bubbles: true,
-      detail: {
-        quantity: lineItemAfterChange.length === 0 ? 0 : lineItemAfterChange[0]["quantity"],
-        cart: cartContent
-      }
-    }));
-    document.documentElement.dispatchEvent(new CustomEvent("cart:change", {
-      bubbles: true,
-      detail: {
-        baseEvent: "line-item:change",
-        cart: cartContent
-      }
-    }));
+    const cartContent = await response.json();
+    if (window.themeVariables.settings.pageType === "cart") {
+      window.location.reload();
+    } else {
+      const lineItemAfterChange = cartContent["items"].filter((lineItem2) => lineItem2["key"] === lineKey);
+      lineItem?.dispatchEvent(new CustomEvent("line-item:change", {
+        bubbles: true,
+        detail: {
+          quantity: lineItemAfterChange.length === 0 ? 0 : lineItemAfterChange[0]["quantity"],
+          cart: cartContent
+        }
+      }));
+      document.documentElement.dispatchEvent(new CustomEvent("cart:change", {
+        bubbles: true,
+        detail: {
+          baseEvent: "line-item:change",
+          cart: cartContent
+        }
+      }));
+    }
   }
 };
 if (!window.customElements.get("line-item-quantity")) {
@@ -1530,7 +1551,7 @@ formatShippingRates_fn = function(shippingRates) {
 formatError_fn = function(errors) {
   let formattedShippingRates = Object.keys(errors).map((errorKey) => {
     return `<li>${errors[errorKey]}</li>`;
-  });
+  }).join("");
   this.resultsElement.innerHTML = `
       <div class="v-stack gap-2">
         <p>${window.themeVariables.strings.shippingEstimatorError}</p>
@@ -1661,11 +1682,11 @@ var DialogElement = class extends HTMLElement {
    * Open the dialog element (the animation can be disabled by passing false as an argument). This function should
    * normally not be directly overriden on children classes
    */
-  show(animate27 = true) {
+  show(animate26 = true) {
     if (this.open) {
       return Promise.resolve();
     }
-    this.setAttribute("open", animate27 ? "" : "immediate");
+    this.setAttribute("open", animate26 ? "" : "immediate");
     return waitForEvent(this, "dialog:after-show");
   }
   /**
@@ -1746,11 +1767,14 @@ var DialogElement = class extends HTMLElement {
    * Get the focus trap element configured with all the other attributes
    */
   get focusTrap() {
-    return __privateSet(this, _focusTrap, __privateGet(this, _focusTrap) || new FocusTrap.createFocusTrap([this, this.shadowRoot], {
+    return __privateSet(this, _focusTrap, __privateGet(this, _focusTrap) || new FocusTrap.createFocusTrap(this, {
       onDeactivate: this.hide.bind(this),
       allowOutsideClick: this.clickOutsideDeactivates ? __privateMethod(this, _DialogElement_instances, allowOutsideClick_fn).bind(this) : false,
       initialFocus: matchesMediaQuery("supports-hover") ? this.initialFocus : false,
       fallbackFocus: this,
+      tabbableOptions: {
+        getShadowRoot: true
+      },
       preventScroll: this.preventScrollWhenTrapped
     }));
   }
@@ -2298,9 +2322,22 @@ var QuantitySelector = class extends HTMLElement {
     __privateSet(this, _inputElement, this.querySelector("input"));
     __privateGet(this, _decreaseButton)?.addEventListener("click", __privateMethod(this, _QuantitySelector_instances, onDecreaseQuantity_fn).bind(this), { signal: __privateGet(this, _abortController5).signal });
     __privateGet(this, _increaseButton)?.addEventListener("click", __privateMethod(this, _QuantitySelector_instances, onIncreaseQuantity_fn).bind(this), { signal: __privateGet(this, _abortController5).signal });
+    __privateGet(this, _inputElement)?.addEventListener("input", () => __privateMethod(this, _QuantitySelector_instances, updateUI_fn).call(this), { signal: __privateGet(this, _abortController5).signal });
   }
   disconnectedCallback() {
     __privateGet(this, _abortController5).abort();
+  }
+  get quantity() {
+    return __privateGet(this, _inputElement).value;
+  }
+  set quantity(quantity) {
+    __privateGet(this, _inputElement).value = quantity;
+    __privateGet(this, _inputElement).dispatchEvent(new Event("change", { bubbles: true }));
+    __privateMethod(this, _QuantitySelector_instances, updateUI_fn).call(this);
+  }
+  restoreDefaultValue() {
+    __privateGet(this, _inputElement).value = __privateGet(this, _inputElement).defaultValue;
+    __privateMethod(this, _QuantitySelector_instances, updateUI_fn).call(this);
   }
 };
 _abortController5 = new WeakMap();
@@ -2309,22 +2346,38 @@ _increaseButton = new WeakMap();
 _inputElement = new WeakMap();
 _QuantitySelector_instances = new WeakSet();
 onDecreaseQuantity_fn = function() {
-  __privateGet(this, _inputElement).stepDown();
+  if (this.hasAttribute("allow-reset-to-zero") && __privateGet(this, _inputElement).value === __privateGet(this, _inputElement).min) {
+    __privateGet(this, _inputElement).value = 0;
+  } else {
+    __privateGet(this, _inputElement).stepDown();
+  }
+  __privateGet(this, _inputElement).dispatchEvent(new Event("change", { bubbles: true }));
   __privateMethod(this, _QuantitySelector_instances, updateUI_fn).call(this);
 };
 onIncreaseQuantity_fn = function() {
   __privateGet(this, _inputElement).stepUp();
+  __privateGet(this, _inputElement).dispatchEvent(new Event("change", { bubbles: true }));
   __privateMethod(this, _QuantitySelector_instances, updateUI_fn).call(this);
 };
 updateUI_fn = function() {
-  __privateGet(this, _decreaseButton).disabled = __privateGet(this, _inputElement).quantity <= 1;
+  if (__privateGet(this, _decreaseButton)) {
+    if (this.hasAttribute("allow-reset-to-zero") && __privateGet(this, _inputElement).value === __privateGet(this, _inputElement).min) {
+      __privateGet(this, _decreaseButton).disabled = false;
+    } else {
+      __privateGet(this, _decreaseButton).disabled = parseInt(__privateGet(this, _inputElement).value) <= parseInt(__privateGet(this, _inputElement).min);
+    }
+  }
+  if (__privateGet(this, _increaseButton)) {
+    __privateGet(this, _increaseButton).disabled = __privateGet(this, _inputElement).hasAttribute("max") ? parseInt(__privateGet(this, _inputElement).value) >= parseInt(__privateGet(this, _inputElement).max) : false;
+  }
 };
-var _QuantityInput_instances, inputElement_get, onValueInput_fn;
+var _QuantityInput_instances, inputElement_get, onValueInput_fn, onValueChange_fn;
 var QuantityInput = class extends HTMLElement {
   constructor() {
     super();
     __privateAdd(this, _QuantityInput_instances);
     __privateGet(this, _QuantityInput_instances, inputElement_get).addEventListener("input", __privateMethod(this, _QuantityInput_instances, onValueInput_fn).bind(this));
+    __privateGet(this, _QuantityInput_instances, inputElement_get).addEventListener("change", __privateMethod(this, _QuantityInput_instances, onValueChange_fn).bind(this));
     __privateGet(this, _QuantityInput_instances, inputElement_get).addEventListener("focus", () => __privateGet(this, _QuantityInput_instances, inputElement_get).select());
   }
   connectedCallback() {
@@ -2343,6 +2396,11 @@ onValueInput_fn = function() {
     __privateGet(this, _QuantityInput_instances, inputElement_get).value = __privateGet(this, _QuantityInput_instances, inputElement_get).min || 1;
   }
   this.style.setProperty("--quantity-selector-character-count", `${__privateGet(this, _QuantityInput_instances, inputElement_get).value.length}ch`);
+};
+onValueChange_fn = function() {
+  if (!__privateGet(this, _QuantityInput_instances, inputElement_get).checkValidity()) {
+    __privateGet(this, _QuantityInput_instances, inputElement_get).stepDown();
+  }
 };
 if (!window.customElements.get("quantity-selector")) {
   window.customElements.define("quantity-selector", QuantitySelector);
@@ -2458,9 +2516,9 @@ _ImageParallax_instances = new WeakSet();
 setupParallax_fn = function() {
   const [scale, translate] = [1.3, 0.15 * 100 / 1.3], isFirstSection = this.closest(".shopify-section").matches(":first-child");
   scroll(
-    animate8(this.firstElementChild, { transform: [`scale(${scale}) translateY(-${translate}%)`, `scale(${scale}) translateY(${translate}%)`] }, { easing: "linear" }),
+    animate8(this.querySelector("img"), { transform: [`scale(${scale}) translateY(-${translate}%)`, `scale(${scale}) translateY(${translate}%)`] }, { easing: "linear" }),
     {
-      target: this.firstElementChild,
+      target: this.querySelector("img"),
       offset: [isFirstSection ? "start start" : "start end", "end start"]
     }
   );
@@ -2508,7 +2566,7 @@ _recipientFieldsContainer = new WeakMap();
 _GiftCardRecipient_instances = new WeakSet();
 synchronizeProperties_fn = function() {
   __privateGet(this, _recipientOtherProperties).forEach((property) => property.disabled = !__privateGet(this, _recipientCheckbox).checked);
-  __privateGet(this, _recipientFieldsContainer).classList.toggle("js:hidden", !__privateGet(this, _recipientCheckbox).checked);
+  __privateGet(this, _recipientFieldsContainer).toggleAttribute("hidden", !__privateGet(this, _recipientCheckbox).checked);
 };
 formatDate_fn = function(date) {
   const offset = date.getTimezoneOffset();
@@ -2546,8 +2604,12 @@ onSwatchHovered_fn = async function(event, target) {
   }
 };
 onSwatchChanged_fn = async function(event, target) {
-  if (target.hasAttribute("data-variant-id")) {
-    this.querySelectorAll(`a[href^="${Shopify.routes.root}products/${this.getAttribute("handle")}"`).forEach((link) => {
+  if (target.hasAttribute("data-product-url")) {
+    this.querySelectorAll(`a[href^="${Shopify.routes.root}products/"`).forEach((link) => {
+      link.href = target.getAttribute("data-product-url");
+    });
+  } else if (target.hasAttribute("data-variant-id")) {
+    this.querySelectorAll(`a[href^="${Shopify.routes.root}products/"`).forEach((link) => {
       const url = new URL(link.href);
       url.searchParams.set("variant", target.getAttribute("data-variant-id"));
       link.href = `${url.pathname}${url.search}${url.hash}`;
@@ -2556,10 +2618,14 @@ onSwatchChanged_fn = async function(event, target) {
   if (!target.hasAttribute("data-variant-media")) {
     return;
   }
-  const newMedia = JSON.parse(target.getAttribute("data-variant-media")), primaryMediaElement = this.querySelector(".product-card__image--primary"), secondaryMediaElement = this.querySelector(".product-card__image--secondary"), newPrimaryMediaElement = __privateMethod(this, _ProductCard_instances, createMediaImg_fn).call(this, newMedia, primaryMediaElement.className, primaryMediaElement.sizes);
+  let newMedia = JSON.parse(target.getAttribute("data-variant-media")), primaryMediaElement = this.querySelector(".product-card__image--primary"), secondaryMediaElement = this.querySelector(".product-card__image--secondary"), newPrimaryMediaElement = __privateMethod(this, _ProductCard_instances, createMediaImg_fn).call(this, newMedia, primaryMediaElement.className, primaryMediaElement.sizes), newSecondaryMediaElement = null;
+  if (secondaryMediaElement && target.hasAttribute("data-variant-secondary-media")) {
+    let newSecondaryMedia = JSON.parse(target.getAttribute("data-variant-secondary-media"));
+    newSecondaryMediaElement = __privateMethod(this, _ProductCard_instances, createMediaImg_fn).call(this, newSecondaryMedia, secondaryMediaElement.className, secondaryMediaElement.sizes);
+  }
   if (primaryMediaElement.src !== newPrimaryMediaElement.src) {
-    if (secondaryMediaElement) {
-      secondaryMediaElement.replaceWith(__privateMethod(this, _ProductCard_instances, createMediaImg_fn).call(this, newMedia, secondaryMediaElement.className, secondaryMediaElement.sizes));
+    if (secondaryMediaElement && newSecondaryMediaElement) {
+      secondaryMediaElement.replaceWith(newSecondaryMediaElement);
     }
     await primaryMediaElement.animate({ opacity: [1, 0] }, { duration: 150, easing: "ease-in", fill: "forwards" }).finished;
     await new Promise((resolve) => newPrimaryMediaElement.complete ? resolve() : newPrimaryMediaElement.onload = () => resolve());
@@ -2575,30 +2641,40 @@ if (!window.customElements.get("product-card")) {
 }
 
 // js/common/product/product-form.js
-var _ProductForm_instances, form_get2, onSubmit_fn;
+var _abortController6, _ProductForm_instances, form_get2, onSubmit_fn;
 var ProductForm = class extends HTMLElement {
   constructor() {
-    super();
+    super(...arguments);
     __privateAdd(this, _ProductForm_instances);
-    this.addEventListener("submit", __privateMethod(this, _ProductForm_instances, onSubmit_fn));
+    __privateAdd(this, _abortController6);
   }
   connectedCallback() {
-    __privateGet(this, _ProductForm_instances, form_get2).id.disabled = false;
+    __privateSet(this, _abortController6, new AbortController());
+    if (__privateGet(this, _ProductForm_instances, form_get2)) {
+      __privateGet(this, _ProductForm_instances, form_get2).addEventListener("submit", __privateMethod(this, _ProductForm_instances, onSubmit_fn).bind(this), { signal: __privateGet(this, _abortController6).signal });
+      __privateGet(this, _ProductForm_instances, form_get2).id.disabled = false;
+    }
+  }
+  disconnectedCallback() {
+    __privateGet(this, _abortController6).abort();
   }
 };
+_abortController6 = new WeakMap();
 _ProductForm_instances = new WeakSet();
 form_get2 = function() {
-  return this.querySelector("form");
+  return this.querySelector('form[action*="/cart/add"]');
 };
 onSubmit_fn = async function(event) {
   event.preventDefault();
+  if (event.submitter?.getAttribute("aria-busy") === "true") {
+    return;
+  }
   if (!__privateGet(this, _ProductForm_instances, form_get2).checkValidity()) {
     __privateGet(this, _ProductForm_instances, form_get2).reportValidity();
     return;
   }
   const submitButtons = Array.from(__privateGet(this, _ProductForm_instances, form_get2).elements).filter((button) => button.type === "submit");
   submitButtons.forEach((submitButton) => {
-    submitButton.setAttribute("disabled", "disabled");
     submitButton.setAttribute("aria-busy", "true");
   });
   document.documentElement.dispatchEvent(new CustomEvent("theme:loading:start", { bubbles: true }));
@@ -2616,7 +2692,6 @@ onSubmit_fn = async function(event) {
     }
   });
   submitButtons.forEach((submitButton) => {
-    submitButton.removeAttribute("disabled");
     submitButton.removeAttribute("aria-busy");
   });
   const responseJson = await response.json();
@@ -2658,25 +2733,25 @@ if (!window.customElements.get("product-form")) {
 }
 
 // js/common/product/product-form-listeners.js
-var _abortController6, _BuyButtons_instances, onVariantAdded_fn, onCartError_fn;
+var _abortController7, _BuyButtons_instances, onVariantAdded_fn, onCartError_fn;
 var BuyButtons = class extends HTMLElement {
   constructor() {
     super(...arguments);
     __privateAdd(this, _BuyButtons_instances);
-    __privateAdd(this, _abortController6);
+    __privateAdd(this, _abortController7);
   }
   connectedCallback() {
-    __privateSet(this, _abortController6, new AbortController());
-    document.forms[this.getAttribute("form")]?.addEventListener("cart:error", __privateMethod(this, _BuyButtons_instances, onCartError_fn).bind(this), { signal: __privateGet(this, _abortController6).signal });
+    __privateSet(this, _abortController7, new AbortController());
+    document.forms[this.getAttribute("form")]?.addEventListener("cart:error", __privateMethod(this, _BuyButtons_instances, onCartError_fn).bind(this), { signal: __privateGet(this, _abortController7).signal });
     if (window.themeVariables.settings.cartType === "message") {
-      document.forms[this.getAttribute("form")]?.addEventListener("variant:add", __privateMethod(this, _BuyButtons_instances, onVariantAdded_fn).bind(this), { signal: __privateGet(this, _abortController6).signal });
+      document.forms[this.getAttribute("form")]?.addEventListener("variant:add", __privateMethod(this, _BuyButtons_instances, onVariantAdded_fn).bind(this), { signal: __privateGet(this, _abortController7).signal });
     }
   }
   disconnectedCallback() {
-    __privateGet(this, _abortController6).abort();
+    __privateGet(this, _abortController7).abort();
   }
 };
-_abortController6 = new WeakMap();
+_abortController7 = new WeakMap();
 _BuyButtons_instances = new WeakSet();
 onVariantAdded_fn = function(event) {
   const bannerElement = document.createRange().createContextualFragment(`
@@ -2706,36 +2781,36 @@ if (!window.customElements.get("buy-buttons")) {
 
 // js/common/product/product-gallery.js
 import { PhotoSwipeLightbox } from "vendor";
-var _abortController7, _photoSwipeInstance, _onGestureChangedListener, _settledMedia, _ProductGallery_instances, registerLightboxUi_fn, onSectionRerender_fn, onVariantChange_fn, onMediaChange_fn, onMediaSettle_fn, onCarouselClick_fn, onGestureStart_fn, onGestureChanged_fn;
+var _abortController8, _photoSwipeInstance, _onGestureChangedListener, _settledMedia, _ProductGallery_instances, registerLightboxUi_fn, onSectionRerender_fn, onVariantChange_fn, onMediaChange_fn, onMediaSettle_fn, onCarouselClick_fn, onGestureStart_fn, onGestureChanged_fn;
 var ProductGallery = class extends HTMLElement {
   /* Keep track of the currently settled media */
   constructor() {
     super();
     __privateAdd(this, _ProductGallery_instances);
-    __privateAdd(this, _abortController7);
+    __privateAdd(this, _abortController8);
     __privateAdd(this, _photoSwipeInstance);
     __privateAdd(this, _onGestureChangedListener, __privateMethod(this, _ProductGallery_instances, onGestureChanged_fn).bind(this));
     __privateAdd(this, _settledMedia);
     this.addEventListener("lightbox:open", (event) => this.openLightBox(event?.detail?.index));
   }
   connectedCallback() {
-    __privateSet(this, _abortController7, new AbortController());
+    __privateSet(this, _abortController8, new AbortController());
     if (!this.carousel) {
       return;
     }
     const form = document.forms[this.getAttribute("form")];
-    form.addEventListener("product:rerender", __privateMethod(this, _ProductGallery_instances, onSectionRerender_fn).bind(this), { signal: __privateGet(this, _abortController7).signal });
-    form.addEventListener("variant:change", __privateMethod(this, _ProductGallery_instances, onVariantChange_fn).bind(this), { signal: __privateGet(this, _abortController7).signal });
-    this.carousel.addEventListener("carousel:change", __privateMethod(this, _ProductGallery_instances, onMediaChange_fn).bind(this), { signal: __privateGet(this, _abortController7).signal });
-    this.carousel.addEventListener("carousel:settle", __privateMethod(this, _ProductGallery_instances, onMediaSettle_fn).bind(this), { signal: __privateGet(this, _abortController7).signal });
-    this.carousel.addEventListener("click", __privateMethod(this, _ProductGallery_instances, onCarouselClick_fn).bind(this), { signal: __privateGet(this, _abortController7).signal });
+    form.addEventListener("product:rerender", __privateMethod(this, _ProductGallery_instances, onSectionRerender_fn).bind(this), { signal: __privateGet(this, _abortController8).signal });
+    form.addEventListener("variant:change", __privateMethod(this, _ProductGallery_instances, onVariantChange_fn).bind(this), { signal: __privateGet(this, _abortController8).signal });
+    this.carousel.addEventListener("carousel:change", __privateMethod(this, _ProductGallery_instances, onMediaChange_fn).bind(this), { signal: __privateGet(this, _abortController8).signal });
+    this.carousel.addEventListener("carousel:settle", __privateMethod(this, _ProductGallery_instances, onMediaSettle_fn).bind(this), { signal: __privateGet(this, _abortController8).signal });
+    this.carousel.addEventListener("click", __privateMethod(this, _ProductGallery_instances, onCarouselClick_fn).bind(this), { signal: __privateGet(this, _abortController8).signal });
     if (this.hasAttribute("allow-zoom")) {
-      this.carousel.addEventListener("gesturestart", __privateMethod(this, _ProductGallery_instances, onGestureStart_fn).bind(this), { capture: false, signal: __privateGet(this, _abortController7).signal });
+      this.carousel.addEventListener("gesturestart", __privateMethod(this, _ProductGallery_instances, onGestureStart_fn).bind(this), { capture: false, signal: __privateGet(this, _abortController8).signal });
     }
     __privateMethod(this, _ProductGallery_instances, onMediaChange_fn).call(this);
   }
   disconnectedCallback() {
-    __privateGet(this, _abortController7).abort();
+    __privateGet(this, _abortController8).abort();
   }
   get viewInSpaceButton() {
     return this.querySelector("[data-shopify-xr]");
@@ -2794,7 +2869,7 @@ var ProductGallery = class extends HTMLElement {
     this.lightBox.loadAndOpen(index ?? imageCells.indexOf(this.carousel.selectedCell), dataSource);
   }
 };
-_abortController7 = new WeakMap();
+_abortController8 = new WeakMap();
 _photoSwipeInstance = new WeakMap();
 _onGestureChangedListener = new WeakMap();
 _settledMedia = new WeakMap();
@@ -2941,7 +3016,7 @@ onCarouselClick_fn = function(event) {
  */
 onGestureStart_fn = function(event) {
   event.preventDefault();
-  this.carousel.addEventListener("gesturechange", __privateGet(this, _onGestureChangedListener), { capture: false, signal: __privateGet(this, _abortController7).signal });
+  this.carousel.addEventListener("gesturechange", __privateGet(this, _onGestureChangedListener), { capture: false, signal: __privateGet(this, _abortController8).signal });
 };
 onGestureChanged_fn = function(event) {
   event.preventDefault();
@@ -3008,6 +3083,9 @@ onMediaObserve_fn = function(entries) {
     return;
   }
   const selectedItem = this.items.find((item) => item.getAttribute("aria-current") === "true"), candidateItem = this.items.find((item) => item.getAttribute("data-media-id") === firstEntry.target.getAttribute("data-media-id"));
+  if (!selectedItem) {
+    return;
+  }
   if (__privateGet(this, _scrollDirection) === "bottom" && parseInt(candidateItem.getAttribute("data-media-position")) > parseInt(selectedItem.getAttribute("data-media-position"))) {
     selectedItem.setAttribute("aria-current", "false");
     candidateItem.setAttribute("aria-current", "true");
@@ -3083,25 +3161,25 @@ var ProductLoader = class {
 };
 
 // js/common/product/product-rerender.js
-var _abortController8, _ProductRerender_instances, onRerender_fn;
+var _abortController9, _ProductRerender_instances, onRerender_fn;
 var ProductRerender = class extends HTMLElement {
   constructor() {
     super(...arguments);
     __privateAdd(this, _ProductRerender_instances);
-    __privateAdd(this, _abortController8);
+    __privateAdd(this, _abortController9);
   }
   connectedCallback() {
-    __privateSet(this, _abortController8, new AbortController());
+    __privateSet(this, _abortController9, new AbortController());
     if (!this.id || !this.hasAttribute("observe-form")) {
       console.warn('The <product-rerender> requires an ID to identify the element to re-render, and an "observe-form" attribute referencing to the form to monitor.');
     }
-    document.forms[this.getAttribute("observe-form")].addEventListener("product:rerender", __privateMethod(this, _ProductRerender_instances, onRerender_fn).bind(this), { signal: __privateGet(this, _abortController8).signal });
+    document.forms[this.getAttribute("observe-form")].addEventListener("product:rerender", __privateMethod(this, _ProductRerender_instances, onRerender_fn).bind(this), { signal: __privateGet(this, _abortController9).signal });
   }
   disconnectedCallback() {
-    __privateGet(this, _abortController8).abort();
+    __privateGet(this, _abortController9).abort();
   }
 };
-_abortController8 = new WeakMap();
+_abortController9 = new WeakMap();
 _ProductRerender_instances = new WeakSet();
 onRerender_fn = function(event) {
   const matchingElement = deepQuerySelector(event.detail.htmlFragment, `#${this.id}`);
@@ -3112,13 +3190,23 @@ onRerender_fn = function(event) {
   if (!this.hasAttribute("allow-partial-rerender") || event.detail.productChange) {
     this.replaceWith(matchingElement);
   } else {
-    const blockTypes = ["sku", "badges", "price", "payment-terms", "variant-picker", "inventory", "buy-buttons", "pickup-availability", "liquid"];
+    const blockTypes = ["sku", "badges", "quantity-selector", "volume-pricing", "price", "payment-terms", "variant-picker", "inventory", "buy-buttons", "pickup-availability", "liquid"];
     blockTypes.forEach((blockType) => {
       this.querySelectorAll(`[data-block-type="${blockType}"]`).forEach((element) => {
         const matchingBlock = matchingElement.querySelector(`[data-block-type="${blockType}"][data-block-id="${element.getAttribute("data-block-id")}"]`);
         if (matchingBlock) {
           if (blockType === "buy-buttons") {
             element.querySelector("buy-buttons").replaceWith(matchingBlock.querySelector("buy-buttons"));
+          } else if (blockType === "payment-terms") {
+            element.querySelector('[name="id"]').value = matchingBlock.querySelector('[name="id"]').value;
+            element.querySelector('[name="id"]').dispatchEvent(new Event("change", { bubbles: true }));
+          } else if (blockType === "quantity-selector") {
+            const quantitySelectorElement = element.querySelector("quantity-selector");
+            if (quantitySelectorElement) {
+              const existingQuantity = quantitySelectorElement.quantity;
+              element.replaceWith(matchingBlock);
+              matchingBlock.querySelector("quantity-selector").quantity = existingQuantity;
+            }
           } else {
             element.replaceWith(matchingBlock);
           }
@@ -3220,6 +3308,14 @@ var _VariantPicker = class _VariantPicker extends HTMLElement {
         newUrl.searchParams.set("variant", __privateGet(this, _selectedVariant).id);
         window.history.replaceState({ path: newUrl.toString() }, "", newUrl.toString());
       }
+    }
+    __privateGet(this, _form).dispatchEvent(new CustomEvent("product:rerender", {
+      detail: {
+        htmlFragment: newContent,
+        productChange
+      }
+    }));
+    if (!productChange) {
       __privateGet(this, _form).dispatchEvent(new CustomEvent("variant:change", {
         bubbles: true,
         detail: {
@@ -3229,12 +3325,6 @@ var _VariantPicker = class _VariantPicker extends HTMLElement {
         }
       }));
     }
-    __privateGet(this, _form).dispatchEvent(new CustomEvent("product:rerender", {
-      detail: {
-        htmlFragment: newContent,
-        productChange
-      }
-    }));
     Shopify?.PaymentButton?.init();
   }
 };
@@ -3576,16 +3666,16 @@ var CustomDetails = class extends HTMLElement {
   get contentElement() {
     return this.disclosureElement.lastElementChild;
   }
-  toggle(force = void 0, animate27 = true) {
+  toggle(force = void 0, animate26 = true) {
     const newValue = typeof force === "boolean" ? force : !(this.disclosureElement.getAttribute("aria-expanded") === "true");
     if (newValue) {
-      this.open({ instant: !animate27 });
+      this.open({ instant: !animate26 });
     } else {
       this.close();
     }
   }
   async open({ instant = false } = {}) {
-    if (this.disclosureElement.open) {
+    if (this.disclosureElement.getAttribute("aria-expanded") === "true") {
       return;
     }
     this.disclosureElement.open = true;
@@ -3596,10 +3686,10 @@ var CustomDetails = class extends HTMLElement {
     }
   }
   async close() {
+    this.disclosureElement.setAttribute("aria-expanded", "false");
     if (!this.disclosureElement.open) {
       return;
     }
-    this.disclosureElement.setAttribute("aria-expanded", "false");
     this.createHideAnimationControls()?.finished.then((event) => {
       if (event !== void 0) {
         this.disclosureElement.removeAttribute("open");
@@ -3618,10 +3708,10 @@ _CustomDetails_instances = new WeakSet();
  * perform animation. We therefore block that to allow doing an animation
  */
 onSummaryClicked_fn = function(event) {
+  event.preventDefault();
   if (this.disclosureElement.open && this.summaryElement.hasAttribute("data-follow-link")) {
     return window.location.href = this.summaryElement.getAttribute("data-follow-link");
   }
-  event.preventDefault();
   this.toggle();
 };
 
@@ -3813,7 +3903,7 @@ var Tabs = class extends HTMLElement {
     return parseInt(this.getAttribute("selected-index")) || 0;
   }
   set selectedIndex(index) {
-    this.setAttribute("selected-index", Math.min(Math.max(index, 0), __privateGet(this, _buttons).length - 1).toString());
+    this.setAttribute("selected-index", Math.min(Math.max(index, 0), Math.max(0, __privateGet(this, _buttons).length - 1)).toString());
     this.style.setProperty("--selected-index", this.selectedIndex.toString());
   }
   /**
@@ -3848,8 +3938,8 @@ _panels = new WeakMap();
 _delegate5 = new WeakMap();
 _Tabs_instances = new WeakSet();
 setupComponent_fn = function() {
-  __privateSet(this, _buttons, Array.from(this.shadowRoot.querySelector('slot[name="title"]').assignedNodes(), (item) => item.matches("button") && item || item.querySelector("button")));
-  __privateSet(this, _panels, Array.from(this.shadowRoot.querySelector('slot[name="content"]').assignedNodes()));
+  __privateSet(this, _buttons, Array.from(this.shadowRoot.querySelector('slot[name="title"]')?.assignedNodes() ?? [], (item) => item.matches("button") && item || item.querySelector("button")));
+  __privateSet(this, _panels, Array.from(this.shadowRoot.querySelector('slot[name="content"]')?.assignedNodes() ?? []));
   __privateGet(this, _buttons).forEach((button, index) => {
     button.setAttribute("role", "tab");
     button.setAttribute("aria-controls", `tab-panel-${__privateGet(this, _componentID)}-${index}`);
@@ -3992,23 +4082,22 @@ if (!window.customElements.get("announcement-bar-carousel")) {
 
 // js/sections/before-after-image.js
 import { animate as animate12, inView as inView9 } from "vendor";
-var _onPointerMoveListener, _onTouchMoveListener, _touchStartTimestamp, _BeforeAfter_instances, onPointerDown_fn, onPointerMove_fn, onTouchMove_fn, onPointerUp_fn, onKeyboardNavigation_fn2, calculatePosition_fn, animateInitialPosition_fn;
+var _onPointerMoveListener, _touchStartTimestamp, _BeforeAfter_instances, onPointerDown_fn, onPointerMove_fn, onTouchStart_fn, onPointerUp_fn, onKeyboardNavigation_fn2, calculatePosition_fn, animateInitialPosition_fn;
 var BeforeAfter = class extends HTMLElement {
   constructor() {
     super();
     __privateAdd(this, _BeforeAfter_instances);
     __privateAdd(this, _onPointerMoveListener, __privateMethod(this, _BeforeAfter_instances, onPointerMove_fn).bind(this));
-    __privateAdd(this, _onTouchMoveListener, __privateMethod(this, _BeforeAfter_instances, onTouchMove_fn).bind(this));
     __privateAdd(this, _touchStartTimestamp, 0);
     this.addEventListener("pointerdown", __privateMethod(this, _BeforeAfter_instances, onPointerDown_fn));
     this.addEventListener("keydown", __privateMethod(this, _BeforeAfter_instances, onKeyboardNavigation_fn2));
+    this.addEventListener("touchstart", __privateMethod(this, _BeforeAfter_instances, onTouchStart_fn), { passive: false });
   }
   connectedCallback() {
     inView9(this, __privateMethod(this, _BeforeAfter_instances, animateInitialPosition_fn).bind(this));
   }
 };
 _onPointerMoveListener = new WeakMap();
-_onTouchMoveListener = new WeakMap();
 _touchStartTimestamp = new WeakMap();
 _BeforeAfter_instances = new WeakSet();
 onPointerDown_fn = function(event) {
@@ -4019,24 +4108,21 @@ onPointerDown_fn = function(event) {
   if (matchesMediaQuery("supports-hover")) {
     document.addEventListener("pointermove", __privateGet(this, _onPointerMoveListener));
     __privateMethod(this, _BeforeAfter_instances, calculatePosition_fn).call(this, event);
-  } else {
-    const cursor = this.querySelector(".before-after__cursor");
-    if (event.target === cursor || cursor.contains(event.target)) {
-      document.addEventListener("pointermove", __privateGet(this, _onPointerMoveListener));
-      this.addEventListener("touchmove", __privateGet(this, _onTouchMoveListener), { passive: false });
-    } else {
-      __privateSet(this, _touchStartTimestamp, event.timeStamp);
-    }
   }
 };
 onPointerMove_fn = function(event) {
   __privateMethod(this, _BeforeAfter_instances, calculatePosition_fn).call(this, event);
 };
-onTouchMove_fn = function(event) {
-  event.preventDefault();
+onTouchStart_fn = function(event) {
+  const cursor = this.querySelector(".before-after__cursor");
+  if (event.target === cursor || cursor.contains(event.target)) {
+    event.preventDefault();
+    document.addEventListener("pointermove", __privateGet(this, _onPointerMoveListener));
+  } else {
+    __privateSet(this, _touchStartTimestamp, event.timeStamp);
+  }
 };
 onPointerUp_fn = function(event) {
-  this.removeEventListener("touchmove", __privateGet(this, _onTouchMoveListener));
   document.removeEventListener("pointermove", __privateGet(this, _onPointerMoveListener));
   if (!matchesMediaQuery("supports-hover")) {
     if (event.timeStamp - __privateGet(this, _touchStartTimestamp) <= 250) {
@@ -4203,10 +4289,10 @@ var CollectionBanner = class extends HTMLElement {
 };
 _CollectionBanner_instances = new WeakSet();
 reveal_fn2 = async function() {
-  const image = this.querySelector(".content-over-media > picture img"), content = this.querySelector(".content-over-media > .prose");
+  const image = this.querySelector(".content-over-media > picture img, .content-over-media > image-parallax img"), hasParallax = this.querySelector(".content-over-media image-parallax") !== null, content = this.querySelector(".content-over-media > .prose");
   await imageLoaded(image);
   const transformEffect = 0.15 * 100 / 1.3;
-  const imageTransform = image.getAttribute("is") === "image-parallax" ? [`scale(1.5) translateY(-${transformEffect}%)`, `scale(1.3) translateY(-${transformEffect}%)`] : ["scale(1.2)", "scale(1)"];
+  const imageTransform = hasParallax ? [`scale(1.5) translateY(-${transformEffect}%)`, `scale(1.3) translateY(-${transformEffect}%)`] : ["scale(1.2)", "scale(1)"];
   return timeline8([
     [this, { opacity: 1 }, { duration: 0, easing: [0.25, 0.46, 0.45, 0.94] }],
     [image, { opacity: [0, 1], transform: imageTransform }, { duration: 0.8, delay: 0.25, at: "<", easing: [0.25, 0.46, 0.45, 0.94] }],
@@ -4455,30 +4541,30 @@ if (!window.customElements.get("featured-collections-carousel")) {
 
 // js/sections/header.js
 import { animate as animate18, timeline as timeline9, stagger as stagger3, Delegate as Delegate8 } from "vendor";
-var _headerTrackerIntersectionObserver, _abortController9, _scrollYTrackingPosition, _isVisible2, _Header_instances, onHeaderTrackerIntersection_fn, detectMousePosition_fn, detectScrollDirection_fn, setVisibility_fn;
+var _headerTrackerIntersectionObserver, _abortController10, _scrollYTrackingPosition, _isVisible2, _Header_instances, onHeaderTrackerIntersection_fn, detectMousePosition_fn, detectScrollDirection_fn, setVisibility_fn;
 var Header = class extends HTMLElement {
   constructor() {
     super(...arguments);
     __privateAdd(this, _Header_instances);
     __privateAdd(this, _headerTrackerIntersectionObserver, new IntersectionObserver(__privateMethod(this, _Header_instances, onHeaderTrackerIntersection_fn).bind(this)));
-    __privateAdd(this, _abortController9);
+    __privateAdd(this, _abortController10);
     __privateAdd(this, _scrollYTrackingPosition, 0);
     __privateAdd(this, _isVisible2, true);
   }
   connectedCallback() {
-    __privateSet(this, _abortController9, new AbortController());
+    __privateSet(this, _abortController10, new AbortController());
     __privateGet(this, _headerTrackerIntersectionObserver).observe(document.getElementById("header-scroll-tracker"));
     if (this.hasAttribute("hide-on-scroll")) {
-      window.addEventListener("scroll", __privateMethod(this, _Header_instances, detectScrollDirection_fn).bind(this), { signal: __privateGet(this, _abortController9).signal });
-      window.addEventListener("pointermove", __privateMethod(this, _Header_instances, detectMousePosition_fn).bind(this), { signal: __privateGet(this, _abortController9).signal });
+      window.addEventListener("scroll", __privateMethod(this, _Header_instances, detectScrollDirection_fn).bind(this), { signal: __privateGet(this, _abortController10).signal });
+      window.addEventListener("pointermove", __privateMethod(this, _Header_instances, detectMousePosition_fn).bind(this), { signal: __privateGet(this, _abortController10).signal });
     }
   }
   disconnectedCallback() {
-    __privateGet(this, _abortController9).abort();
+    __privateGet(this, _abortController10).abort();
   }
 };
 _headerTrackerIntersectionObserver = new WeakMap();
-_abortController9 = new WeakMap();
+_abortController10 = new WeakMap();
 _scrollYTrackingPosition = new WeakMap();
 _isVisible2 = new WeakMap();
 _Header_instances = new WeakSet();
@@ -4493,11 +4579,12 @@ detectMousePosition_fn = function(event) {
 };
 detectScrollDirection_fn = function() {
   let isVisible;
-  if (window.scrollY > __privateGet(this, _scrollYTrackingPosition) && window.scrollY - __privateGet(this, _scrollYTrackingPosition) > 100) {
+  const scrollY = Math.max(0, window.scrollY);
+  if (scrollY > __privateGet(this, _scrollYTrackingPosition) && scrollY - __privateGet(this, _scrollYTrackingPosition) > 100) {
     isVisible = false;
-    __privateSet(this, _scrollYTrackingPosition, window.scrollY);
+    __privateSet(this, _scrollYTrackingPosition, scrollY);
   } else if (window.scrollY < __privateGet(this, _scrollYTrackingPosition)) {
-    __privateSet(this, _scrollYTrackingPosition, window.scrollY);
+    __privateSet(this, _scrollYTrackingPosition, scrollY);
     isVisible = true;
   }
   if (isVisible !== void 0) {
@@ -4706,7 +4793,6 @@ switchPanel_fn = async function(fromPanel, toPanel) {
   if (fromPanel) {
     await animate18(fromPanel, { opacity: [1, 0] }, { duration: 0.15 }).finished;
     fromPanel.hidden = true;
-    Array.from(fromPanel.querySelectorAll("details")).forEach((detail) => detail.open = false);
   }
   toPanel.hidden = false;
   const listSelector = matchesMediaQuery("md-max") ? ".header-sidebar__back-button, .header-sidebar__linklist li" : ".header-sidebar__linklist li";
@@ -5131,6 +5217,138 @@ if (!window.customElements.get("product-recommendations")) {
   window.customElements.define("product-recommendations", ProductRecommendations);
 }
 
+// js/sections/quick-order-list.js
+var _abortController11, _QuickOrderList_instances, onQuantityChange_fn, onUpdate_fn, onQuantityUpdated_fn;
+var QuickOrderList = class extends HTMLElement {
+  constructor() {
+    super();
+    __privateAdd(this, _QuickOrderList_instances);
+    __privateAdd(this, _abortController11);
+    this.addEventListener("quick-order-list:update", __privateMethod(this, _QuickOrderList_instances, onUpdate_fn).bind(this));
+    this.addEventListener("change", __privateMethod(this, _QuickOrderList_instances, onQuantityChange_fn).bind(this));
+  }
+};
+_abortController11 = new WeakMap();
+_QuickOrderList_instances = new WeakSet();
+onQuantityChange_fn = async function() {
+  __privateGet(this, _abortController11)?.abort();
+};
+onUpdate_fn = async function(event) {
+  let sectionsToBundle = [extractSectionId(this)];
+  document.documentElement.dispatchEvent(new CustomEvent("cart:prepare-bundled-sections", { bubbles: true, detail: { sections: sectionsToBundle } }));
+  __privateSet(this, _abortController11, new AbortController());
+  const inputWrapper = event.target.closest(".quick-order-list__quantity-actions")?.querySelector(".quantity-selector__input-wrapper");
+  inputWrapper?.setAttribute("aria-busy", "true");
+  try {
+    const response = await fetch(`${window.Shopify.routes.root}cart/update.js`, {
+      method: "POST",
+      signal: __privateGet(this, _abortController11).signal,
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        updates: event.detail.updates,
+        sections: sectionsToBundle.join(",")
+      })
+    });
+    inputWrapper?.removeAttribute("aria-busy");
+    if (response.ok) {
+      setTimeout(() => {
+        __privateMethod(this, _QuickOrderList_instances, onQuantityUpdated_fn).call(this, response);
+      }, 250);
+    } else {
+      const { message } = await response.json();
+      event.target.dispatchEvent(new CustomEvent("cart:error", { bubbles: true, detail: { message } }));
+    }
+  } catch (error) {
+  }
+};
+onQuantityUpdated_fn = async function(response) {
+  const cartContent = await response.json(), sectionId = extractSectionId(this);
+  document.documentElement.dispatchEvent(new CustomEvent("cart:change", {
+    bubbles: true,
+    detail: {
+      baseEvent: "quick-order-list:add",
+      cart: cartContent
+    }
+  }));
+  this.closest(".shopify-section").outerHTML = cartContent["sections"][sectionId];
+};
+var _QuickOrderListQuantitySelector_instances, onQuantityChange_fn2, onCartError_fn2;
+var QuickOrderListQuantitySelector = class extends HTMLElement {
+  constructor() {
+    super();
+    __privateAdd(this, _QuickOrderListQuantitySelector_instances);
+    this.addEventListener("change", debounce(__privateMethod(this, _QuickOrderListQuantitySelector_instances, onQuantityChange_fn2).bind(this), 300));
+    this.addEventListener("cart:error", __privateMethod(this, _QuickOrderListQuantitySelector_instances, onCartError_fn2).bind(this));
+  }
+};
+_QuickOrderListQuantitySelector_instances = new WeakSet();
+onQuantityChange_fn2 = function(event) {
+  this.dispatchEvent(new CustomEvent("quick-order-list:update", {
+    bubbles: true,
+    detail: {
+      updates: { [this.getAttribute("variant-id")]: parseInt(event.target.value) }
+    }
+  }));
+};
+onCartError_fn2 = function(event) {
+  const errorSvg = `<svg width="13" height="13" fill="none" viewBox="0 0 13 13">
+        <circle cx="6.5" cy="6.5" r="6.5" fill="#BF1515"/>
+        <path fill="#fff" d="M6.75 7.97a.387.387 0 0 1-.3-.12.606.606 0 0 1-.12-.34l-.3-3.82c-.02-.247.033-.443.16-.59.127-.153.313-.23.56-.23.24 0 .42.077.54.23.127.147.18.343.16.59l-.3 3.82a.522.522 0 0 1-.12.34.344.344 0 0 1-.28.12Zm0 2.08a.744.744 0 0 1-.55-.21.751.751 0 0 1-.2-.54c0-.213.067-.387.2-.52.14-.14.323-.21.55-.21.233 0 .413.07.54.21.133.133.2.307.2.52 0 .22-.067.4-.2.54-.127.14-.307.21-.54.21Z"/>
+      </svg>`;
+  this.insertAdjacentHTML("afterend", `<p class="h-stack gap-2 justify-center text-xs" role="alert">${errorSvg} ${event.detail.message}</p>`);
+  this.querySelector("quantity-selector")?.restoreDefaultValue();
+};
+var _QuickOrderListRemoveVariant_instances, onClick_fn;
+var QuickOrderListRemoveVariant = class extends HTMLElement {
+  constructor() {
+    super();
+    __privateAdd(this, _QuickOrderListRemoveVariant_instances);
+    this.addEventListener("click", __privateMethod(this, _QuickOrderListRemoveVariant_instances, onClick_fn));
+  }
+};
+_QuickOrderListRemoveVariant_instances = new WeakSet();
+onClick_fn = function() {
+  this.dispatchEvent(new CustomEvent("quick-order-list:update", {
+    bubbles: true,
+    detail: {
+      updates: { [this.getAttribute("variant-id")]: 0 }
+    }
+  }));
+};
+var _QuickOrderListRemoveAll_instances, onClick_fn2;
+var QuickOrderListRemoveAll = class extends HTMLElement {
+  constructor() {
+    super();
+    __privateAdd(this, _QuickOrderListRemoveAll_instances);
+    this.addEventListener("click", __privateMethod(this, _QuickOrderListRemoveAll_instances, onClick_fn2));
+  }
+};
+_QuickOrderListRemoveAll_instances = new WeakSet();
+onClick_fn2 = function() {
+  const updates = JSON.parse(this.getAttribute("variant-ids")).reduce((acc, variantId) => {
+    acc[variantId] = 0;
+    return acc;
+  }, {});
+  this.dispatchEvent(new CustomEvent("quick-order-list:update", {
+    bubbles: true,
+    detail: {
+      updates
+    }
+  }));
+};
+if (!window.customElements.get("quick-order-list")) {
+  window.customElements.define("quick-order-list", QuickOrderList);
+}
+if (!window.customElements.get("quick-order-list-quantity-selector")) {
+  window.customElements.define("quick-order-list-quantity-selector", QuickOrderListQuantitySelector);
+}
+if (!window.customElements.get("quick-order-list-remove-variant")) {
+  window.customElements.define("quick-order-list-remove-variant", QuickOrderListRemoveVariant);
+}
+if (!window.customElements.get("quick-order-list-remove-all")) {
+  window.customElements.define("quick-order-list-remove-all", QuickOrderListRemoveAll);
+}
+
 // js/sections/recently-viewed-products.js
 var _isLoaded2, _RecentlyViewedProducts_instances, searchQueryString_get, loadProducts_fn;
 var RecentlyViewedProducts = class extends HTMLElement {
@@ -5421,7 +5639,6 @@ onSlideSettle_fn = function(event) {
   const videoList = Array.from(event.detail.cell.querySelectorAll("video"));
   if (__privateGet(this, _SlideshowCarousel_instances, autoplayPauseOnVideo_get) && this.cells.length > 1 && videoList.length > 0) {
     this.player?.pause();
-    videoList.forEach((video) => video.loop = false);
     event.detail.cell.addEventListener("ended", __privateGet(this, _onVideoEndedListener), { capture: true, once: true });
   }
 };
@@ -5518,22 +5735,9 @@ if (!window.customElements.get("timeline-carousel")) {
 }
 
 // js/theme.js
-import { animate as animate26, Delegate as Delegate11 } from "vendor";
+import { Delegate as Delegate11 } from "vendor";
 (() => {
   const delegateDocument = new Delegate11(document.documentElement);
-  if (window.themeVariables.settings.showPageTransition && window.matchMedia("(prefers-reduced-motion: no-preference)").matches) {
-    delegateDocument.on("click", 'a:not([target="_blank"])', async (event, target) => {
-      if (event.defaultPrevented || event.ctrlKey || event.metaKey) {
-        return;
-      }
-      if (target.hostname !== window.location.hostname || target.pathname === window.location.pathname) {
-        return;
-      }
-      event.preventDefault();
-      await animate26(document.body, { opacity: 0 }, { duration: 0.2 }).finished;
-      window.location = target.href;
-    });
-  }
   delegateDocument.on("click", 'a[href*="#"]', (event, target) => {
     if (event.defaultPrevented || target.matches("[allow-hash-change]") || target.pathname !== window.location.pathname || target.search !== window.location.search) {
       return;
@@ -5631,6 +5835,7 @@ export {
   QuantityInput,
   QuantitySelector,
   QuickBuyModal,
+  QuickOrderList,
   RecentlyViewedProducts,
   SafeSticky,
   ScrollCarousel,

@@ -1,20 +1,25 @@
 {%- if section.blocks.size > 0 -%}
   <style>
     #shopify-section-{{ section.id }} {
-      --logo-list-items-per-row: {{ 2 | at_most: section.blocks.size }};
+      {%- if section.settings.stack_on_mobile -%}
+        --logo-list-grid: auto / repeat({{ 2 | at_most: section.blocks.size }}, minmax(0, 250px));
+      {%- else -%}
+        --logo-list-grid: auto / auto-flow max-content;
+      {%- endif -%}
+
       --logo-list-item-border-color: {{ section.settings.logo_item_border.rgb }};
       --logo-list-gap: {% if section.settings.logo_item_border == blank or section.settings.logo_item_border == 'rgba(0,0,0,0)' %}0px{% else %}1px{% endif %};
     }
 
     @media screen and (min-width: 700px) {
       #shopify-section-{{ section.id }} {
-        --logo-list-items-per-row: {{ 3 | at_most: section.blocks.size }};
+        --logo-list-grid: auto / repeat({{ 3 | at_most: section.blocks.size }}, minmax(0, 250px));
       }
     }
 
     @media screen and (min-width: 1000px) {
       #shopify-section-{{ section.id }} {
-        --logo-list-items-per-row: {{ section.settings.items_per_row | at_most: section.blocks.size }};
+        --logo-list-grid: auto / repeat({{ section.settings.items_per_row | at_most: section.blocks.size }}, minmax(0, 250px));
       }
     }
   </style>
@@ -26,7 +31,7 @@
       <div class="section-stack">
         {%- render 'section-header', subheading: section.settings.subheading, heading: section.settings.title, text_alignment: 'center' -%}
 
-        <div class="logo-list">
+        <div class="logo-list {% if section.settings.stack_on_mobile == false %}scroll-area bleed sm:unbleed{% endif %}">
           {%- for block in section.blocks -%}
             {%- capture block_content -%}
               {%- if block.settings.logo != blank -%}
@@ -83,6 +88,12 @@
       "id": "title",
       "label": "t:global.text.heading",
       "default": "Logo list"
+    },
+    {
+      "type": "checkbox",
+      "id": "stack_on_mobile",
+      "label": "t:sections.logo_list.stack_on_mobile",
+      "default": true
     },
     {
       "type": "range",

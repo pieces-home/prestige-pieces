@@ -102,7 +102,7 @@
     {%- if menu.links.size > 0 or sidebar_menu.links.size > 0 -%}
       <nav class="header__primary-nav {% if section.settings.layout == 'logo_center_navigation_below' or section.settings.layout == 'logo_left_navigation_center' %}header__primary-nav--center{% endif %}" aria-label="{{ 'header.general.primary_navigation' | t | escape }}">
         <button type="button" aria-controls="sidebar-menu" {% unless section.settings.layout == 'drawer' %}class="md:hidden"{% endunless %}>
-          <span class="sr-only">{{ 'header.general.open_menu' | t }}</span>
+          <span class="sr-only">{{ 'header.general.menu' | t }}</span>
           {%- render 'icon' with 'hamburger', class: 'header__nav-icon' -%}
         </button>
 
@@ -126,11 +126,11 @@
 
               <li class="header__primary-nav-item" data-title="{{ link.title | escape }}">
                 {%- if link.levels == 0 and mega_menu_block == '' -%}
-                  <a href="{{ link.url }}" class="block h6" {% if link.current %}aria-current="page"{% endif %}>{{ link.title }}</a>
+                  <a href="{{ link.url }}" class="block {% if section.settings.menu_text_font == 'heading' %}h6{% endif %}" {% if link.current %}aria-current="page"{% endif %}>{{ link.title }}</a>
                 {%- else -%}
                   {%- capture disclosure_content -%}
                     <details class="header__menu-disclosure">
-                      <summary data-follow-link="{{ link.url }}" class="h6">
+                      <summary data-follow-link="{{ link.url }}" {% if section.settings.menu_text_font == 'heading' %}class="h6"{% endif %}>
                         {{- link.title -}}
                       </summary>
 
@@ -203,70 +203,80 @@
         endif
       -%}
 
-      {%- if show_country_selector or show_locale_selector -%}
-        <div class="localization-selectors md-max:hidden">
-          {%- if show_country_selector -%}
-            {%- render 'localization-selector', type: 'country', placement: 'bottom-end', show_country_name: section.settings.show_country_name, show_country_flag: section.settings.show_country_flag, id_prefix: 'header-nav' -%}
-          {%- endif -%}
+      <ul class="contents unstyled-list">
+        {%- if show_country_selector or show_locale_selector -%}
+          <li class="localization-selectors md-max:hidden">
+            {%- if show_country_selector -%}
+              {%- render 'localization-selector', type: 'country', placement: 'bottom-end', show_country_name: section.settings.show_country_name, show_country_flag: section.settings.show_country_flag, id_prefix: 'header-nav' -%}
+            {%- endif -%}
 
-          {%- if show_locale_selector -%}
-            {%- render 'localization-selector', type: 'locale', placement: 'bottom-end', id_prefix: 'header-nav' -%}
-          {%- endif -%}
-        </div>
-      {%- endif -%}
-
-      {%- comment -%}Offer a hook for apps to integrate into the header to add their own icon, for instance{%- endcomment -%}
-      {%- for block in section.blocks -%}
-        {%- if block.type == '@app' -%}
-          {%- render block -%}
+            {%- if show_locale_selector -%}
+              {%- render 'localization-selector', type: 'locale', placement: 'bottom-end', id_prefix: 'header-nav' -%}
+            {%- endif -%}
+          </li>
         {%- endif -%}
-      {%- endfor -%}
 
-      {%- if shop.customer_accounts_enabled -%}
-        <a href="{% if customer %}{{ routes.account_url }}{% else %}{{ routes.account_login_url }}{% endif %}" class="sm-max:hidden">
-          <span class="sr-only">{{ 'header.general.open_account' | t }}</span>
+        {%- comment -%}Offer a hook for apps to integrate into the header to add their own icon, for instance{%- endcomment -%}
+        {%- for block in section.blocks -%}
+          {%- if block.type == '@app' -%}
+            <li>
+              {%- render block -%}
+            </li>
+          {%- endif -%}
+        {%- endfor -%}
 
-          {%- if section.settings.show_icons -%}
-            {%- render 'icon' with 'account', class: 'header__nav-icon' -%}
-          {%- else -%}
-            <span class="md:hidden">{%- render 'icon' with 'account', class: 'header__nav-icon' -%}</span>
+        {%- if shop.customer_accounts_enabled -%}
+          <li class="header__account-link sm-max:hidden">
+            <a href="{% if customer %}{{ routes.account_url }}{% else %}{{ routes.account_login_url }}{% endif %}">
+              <span class="sr-only">{% if customer %}{{ 'header.general.account' | t }}{% else %}{{ 'header.general.login' | t }}{% endif %}</span>
 
-            <span class="h6 link-faded md-max:hidden">
-              {%- if customer -%}
-                {{- 'header.general.account' | t -}}
+              {%- if section.settings.show_icons -%}
+                {%- render 'icon' with 'account', class: 'header__nav-icon' -%}
               {%- else -%}
-                {{- 'header.general.login' | t -}}
+                <span class="md:hidden">{%- render 'icon' with 'account', class: 'header__nav-icon' -%}</span>
+
+                <span class="{% if section.settings.menu_text_font == 'heading' %}h6{% endif %} link-faded md-max:hidden" aria-hidden="true">
+                  {%- if customer -%}
+                    {{- 'header.general.account' | t -}}
+                  {%- else -%}
+                    {{- 'header.general.login' | t -}}
+                  {%- endif -%}
+                </span>
               {%- endif -%}
-            </span>
-          {%- endif -%}
-        </a>
-      {%- endif -%}
-
-      {%- if section.settings.enable_search -%}
-        <a href="{{ routes.search_url }}" aria-controls="header-search-{{ section.id }}">
-          <span class="sr-only">{{ 'header.general.open_search' | t }}</span>
-
-          {%- if section.settings.show_icons -%}
-            {%- render 'icon' with 'search', class: 'header__nav-icon' -%}
-          {%- else -%}
-            <span class="md:hidden">{%- render 'icon' with 'search', class: 'header__nav-icon' -%}</span>
-            <span class="h6 link-faded md-max:hidden">{{ 'header.general.search' | t }}</span>
-          {%- endif -%}
-        </a>
-      {%- endif -%}
-
-      <a href="{{ routes.cart_url }}" class="relative" {% if settings.cart_type != 'page' and request.page_type != 'cart' %}aria-controls="cart-drawer"{% endif %} data-no-instant>
-        <span class="sr-only">{{ 'header.general.open_cart' | t }}</span>
-
-        {%- if section.settings.show_icons -%}
-          {%- render 'icon' with 'cart', class: 'header__nav-icon' -%}
-        {%- else -%}
-          <span class="md:hidden">{%- render 'icon' with 'cart', class: 'header__nav-icon' -%}</span>
-          <span class="h6 link-faded md-max:hidden">{{ 'header.general.cart' | t }} (<cart-count>{{ cart.item_count }}</cart-count>)</span>
+            </a>
+          </li>
         {%- endif -%}
 
-        <cart-dot class="header__cart-dot {% unless cart.empty? %}is-visible{% endunless %} {% unless section.settings.show_icons %}md:hidden{% endunless %}"></cart-dot>
-      </a>
+        {%- if section.settings.enable_search -%}
+          <li class="header__search-link">
+            <a href="{{ routes.search_url }}" aria-controls="header-search-{{ section.id }}">
+              <span class="sr-only">{{ 'header.general.search' | t }}</span>
+
+              {%- if section.settings.show_icons -%}
+                {%- render 'icon' with 'search', class: 'header__nav-icon' -%}
+              {%- else -%}
+                <span class="md:hidden">{%- render 'icon' with 'search', class: 'header__nav-icon' -%}</span>
+                <span class="{% if section.settings.menu_text_font == 'heading' %}h6{% endif %} link-faded md-max:hidden" aria-hidden="true">{{ 'header.general.search' | t }}</span>
+              {%- endif -%}
+            </a>
+          </li>
+        {%- endif -%}
+
+        <li class="relative header__cart-link">
+          <a href="{{ routes.cart_url }}" {% if settings.cart_type != 'page' and request.page_type != 'cart' %}aria-controls="cart-drawer"{% endif %} data-no-instant>
+            <span class="sr-only">{{ 'header.general.cart' | t }}</span>
+
+            {%- if section.settings.show_icons -%}
+              {%- render 'icon' with 'cart', class: 'header__nav-icon' -%}
+            {%- else -%}
+              <span class="md:hidden">{%- render 'icon' with 'cart', class: 'header__nav-icon' -%}</span>
+              <span class="{% if section.settings.menu_text_font == 'heading' %}h6{% endif %} link-faded md-max:hidden">{{ 'header.general.cart' | t }} (<cart-count>{{ cart.item_count }}</cart-count>)</span>
+            {%- endif -%}
+
+            <cart-dot class="header__cart-dot {% unless cart.empty? %}is-visible{% endunless %} {% unless section.settings.show_icons %}md:hidden{% endunless %}"></cart-dot>
+          </a>
+        </li>
+      </ul>
     </nav>
 
     {%- if section.settings.enable_search -%}
@@ -276,7 +286,7 @@
     {%- assign sidebar_menu = section.settings.sidebar_menu | default: section.settings.menu -%}
 
     {%- if sidebar_menu.links.size > 0 -%}
-      {%- render 'header-sidebar', menu: sidebar_menu, color_scheme: section.settings.sidebar_color_scheme, show_dividers: section.settings.sidebar_show_dividers -%}
+      {%- render 'header-sidebar', menu: sidebar_menu, color_scheme: section.settings.sidebar_color_scheme, show_dividers: section.settings.sidebar_show_dividers, open_second_level_menus: section.settings.sidebar_open_second_level_menus -%}
     {%- endif -%}
   </x-header>
 </height-observer>
@@ -384,6 +394,22 @@
       "default": "hover"
     },
     {
+      "type": "select",
+      "id": "menu_text_font",
+      "label": "t:sections.header.menu_text_font",
+      "options": [
+        {
+          "value": "heading",
+          "label": "t:sections.header.menu_text_font_options.heading"
+        },
+        {
+          "value": "body",
+          "label": "t:sections.header.menu_text_font_options.body"
+        }
+      ],
+      "default": "heading"
+    },
+    {
       "type": "checkbox",
       "id": "enable_search",
       "label": "t:sections.header.enable_search",
@@ -420,6 +446,12 @@
       "id": "sidebar_show_dividers",
       "label": "t:sections.header.sidebar_show_dividers",
       "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "sidebar_open_second_level_menus",
+      "label": "t:sections.header.sidebar_open_second_level_menus",
+      "default": false
     },
     {
       "type": "header",
